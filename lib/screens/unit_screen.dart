@@ -121,7 +121,7 @@ class _UnitConverterState extends State<UnitConverter> {
 
     /// Final Return
     return Scaffold(
-      resizeToAvoidBottomPadding: false,
+      resizeToAvoidBottomInset: false,
       body: Container(
         decoration: BoxDecoration(
           gradient: LinearGradient(

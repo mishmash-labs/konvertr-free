@@ -6,7 +6,6 @@ import '../models/category.dart';
 final _borderRadius = BorderRadius.circular(12.5);
 final _padding8 = EdgeInsets.all(8.0);
 
-/// Creates a tile that contains [Category] information
 class CategoryTile extends StatelessWidget {
   const CategoryTile({
     @required this.category,
