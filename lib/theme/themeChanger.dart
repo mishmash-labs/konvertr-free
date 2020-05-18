@@ -9,7 +9,7 @@ class ThemeChanger with ChangeNotifier {
   /// Initializes and declare [_themeData] property with a given [ThemeData]
   /// Setter method to set the value of [_themeData]
 
-  ThemeData _themeData = appTheme.getLightTheme();
+  ThemeData _themeData = appTheme.getDarkTheme();
 
   /// Getter method to get the value of [_themeData]
 

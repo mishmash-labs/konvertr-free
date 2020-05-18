@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'unit.dart';
+import '../models/unit.dart';
 
 /// The Unitconverter main logic and some UI
 class UnitConFgUI extends StatefulWidget {
@@ -41,7 +41,6 @@ class _UnitConFgUIState extends State<UnitConFgUI> {
   Unit _fromUnit;
   final _inputKey = GlobalKey(debugLabel: 'inputText');
   double _inputValue;
-  bool _showValidationError = false;
   Unit _toUnit;
 
   @override
@@ -108,11 +107,9 @@ class _UnitConFgUIState extends State<UnitConFgUI> {
       } else {
         try {
           final _inputDouble = double.parse(value);
-          _showValidationError = false;
           _inputValue = _inputDouble;
           _updateConversion();
         } catch (e) {
-          _showValidationError = true;
           print(e);
         }
       }
@@ -154,7 +151,6 @@ class _UnitConFgUIState extends State<UnitConFgUI> {
 
     final _inputTextTheme = Theme.of(context).textTheme.headline5.copyWith(
       fontSize: _fontSize,
-      fontFamily: 'Roboto',
       fontWeight: FontWeight.w400,
       color: Theme.of(context).hoverColor,
       shadows: [],
@@ -199,7 +195,6 @@ class _UnitConFgUIState extends State<UnitConFgUI> {
                 style: _inputTextTheme.copyWith(
                   fontSize: _fontSize,
                   fontWeight: FontWeight.w400,
-                  fontFamily: 'Roboto_Con',
                   shadows: [],
                 ),
               ),

@@ -43,7 +43,6 @@ class AppTheme {
     textTheme: ThemeData.dark().textTheme.copyWith(
           /// Theme for UNIT CONVERTER text
           headline5: TextStyle(
-            fontFamily: 'Roboto_Con',
             fontSize: 50,
             fontWeight: FontWeight.bold,
             color: Colors.white,
@@ -58,7 +57,6 @@ class AppTheme {
 
           /// Category name in the Unit Converter screen
           headline6: TextStyle(
-            fontFamily: 'Roboto_Con',
             fontSize: 56,
             fontWeight: FontWeight.bold,
             color: Color(0xfffaf9ff),
@@ -73,7 +71,6 @@ class AppTheme {
 
           /// Category name in Category tile
           caption: TextStyle(
-            fontFamily: 'Roboto',
             fontWeight: FontWeight.bold,
             color: Color.fromARGB(255, 255, 255, 255),
             fontSize: 20,
@@ -81,18 +78,9 @@ class AppTheme {
 
           /// 'Select a Category' text
           subtitle1: TextStyle(
-            fontFamily: 'Roboto',
             fontWeight: FontWeight.w700,
             fontSize: 17,
             color: Color(0xff7565c8),
-          ),
-
-          /// Error Text
-          bodyText1: TextStyle(
-            fontFamily: 'SourceSans',
-            fontSize: 16,
-            color: Colors.red[700],
-            fontWeight: FontWeight.w600,
           ),
         ),
   );
@@ -138,7 +126,6 @@ class AppTheme {
     textTheme: ThemeData.light().textTheme.copyWith(
           /// Theme for UNIT CONVERTER text
           headline5: TextStyle(
-            fontFamily: 'Roboto_Con',
             fontSize: 50,
             fontWeight: FontWeight.bold,
             color: Color(0xff1d2440),
@@ -153,7 +140,6 @@ class AppTheme {
 
           /// Category name in the Unit Converter screen
           headline6: TextStyle(
-            fontFamily: 'Roboto_Con',
             fontSize: 56,
             fontWeight: FontWeight.bold,
             color: Color(0xfffaf9ff),
@@ -168,7 +154,6 @@ class AppTheme {
 
           /// Category name in Category tile
           caption: TextStyle(
-            fontFamily: 'Roboto',
             fontWeight: FontWeight.bold,
             color: Color(0xff404047),
             fontSize: 20,
@@ -176,18 +161,9 @@ class AppTheme {
 
           /// 'Select a Category' text
           subtitle1: TextStyle(
-            fontFamily: 'Roboto',
             fontWeight: FontWeight.w700,
             fontSize: 17,
             color: Color(0xff7655c8),
-          ),
-
-          /// Error Text
-          bodyText1: TextStyle(
-            fontFamily: 'SourceSans',
-            fontSize: 16,
-            color: Colors.red[700],
-            fontWeight: FontWeight.w600,
           ),
         ),
   );

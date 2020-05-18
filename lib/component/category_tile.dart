@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:page_transition/page_transition.dart';
 
 import '../screens/unit_screen.dart';
-import 'category.dart';
+import '../models/category.dart';
 
 final _borderRadius = BorderRadius.circular(12.5);
 final _padding8 = EdgeInsets.all(8.0);

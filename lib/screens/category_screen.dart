@@ -4,9 +4,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:provider/provider.dart';
 
-import '../component/category.dart';
 import '../component/category_tile.dart';
-import '../component/unit.dart';
+import '../models/category.dart';
+import '../models/unit.dart';
 import '../theme/themeChanger.dart';
 import '../theme/themes.dart';
 
@@ -40,7 +40,6 @@ class _CategoryScreenState extends State<CategoryScreen> {
     if (data is! Map) {
       throw ('Json is not a Map');
     }
-    var categoryIndex = 0;
     data.keys.forEach((key) {
       print(key);
       final List<Unit> units =
@@ -54,8 +53,6 @@ class _CategoryScreenState extends State<CategoryScreen> {
       setState(() {
         _categories.add(category);
       });
-
-      categoryIndex += 1;
     });
   }
 
