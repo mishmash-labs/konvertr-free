@@ -63,7 +63,6 @@ class _UnitConverterState extends State<UnitConverter> {
 
           /// Top Icon Row
           Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: <Widget>[
               SizedBox(width: height / 50),
 
@@ -101,7 +100,7 @@ class _UnitConverterState extends State<UnitConverter> {
               ),
               SizedBox(width: 0.03281249999999999909 * width),
               Image.asset(
-                'assets/icons/${widget.category.name.toLowerCase()}2.png',
+                'assets/icons/dark/${widget.category.name}.png',
                 height: 0.11098170266836086757 * height,
                 width: 0.11098170266836086757 * height,
               ),

@@ -20,38 +20,6 @@ class _CategoryScreenState extends State<CategoryScreen> {
   /// Creates a list of [Category] widgets for storing each category information
   final _categories = <Category>[];
 
-  /// List of Category names
-  static const _categoryNames = <String>[
-    'Length',
-    'Area',
-    'Volume',
-    'Weight',
-    'Data',
-    'Time',
-  ];
-
-  /// List of Category icon location
-  ///
-  /// Light
-  final _iconLocationLight = <String>[
-    'assets/icons/length1.png',
-    'assets/icons/area1.png',
-    'assets/icons/volume1.png',
-    'assets/icons/weight1.png',
-    'assets/icons/data1.png',
-    'assets/icons/time1.png',
-  ];
-
-  /// Dark
-  final _iconLocationDark = <String>[
-    'assets/icons/length2.png',
-    'assets/icons/area2.png',
-    'assets/icons/volume2.png',
-    'assets/icons/weight2.png',
-    'assets/icons/data2.png',
-    'assets/icons/time2.png',
-  ];
-
   @override
   Future<void> didChangeDependencies() async {
     super.didChangeDependencies();
@@ -70,12 +38,13 @@ class _CategoryScreenState extends State<CategoryScreen> {
     }
     var categoryIndex = 0;
     data.keys.forEach((key) {
+      print(key);
       final List<Unit> units =
           data[key].map<Unit>((dynamic data) => Unit.fromJson(data)).toList();
 
       var category = Category(
-          iconLocation: _iconLocationLight[categoryIndex],
-          name: _categoryNames[categoryIndex],
+          iconLocation: "assets/icons/dark/" + key + ".png",
+          name: key,
           units: units);
 
       setState(() {
@@ -100,8 +69,9 @@ class _CategoryScreenState extends State<CategoryScreen> {
     void updateCategoryIcons() {
       setState(() {
         for (var i = 0; i < _categories.length; ++i) {
-          _categories[i].iconLocation =
-              isDarkTheme ? _iconLocationDark[i] : _iconLocationLight[i];
+          _categories[i].iconLocation = isDarkTheme
+              ? "assets/icons/dark/" + _categories[i].name + ".png"
+              : "assets/icons/light/" + _categories[i].name + ".png";
         }
       });
     }
