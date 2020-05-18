@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 import '../component/unitCon_Logic.dart';
-import '../component/unit_UI.dart';
 import '../models/category.dart';
 
 /// Unit Converter Page.
@@ -138,19 +137,7 @@ class _UnitConverterState extends State<UnitConverter> {
         ),
         child: SafeArea(
           bottom: false,
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: <Widget>[
-              Expanded(
-                child: Stack(
-                  children: <Widget>[
-                    UnitBgUI(),
-                    _topDesign(),
-                  ],
-                ),
-              ),
-            ],
-          ),
+          child: _topDesign(),
         ),
       ),
     );

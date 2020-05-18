@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:page_transition/page_transition.dart';
 
 import '../screens/unit_screen.dart';
 import '../models/category.dart';
@@ -20,9 +19,8 @@ class CategoryTile extends StatelessWidget {
     final height = MediaQuery.of(context).size.height;
 
     void _openConverterRoute(Category categoryUnit) {
-      Navigator.of(context).push(PageTransition(
-        child: UnitConverter(category: categoryUnit),
-        type: PageTransitionType.rightToLeftWithFade,
+      Navigator.of(context).push(MaterialPageRoute(
+        builder: (_) => UnitConverter(category: categoryUnit),
       ));
     }
 

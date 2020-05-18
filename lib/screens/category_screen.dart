@@ -7,7 +7,7 @@ import 'package:provider/provider.dart';
 import '../component/category_tile.dart';
 import '../models/category.dart';
 import '../models/unit.dart';
-import '../theme/themeChanger.dart';
+import '../theme/theme_changer.dart';
 import '../theme/themes.dart';
 
 /// Builds the main screen.
@@ -41,7 +41,6 @@ class _CategoryScreenState extends State<CategoryScreen> {
       throw ('Json is not a Map');
     }
     data.keys.forEach((key) {
-      print(key);
       final List<Unit> units =
           data[key].map<Unit>((dynamic data) => Unit.fromJson(data)).toList();
 
@@ -109,7 +108,6 @@ class _CategoryScreenState extends State<CategoryScreen> {
               alignment: Alignment.topRight,
               child: IconButton(
                 onPressed: () {
-                  print("Theme change toogled");
                   theme.themeData = isDarkTheme
                       ? appTheme.getLightTheme()
                       : appTheme.getDarkTheme();

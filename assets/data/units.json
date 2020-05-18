@@ -1,59 +1,28 @@
 {
-  "Length": [
-    {
-      "name": "Meter",
-      "conversion": 1.0,
-      "base_unit": true
-    },
-    {
-      "name": "Millimeter",
-      "conversion": 1000.0
-    },
-    {
-      "name": "Centimeter",
-      "conversion": 100.0
-    },
-    {
-      "name": "Kilometer",
-      "conversion": 0.001
-    },
-    {
-      "name": "Inch",
-      "conversion": 39.3701
-    },
-    {
-      "name": "Foot",
-      "conversion": 3.28084
-    },
-    {
-      "name": "Yard",
-      "conversion": 1.09361
-    },
-    {
-      "name": "Mile",
-      "conversion": 0.000621371
-    }
-  ],
   "Area": [
     {
-      "name": "Meter squared",
+      "name": "Square Meter",
       "conversion": 1.0,
       "base_unit": true
     },
     {
-      "name": "Kilometer squared",
+      "name": "Square Kilometer",
       "conversion": 0.000001
     },
     {
-      "name": "Square inch",
+      "name": "Square Mile",
+      "conversion": 0.0000003861
+    },
+    {
+      "name": "Square Inch",
       "conversion": 1550.0
     },
     {
-      "name": "Square foot",
+      "name": "Square Foot",
       "conversion": 10.7639
     },
     {
-      "name": "Square yard",
+      "name": "Square Yard",
       "conversion": 1.19599
     },
     {
@@ -65,77 +34,7 @@
       "conversion": 0.0001
     }
   ],
-  "Volume": [
-    {
-      "name": "Cubic meter",
-      "conversion": 1.0,
-      "base_unit": true
-    },
-    {
-      "name": "US legal cup",
-      "conversion": 4166.67
-    },
-    {
-      "name": "US fluid ounce",
-      "conversion": 33814.0
-    },
-    {
-      "name": "US tablespoon",
-      "conversion": 67628.0
-    },
-    {
-      "name": "US teaspoon",
-      "conversion": 202884.0
-    },
-    {
-      "name": "Imperial cup",
-      "conversion": 3519.51
-    },
-    {
-      "name": "Imperial fluid ounce",
-      "conversion": 35195.1
-    },
-    {
-      "name": "Imperial tablespoon",
-      "conversion": 56312.13673
-    },
-    {
-      "name": "Imperial teaspoon",
-      "conversion": 168936.41019
-    }
-  ],
-  "Weight": [
-    {
-      "name": "Kilogram",
-      "conversion": 1.0,
-      "base_unit": true
-    },
-    {
-      "name": "Gram",
-      "conversion": 1000.0
-    },
-    {
-      "name": "Ounce",
-      "conversion": 35.274
-    },
-    {
-      "name": "Pound",
-      "conversion": 2.20462
-    },
-    {
-      "name": "Stone",
-      "conversion": 0.157473
-    },
-    {
-      "name": "US ton",
-      "conversion": 0.00110231
-    },
-    {
-      "name": "Metric ton",
-      "conversion": 0.001
-    }
-  ],
-  "Data": [
+  "Digital Storage": [
     {
       "name": "Megabyte",
       "conversion": 1.0,
@@ -170,6 +69,76 @@
       "conversion": 0.000000001
     }
   ],
+  "Length": [
+    {
+      "name": "Meter",
+      "conversion": 1.0,
+      "base_unit": true
+    },
+    {
+      "name": "Millimeter",
+      "conversion": 1000.0
+    },
+    {
+      "name": "Centimeter",
+      "conversion": 100.0
+    },
+    {
+      "name": "Kilometer",
+      "conversion": 0.001
+    },
+    {
+      "name": "Inch",
+      "conversion": 39.3701
+    },
+    {
+      "name": "Foot",
+      "conversion": 3.28084
+    },
+    {
+      "name": "Yard",
+      "conversion": 1.09361
+    },
+    {
+      "name": "Mile",
+      "conversion": 0.000621371
+    },
+    {
+      "name": "Nautical Mile",
+      "conversion": 0.000539957
+    }
+  ],
+  "Mass": [
+    {
+      "name": "Kilogram",
+      "conversion": 1.0,
+      "base_unit": true
+    },
+    {
+      "name": "Gram",
+      "conversion": 1000.0
+    },
+    {
+      "name": "Ounce",
+      "conversion": 35.274
+    },
+    {
+      "name": "Pound",
+      "conversion": 2.20462
+    },
+    {
+      "name": "Stone",
+      "conversion": 0.157473
+    },
+    {
+      "name": "US ton",
+      "conversion": 0.00110231
+    },
+    {
+      "name": "Metric ton",
+      "conversion": 0.001
+    }
+  ],
   "Time": [
     {
       "name": "Second",
@@ -199,6 +168,45 @@
     {
       "name": "Fortnight",
       "conversion": 0.000000826719576
+    }
+  ],
+  "Volume": [
+    {
+      "name": "Cubic Meter",
+      "conversion": 1.0,
+      "base_unit": true
+    },
+    {
+      "name": "US Legal Cup",
+      "conversion": 4166.67
+    },
+    {
+      "name": "US Fluid Ounce",
+      "conversion": 33814.0
+    },
+    {
+      "name": "US Tablespoon",
+      "conversion": 67628.0
+    },
+    {
+      "name": "US Teaspoon",
+      "conversion": 202884.0
+    },
+    {
+      "name": "Imperial Cup",
+      "conversion": 3519.51
+    },
+    {
+      "name": "Imperial Fluid Ounce",
+      "conversion": 35195.1
+    },
+    {
+      "name": "Imperial Tablespoon",
+      "conversion": 56312.13673
+    },
+    {
+      "name": "Imperial Teaspoon",
+      "conversion": 168936.41019
     }
   ]
 }
