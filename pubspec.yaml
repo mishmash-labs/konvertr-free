@@ -1,14 +1,21 @@
 name: konvertr
-description: A minimalistic unit conversion app.
-publish_to: 'none'
-version: 1.0.0+1
+description: Unit Converter App built using Flutter
+
+version: 1.1.1+1
 
 environment:
-  sdk: ">=2.7.0 <3.0.0"
+  sdk: ">=2.1.0 <3.0.0"
 
 dependencies:
   flutter:
     sdk: flutter
 
+  provider: ^4.0.5+1
+  page_transition: ^1.1.5
+
 flutter:
   uses-material-design: true
+
+  assets:
+    - assets/icons/
+    - assets/data/units.json
