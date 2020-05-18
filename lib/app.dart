@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:konvertr/screens/category_screen.dart';
 import 'package:provider/provider.dart';
+
+import 'screens/category_screen.dart';
 import 'theme/themeChanger.dart';
 
 /// Contains the MaterialApp widget

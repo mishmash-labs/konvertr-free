@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
-import 'package:konvertr/app.dart';
-import 'package:konvertr/theme/themeChanger.dart';
+
+import 'app.dart';
+import 'theme/themeChanger.dart';
 
 void main() {
   /// This ensures that the orientation is always portrait

@@ -2,9 +2,6 @@ import 'package:flutter/material.dart';
 
 /// Creates a [Unit] with name and conversion properties
 class Unit {
-  String name;
-  double conversion;
-
   Unit({
     @required this.name,
     @required this.conversion,
@@ -15,4 +12,7 @@ class Unit {
         assert(json['conversion'] != null),
         name = json['name'],
         conversion = json['conversion'].toDouble();
+
+  double conversion;
+  String name;
 }

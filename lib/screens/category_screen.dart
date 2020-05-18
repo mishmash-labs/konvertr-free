@@ -1,23 +1,27 @@
 import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
-import 'package:konvertr/component/category.dart';
-import 'package:konvertr/component/category_tile.dart';
-import 'package:konvertr/component/unit.dart';
-import 'package:konvertr/theme/themeChanger.dart';
 import 'package:provider/provider.dart';
-import 'package:konvertr/theme/themes.dart';
+
+import '../component/category.dart';
+import '../component/category_tile.dart';
+import '../component/unit.dart';
+import '../theme/themeChanger.dart';
+import '../theme/themes.dart';
 
 /// Builds the main screen.
 /// Containing the title, buttons and GridView
 class CategoryScreen extends StatefulWidget {
   const CategoryScreen();
+
   @override
   _CategoryScreenState createState() => _CategoryScreenState();
 }
 
 class _CategoryScreenState extends State<CategoryScreen> {
   /// Creates a list of [Category] widgets for storing each category information
+
   final _categories = <Category>[];
 
   @override

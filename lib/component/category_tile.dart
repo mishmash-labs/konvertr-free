@@ -1,18 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:page_transition/page_transition.dart';
-import 'package:konvertr/component/category.dart';
-import 'package:konvertr/screens/unit_screen.dart';
+
+import '../screens/unit_screen.dart';
+import 'category.dart';
 
 final _borderRadius = BorderRadius.circular(12.5);
 final _padding8 = EdgeInsets.all(8.0);
 
 /// Creates a tile that contains [Category] information
 class CategoryTile extends StatelessWidget {
-  final Category category;
-
   const CategoryTile({
     @required this.category,
   }) : assert(category != null);
+
+  final Category category;
 
   @override
   Widget build(BuildContext context) {

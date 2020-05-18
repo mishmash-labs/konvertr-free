@@ -1,17 +1,20 @@
 import 'package:flutter/material.dart';
-import 'package:konvertr/component/category.dart';
-import 'package:konvertr/component/unitCon_Logic.dart';
-import 'package:konvertr/component/unit_UI.dart';
+
+import '../component/category.dart';
+import '../component/unitCon_Logic.dart';
+import '../component/unit_UI.dart';
 
 /// Unit Converter Page.
 /// Builds the Unit Converter Page
 class UnitConverter extends StatefulWidget {
-  final Category category;
   const UnitConverter({
     Key key,
     @required this.category,
   })  : assert(category != null),
         super(key: key);
+
+  final Category category;
+
   @override
   _UnitConverterState createState() => _UnitConverterState();
 }

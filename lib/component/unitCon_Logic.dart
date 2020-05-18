@@ -1,32 +1,48 @@
 import 'package:flutter/material.dart';
-import 'package:konvertr/component/unit.dart';
+
+import 'unit.dart';
 
 /// The Unitconverter main logic and some UI
 class UnitConFgUI extends StatefulWidget {
-  final List<Unit> units;
   UnitConFgUI({Key key, @required this.units})
       : assert(units != null),
         super(key: key);
+
+  final List<Unit> units;
+
   @override
   _UnitConFgUIState createState() => _UnitConFgUIState();
 }
 
 class _UnitConFgUIState extends State<UnitConFgUI> {
-  double _inputValue;
-  String _convertedValue = '';
-  Unit _fromUnit;
-  Unit _toUnit;
-  List<DropdownMenuItem> _dropdownItems;
-  bool _showValidationError = false;
-  final _inputKey = GlobalKey(debugLabel: 'inputText');
-
   /// Overrides the initState method and calls [_setDefauts] and [_createDropdownItems] methods
-  @override
-  void initState() {
-    super.initState();
-    _setDefaults();
-    _createDropdownItems();
+  /// Sets the default value of [_fromUnit] and [_toUnit]
+  /// Formats the result (Eg: 121.00000 => 121, 121.12000 => 121.12, etc)
+  String _format(double value) {
+    var _outputVal = value.toStringAsPrecision(8);
+    if (_outputVal.contains('.') && _outputVal.endsWith('0')) {
+      var i = _outputVal.length - 1;
+      while (_outputVal[i] == '0') {
+        i -= 1;
+      }
+      _outputVal = _outputVal.substring(0, i + 1);
+    }
+    if (_outputVal.endsWith('.')) {
+      _outputVal = _outputVal.substring(0, _outputVal.length - 1);
+    }
+    return _outputVal;
   }
+
+  /// Updates the [_fromUnit]
+  /// Updates the [_toUnit]
+
+  String _convertedValue = '';
+  List<DropdownMenuItem> _dropdownItems;
+  Unit _fromUnit;
+  final _inputKey = GlobalKey(debugLabel: 'inputText');
+  double _inputValue;
+  bool _showValidationError = false;
+  Unit _toUnit;
 
   @override
   void didUpdateWidget(UnitConFgUI old) {
@@ -40,7 +56,13 @@ class _UnitConFgUIState extends State<UnitConFgUI> {
     }
   }
 
-  /// Sets the default value of [_fromUnit] and [_toUnit]
+  @override
+  void initState() {
+    super.initState();
+    _setDefaults();
+    _createDropdownItems();
+  }
+
   void _setDefaults() {
     setState(() {
       _fromUnit = widget.units[0];
@@ -68,22 +90,6 @@ class _UnitConFgUIState extends State<UnitConFgUI> {
     setState(() {
       _dropdownItems = newItems;
     });
-  }
-
-  /// Formats the result (Eg: 121.00000 => 121, 121.12000 => 121.12, etc)
-  String _format(double value) {
-    var _outputVal = value.toStringAsPrecision(8);
-    if (_outputVal.contains('.') && _outputVal.endsWith('0')) {
-      var i = _outputVal.length - 1;
-      while (_outputVal[i] == '0') {
-        i -= 1;
-      }
-      _outputVal = _outputVal.substring(0, i + 1);
-    }
-    if (_outputVal.endsWith('.')) {
-      _outputVal = _outputVal.substring(0, _outputVal.length - 1);
-    }
-    return _outputVal;
   }
 
   /// Updates the conversion and returns the converted value
@@ -123,7 +129,6 @@ class _UnitConFgUIState extends State<UnitConFgUI> {
     );
   }
 
-  /// Updates the [_fromUnit]
   void _updateFromUnit(dynamic unitName) {
     setState(() {
       _fromUnit = _getUnit(unitName);
@@ -133,7 +138,6 @@ class _UnitConFgUIState extends State<UnitConFgUI> {
     }
   }
 
-  /// Updates the [_toUnit]
   void _updateToUnit(dynamic unitName) {
     setState(() {
       _toUnit = _getUnit(unitName);
