@@ -26,8 +26,8 @@ class CategoryTile extends StatelessWidget {
     return Padding(
       padding: _padding8,
       child: Container(
-        height: 0.16121346886912325798 * height,
-        width: 0.15009529860228717122 * height,
+        height: 0.16 * height,
+        width: 0.15 * height,
         decoration: BoxDecoration(
           color: Theme.of(context).buttonColor,
           borderRadius: _borderRadius,
@@ -54,21 +54,21 @@ class CategoryTile extends StatelessWidget {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  SizedBox(height: 0.00222363405336721735 * height),
+                  SizedBox(height: 0.0022 * height),
                   Padding(
                     padding: _padding8,
                     child: Image.asset(
                       category.iconLocation,
-                      height: 0.07226810673443456392 * height,
-                      width: 0.07226810673443456392 * height,
+                      height: 0.072 * height,
+                      width: 0.072 * height,
                     ),
                   ),
-                  SizedBox(height: 0.00222363405336721735 * height),
+                  SizedBox(height: 0.0022 * height),
                   Text(
                     category.name,
                     style: Theme.of(context).textTheme.caption,
                   ),
-                  SizedBox(height: 0.00555908513341804338 * height),
+                  SizedBox(height: 0.0056 * height),
                 ],
               ),
             ),

@@ -2,12 +2,10 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
-import 'package:provider/provider.dart';
 
 import '../component/category_tile.dart';
 import '../models/category.dart';
 import '../models/unit.dart';
-import '../theme/themes.dart';
 
 /// Builds the main screen.
 /// Containing the title, buttons and GridView

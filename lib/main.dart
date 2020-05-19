@@ -1,16 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:konvertr/theme/themes.dart';
 
 import 'screens/category_screen.dart';
+import 'theme/themes.dart';
 
-void main() {
+void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]).then(
-    (_) => runApp(
-      KonvertrHome(),
-    ),
-  );
+  await SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
+  runApp(KonvertrHome());
 }
 
 class KonvertrHome extends StatelessWidget {

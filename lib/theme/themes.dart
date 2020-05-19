@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
 
-/// Sets theme of the app
 class AppTheme {
   AppTheme();
 
-  /// Sets the Dark Theme
   ThemeData _darkTheme = ThemeData.dark().copyWith(
     brightness: Brightness.dark,
 
@@ -85,7 +83,6 @@ class AppTheme {
         ),
   );
 
-  /// Sets the Light Theme
   ThemeData _lightTheme = ThemeData.light().copyWith(
     brightness: Brightness.light,
 

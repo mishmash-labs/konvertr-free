@@ -3,8 +3,6 @@ import 'package:flutter/material.dart';
 import '../component/unitCon_Logic.dart';
 import '../models/category.dart';
 
-/// Unit Converter Page.
-/// Builds the Unit Converter Page
 class UnitConverter extends StatefulWidget {
   const UnitConverter({
     Key key,
@@ -24,8 +22,6 @@ class _UnitConverterState extends State<UnitConverter> {
     final width = MediaQuery.of(context).size.width;
     final height = MediaQuery.of(context).size.height;
 
-    /// Input Container
-    /// Contains the Dropdowns and Input container
     Widget unitInputContainer() {
       return Container(
         padding: EdgeInsets.all(16.0),
@@ -41,85 +37,67 @@ class _UnitConverterState extends State<UnitConverter> {
             ),
           ],
         ),
-        height: 0.612745098 * height,
-        width: 0.7895884774 * width,
+        height: 0.61 * height,
+        width: 0.79 * width,
         child: UnitConFgUI(
           units: widget.category.units,
         ),
       );
     }
 
-    /// UI Design (Top of the stack)
-    /// Contains the title, buttons and image
     Widget _topDesign() {
       return Column(
         mainAxisAlignment: MainAxisAlignment.start,
         mainAxisSize: MainAxisSize.min,
         children: <Widget>[
-          /// Spacer
           Column(
             children: <Widget>[
-              SizedBox(height: 0.02491359593392630365 * height),
+              SizedBox(height: 0.025 * height),
             ],
           ),
-
-          /// Top Icon Row
           Row(
             children: <Widget>[
               SizedBox(width: height / 50),
-
-              /// Back Icon
               IconButton(
                   icon: Icon(
                     Icons.arrow_back,
-                    size: 0.03335451080050826027 * height,
+                    size: 0.033 * height,
                     color: Colors.white,
                   ),
                   onPressed: () {
                     Navigator.pop(context);
                   }),
               SizedBox(width: height / 4),
-
               SizedBox(width: 0.0),
             ],
           ),
-
-          /// Spacer
-          SizedBox(height: 0.04570902160101652054 * height),
-
-          /// Title and Image Row
+          SizedBox(height: 0.046 * height),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: <Widget>[
-              /// Spacer
               SizedBox(width: 0.0),
               Text(
                 widget.category.name,
                 style: Theme.of(context)
                     .textTheme
                     .headline6
-                    .copyWith(fontSize: 0.05826175349428208584 * height),
+                    .copyWith(fontSize: 0.058 * height),
               ),
-              SizedBox(width: 0.03281249999999999909 * width),
+              SizedBox(width: 0.033 * width),
               Image.asset(
                 'assets/icons/${widget.category.name}.png',
-                height: 0.11098170266836086757 * height,
-                width: 0.11098170266836086757 * height,
+                height: 0.11 * height,
+                width: 0.11 * height,
               ),
               SizedBox(width: 0.0),
             ],
           ),
-
-          /// Spacer
           SizedBox(height: width / 7),
-
-          /// Unit Converter Input Container
           unitInputContainer(),
         ],
       );
     }
 
-    /// Final Return
     return Scaffold(
       backgroundColor: Theme.of(context).backgroundColor,
       resizeToAvoidBottomInset: false,
