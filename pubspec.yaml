@@ -16,6 +16,5 @@ flutter:
   uses-material-design: true
 
   assets:
-    - assets/icons/light/
-    - assets/icons/dark/
+    - assets/icons/
     - assets/data/units.json

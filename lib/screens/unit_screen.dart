@@ -102,7 +102,7 @@ class _UnitConverterState extends State<UnitConverter> {
               ),
               SizedBox(width: 0.03281249999999999909 * width),
               Image.asset(
-                'assets/icons/dark/${widget.category.name}.png',
+                'assets/icons/${widget.category.name}.png',
                 height: 0.11098170266836086757 * height,
                 width: 0.11098170266836086757 * height,
               ),
@@ -121,24 +121,11 @@ class _UnitConverterState extends State<UnitConverter> {
 
     /// Final Return
     return Scaffold(
+      backgroundColor: Theme.of(context).backgroundColor,
       resizeToAvoidBottomInset: false,
-      body: Container(
-        decoration: BoxDecoration(
-          gradient: LinearGradient(
-            colors: [
-              Theme.of(context).focusColor.withAlpha(255),
-              Theme.of(context).hintColor.withAlpha(255),
-              Theme.of(context).focusColor.withAlpha(255),
-              Theme.of(context).hintColor.withAlpha(255),
-            ],
-            begin: Alignment.topRight,
-            end: Alignment.bottomLeft,
-          ),
-        ),
-        child: SafeArea(
-          bottom: false,
-          child: _topDesign(),
-        ),
+      body: SafeArea(
+        bottom: false,
+        child: _topDesign(),
       ),
     );
   }
