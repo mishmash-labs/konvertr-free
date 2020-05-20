@@ -294,6 +294,24 @@
       "conversion": 0.000000001
     }
   ],
+  "Fuel Economy": [
+    {
+      "name": "Kilometre per litre",
+      "symbol": "km/l",
+      "conversion": 1.0,
+      "base_unit": true
+    },
+    {
+      "name": "Miles per US gallon",
+      "symbol": "mpg-US",
+      "conversion": 2.35215
+    },
+    {
+      "name": "Miles per gallon",
+      "symbol": "mpg",
+      "conversion": 2.82481
+    }
+  ],
   "Length": [
     {
       "name": "Meter",
