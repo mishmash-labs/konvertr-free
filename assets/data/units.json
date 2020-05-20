@@ -479,6 +479,24 @@
       "conversion": 0.539957
     }
   ],
+  "Temperature": [
+    {
+      "name": "Celsius",
+      "symbol": "°C",
+      "conversion": 1.0,
+      "base_unit": true
+    },
+    {
+      "name": "Fahrenheit",
+      "symbol": "°F",
+      "conversion": 1.0
+    },
+    {
+      "name": "Kelvin",
+      "symbol": "K",
+      "conversion": 1.0
+    }
+  ],
   "Time": [
     {
       "name": "Second",
