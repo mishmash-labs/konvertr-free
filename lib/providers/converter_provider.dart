@@ -1,7 +1,4 @@
-import 'dart:convert';
-
 import 'package:flutter/material.dart';
-import 'package:konvertr/models/category.dart';
 import 'package:konvertr/models/unit.dart';
 
 String _format(double value) {
@@ -19,13 +16,9 @@ String _format(double value) {
   return _outputVal;
 }
 
-/// Updates the [_fromUnit]
-/// Updates the [_toUnit]
-
 String _convertedValue = '';
 List<DropdownMenuItem> _dropdownItems;
 Unit _fromUnit;
-final _inputKey = GlobalKey(debugLabel: 'inputText');
 double _inputValue;
 Unit _toUnit;
 List<Unit> _units;
@@ -86,6 +79,7 @@ Unit _getUnit(dynamic unitName) {
   );
 }
 
+/// Updates the [_fromUnit]
 void _updateFromUnit(dynamic unitName) {
   _fromUnit = _getUnit(unitName);
   if (_inputValue != null) {
@@ -93,6 +87,7 @@ void _updateFromUnit(dynamic unitName) {
   }
 }
 
+/// Updates the [_toUnit]
 void _updateToUnit(dynamic unitName) {
   _toUnit = _getUnit(unitName);
   if (_inputValue != null) {
