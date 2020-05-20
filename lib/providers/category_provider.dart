@@ -17,8 +17,7 @@ Future<void> _retrieveLocalCategories(BuildContext context) async {
     final List<Unit> units =
         data[key].map<Unit>((dynamic data) => Unit.fromJson(data)).toList();
 
-    var category = Category(
-        iconLocation: "assets/icons/" + key + ".png", name: key, units: units);
+    var category = Category(name: key, units: units);
 
     _categories.add(category);
   });
