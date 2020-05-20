@@ -2,211 +2,152 @@
   "Area": [
     {
       "name": "Square Meter",
+      "symbol": "m²",
       "conversion": 1.0,
       "base_unit": true
     },
     {
       "name": "Square Kilometer",
+      "symbol": "km²",
       "conversion": 0.000001
     },
     {
       "name": "Square Mile",
+      "symbol": "mi²",
       "conversion": 0.0000003861
     },
     {
-      "name": "Square Inch",
-      "conversion": 1550.0
-    },
-    {
-      "name": "Square Foot",
-      "conversion": 10.7639
-    },
-    {
       "name": "Square Yard",
+      "symbol": "yd²",
       "conversion": 1.19599
     },
     {
-      "name": "Acre",
-      "conversion": 0.000247105
+      "name": "Square Foot",
+      "symbol": "ft²",
+      "conversion": 10.7639
+    },
+    {
+      "name": "Square Inch",
+      "symbol": "in²",
+      "conversion": 1550
     },
     {
       "name": "Hectare",
+      "symbol": "ha",
       "conversion": 0.0001
+    },
+    {
+      "name": "Acre",
+      "symbol": "ac",
+      "conversion": 0.000247105
+    }
+  ],
+  "Data Transfer": [
+    {
+      "name": "Megabyte per second",
+      "symbol": "MB/s",
+      "conversion": 1.0,
+      "base_unit": true
+    },
+    {
+      "name": "Bit per second",
+      "symbol": "b/s",
+      "conversion": 8000000
+    },
+    {
+      "name": "Kilobit per second",
+      "symbol": "Kb/s",
+      "conversion": 8000
+    },
+    {
+      "name": "Kilobyte per second",
+      "symbol": "KB/s",
+      "conversion": 1000
+    },
+    {
+      "name": "Kibibit per second",
+      "symbol": "Kibit/s",
+      "conversion": 7812.5
+    },
+    {
+      "name": "Megabit per second",
+      "symbol": "Mb/s",
+      "conversion": 8
+    },
+    {
+      "name": "Mebibit per second",
+      "symbol": "Mibit/s",
+      "conversion": 7.62939
+    },
+    {
+      "name": "Gigabit per second",
+      "symbol": "Gb/s",
+      "conversion": 0.008
+    },
+    {
+      "name": "Gigabyte per second",
+      "symbol": "GB/s",
+      "conversion": 0.001
+    },
+    {
+      "name": "Gibibit per second",
+      "symbol": "Gibit/s",
+      "conversion": 0.00745058
+    },
+    {
+      "name": "Terabit per second",
+      "symbol": "Tb/s",
+      "conversion": 0.000008
+    },
+    {
+      "name": "Terabyte per second",
+      "symbol": "TB/s",
+      "conversion": 0.000001
+    },
+    {
+      "name": "Tebibit per second",
+      "symbol": "Tibit/s",
+      "conversion": 0.000007276
     }
   ],
   "Data": [
     {
       "name": "Megabyte",
+      "symbol": "MB",
       "conversion": 1.0,
       "base_unit": true
-    },
-    {
-      "name": "Megabit",
-      "conversion": 8.0
-    },
-    {
-      "name": "Mebibyte",
-      "conversion": 0.953674
-    },
-    {
-      "name": "Byte",
-      "conversion": 1000000.0
-    },
-    {
-      "name": "Kilobyte",
-      "conversion": 1000.0
-    },
-    {
-      "name": "Gigabyte",
-      "conversion": 0.001
-    },
-    {
-      "name": "Terabyte",
-      "conversion": 0.000001
-    },
-    {
-      "name": "Petabyte",
-      "conversion": 0.000000001
     }
   ],
   "Length": [
     {
       "name": "Meter",
+      "symbol": "m",
       "conversion": 1.0,
       "base_unit": true
-    },
-    {
-      "name": "Millimeter",
-      "conversion": 1000.0
-    },
-    {
-      "name": "Centimeter",
-      "conversion": 100.0
-    },
-    {
-      "name": "Kilometer",
-      "conversion": 0.001
-    },
-    {
-      "name": "Inch",
-      "conversion": 39.3701
-    },
-    {
-      "name": "Foot",
-      "conversion": 3.28084
-    },
-    {
-      "name": "Yard",
-      "conversion": 1.09361
-    },
-    {
-      "name": "Mile",
-      "conversion": 0.000621371
-    },
-    {
-      "name": "Nautical Mile",
-      "conversion": 0.000539957
     }
   ],
   "Mass": [
     {
       "name": "Kilogram",
+      "symbol": "kg",
       "conversion": 1.0,
       "base_unit": true
-    },
-    {
-      "name": "Gram",
-      "conversion": 1000.0
-    },
-    {
-      "name": "Ounce",
-      "conversion": 35.274
-    },
-    {
-      "name": "Pound",
-      "conversion": 2.20462
-    },
-    {
-      "name": "Stone",
-      "conversion": 0.157473
-    },
-    {
-      "name": "US ton",
-      "conversion": 0.00110231
-    },
-    {
-      "name": "Metric ton",
-      "conversion": 0.001
     }
   ],
   "Time": [
     {
       "name": "Second",
+      "symbol": "s",
       "conversion": 1.0,
       "base_unit": true
-    },
-    {
-      "name": "Millisecond",
-      "conversion": 1000.0
-    },
-    {
-      "name": "Minute",
-      "conversion": 0.0166666666666667
-    },
-    {
-      "name": "Hour",
-      "conversion": 0.0002777777777778
-    },
-    {
-      "name": "Day",
-      "conversion": 0.00001157407407
-    },
-    {
-      "name": "Week",
-      "conversion": 0.000001653439153
-    },
-    {
-      "name": "Fortnight",
-      "conversion": 0.000000826719576
     }
   ],
   "Volume": [
     {
       "name": "Cubic Meter",
+      "symbol": "m³",
       "conversion": 1.0,
       "base_unit": true
-    },
-    {
-      "name": "US Legal Cup",
-      "conversion": 4166.67
-    },
-    {
-      "name": "US Fluid Ounce",
-      "conversion": 33814.0
-    },
-    {
-      "name": "US Tablespoon",
-      "conversion": 67628.0
-    },
-    {
-      "name": "US Teaspoon",
-      "conversion": 202884.0
-    },
-    {
-      "name": "Imperial Cup",
-      "conversion": 3519.51
-    },
-    {
-      "name": "Imperial Fluid Ounce",
-      "conversion": 35195.1
-    },
-    {
-      "name": "Imperial Tablespoon",
-      "conversion": 56312.13673
-    },
-    {
-      "name": "Imperial Teaspoon",
-      "conversion": 168936.41019
     }
   ]
 }

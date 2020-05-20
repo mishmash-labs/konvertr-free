@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:konvertr/components/category_card.dart';
-import 'package:konvertr/utils/theme.dart';
 import 'package:provider/provider.dart';
 
 import '../models/category.dart';
 import '../providers/category_provider.dart';
+import '../utils/theme.dart';
 
 class CategoriesScreen extends StatefulWidget {
   @override
