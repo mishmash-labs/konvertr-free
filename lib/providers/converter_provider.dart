@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:konvertr/models/unit.dart';
+
+import '../models/unit.dart';
 
 class ConverterProvider extends ChangeNotifier {
+  /// Updates the [_fromUnit]
+  /// Updates the [_toUnit]
+
   String _convertedValue = '';
   List<DropdownMenuItem> _dropdownItems;
   Unit _fromUnit;
@@ -10,6 +14,7 @@ class ConverterProvider extends ChangeNotifier {
   List<Unit> _units;
 
   List<DropdownMenuItem> get dropdownItems => _dropdownItems;
+
   String get convertedValue => _convertedValue;
 
   String _format(double value) {
@@ -83,7 +88,6 @@ class ConverterProvider extends ChangeNotifier {
     );
   }
 
-  /// Updates the [_fromUnit]
   void updateFromUnit(dynamic unitName) {
     _fromUnit = _getUnit(unitName);
     if (_inputValue != null) {
@@ -91,7 +95,6 @@ class ConverterProvider extends ChangeNotifier {
     }
   }
 
-  /// Updates the [_toUnit]
   void updateToUnit(dynamic unitName) {
     _toUnit = _getUnit(unitName);
     if (_inputValue != null) {

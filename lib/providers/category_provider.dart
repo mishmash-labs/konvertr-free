@@ -6,8 +6,8 @@ import '../models/category.dart';
 import '../models/unit.dart';
 
 class CategoriesProvider extends ChangeNotifier {
-  List<Category> _categories = <Category>[];
   List<Category> _allCategories = <Category>[];
+  List<Category> _categories = <Category>[];
 
   List<Category> get categories => _categories;
 
@@ -37,6 +37,7 @@ class CategoriesProvider extends ChangeNotifier {
         .where((element) =>
             element.name.toLowerCase().contains(searchTerm.toLowerCase()))
         .toList();
+    print(_searchedList);
     _categories = _searchedList;
     notifyListeners();
   }
