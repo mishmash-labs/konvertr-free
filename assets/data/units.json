@@ -314,10 +314,60 @@
   ],
   "Length": [
     {
-      "name": "Meter",
+      "name": "Metre",
       "symbol": "m",
       "conversion": 1.0,
       "base_unit": true
+    },
+    {
+      "name": "Kilometre",
+      "symbol": "km",
+      "conversion": 0.001
+    },
+    {
+      "name": "Centimetre",
+      "symbol": "cm",
+      "conversion": 100
+    },
+    {
+      "name": "Millimetre",
+      "symbol": "mm",
+      "conversion": 1000
+    },
+    {
+      "name": "Micrometre",
+      "symbol": "µm",
+      "conversion": 1000000
+    },
+    {
+      "name": "Nanometre",
+      "symbol": "nm",
+      "conversion": 1000000000
+    },
+    {
+      "name": "Mile",
+      "symbol": "mi",
+      "conversion": 0.000621371
+    },
+    {
+      "name": "Yard",
+      "symbol": "yd",
+      "conversion": 1.09361
+    },
+    {
+      "name": "Foot",
+      "symbol": "ft",
+      "conversion": 3.28084
+    },
+    {
+      "name": "Inch",
+      "symbol": "in",
+      "conversion": 39.3701
+    },
+    {
+      "name": "Nautical Mile",
+      "symbol": "nmi",
+      "conversion": 0.000539957
     }
   ],
   "Mass": [
