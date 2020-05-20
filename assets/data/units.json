@@ -116,6 +116,106 @@
       "symbol": "MB",
       "conversion": 1.0,
       "base_unit": true
+    },
+    {
+      "name": "Kilobit",
+      "symbol": "Kb",
+      "conversion": 8000
+    },
+    {
+      "name": "Kibibit",
+      "symbol": "Kibit",
+      "conversion": 7812.5
+    },
+    {
+      "name": "Megabit",
+      "symbol": "Mb",
+      "conversion": 8
+    },
+    {
+      "name": "Mebibit",
+      "symbol": "Mibit",
+      "conversion": 7.62939
+    },
+    {
+      "name": "Gigabit",
+      "symbol": "Gb",
+      "conversion": 0.008
+    },
+    {
+      "name": "Gibibit",
+      "symbol": "Gibit",
+      "conversion": 0.00745058
+    },
+    {
+      "name": "Terabit",
+      "symbol": "Tb",
+      "conversion": 0.000008
+    },
+    {
+      "name": "Tebibit",
+      "symbol": "Tibit",
+      "conversion": 0.000007276
+    },
+    {
+      "name": "Petabit",
+      "symbol": "Pb",
+      "conversion": 0.000000008
+    },
+    {
+      "name": "Pebibit",
+      "symbol": "Pibit",
+      "conversion": 0.0000000071054
+    },
+    {
+      "name": "Byte",
+      "symbol": "B",
+      "conversion": 1000000
+    },
+    {
+      "name": "Kilobyte",
+      "symbol": "KB",
+      "conversion": 1000
+    },
+    {
+      "name": "Kibibyte",
+      "symbol": "KiB",
+      "conversion": 976.563
+    },
+    {
+      "name": "Mebibyte",
+      "symbol": "MiB",
+      "conversion": 0.953674
+    },
+    {
+      "name": "Gigabyte",
+      "symbol": "GB",
+      "conversion": 0.001
+    },
+    {
+      "name": "Gibibyte",
+      "symbol": "GiB",
+      "conversion": 0.000931323
+    },
+    {
+      "name": "Terabyte",
+      "symbol": "TB",
+      "conversion": 0.000001
+    },
+    {
+      "name": "Tebibyte",
+      "symbol": "TiB",
+      "conversion": 0.00000090949
+    },
+    {
+      "name": "Petabyte",
+      "symbol": "PB",
+      "conversion": 0.000000001
+    },
+    {
+      "name": "Pebibyte",
+      "symbol": "PiB",
+      "conversion": 0.00000000088818
     }
   ],
   "Length": [
