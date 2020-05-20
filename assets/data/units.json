@@ -218,6 +218,59 @@
       "conversion": 0.00000000088818
     }
   ],
+  "Energy": [
+    {
+      "name": "Joule",
+      "symbol": "J",
+      "conversion": 1.0,
+      "base_unit": true
+    },
+    {
+      "name": "Kilojoule",
+      "symbol": "kJ",
+      "conversion": 0.001
+    },
+    {
+      "name": "Gram calorie",
+      "symbol": "cal",
+      "conversion": 0.239006
+    },
+    {
+      "name": "Kilocalorie",
+      "symbol": "kcal",
+      "conversion": 0.000239006
+    },
+    {
+      "name": "Watt hour",
+      "symbol": "Wh",
+      "conversion": 0.000277778
+    },
+    {
+      "name": "Kilowatt hour",
+      "symbol": "kW h",
+      "conversion": 0.00000027778
+    },
+    {
+      "name": "Electronvolt",
+      "symbol": "eV",
+      "conversion": 6242000000000000000
+    },
+    {
+      "name": "British Thermal Unit",
+      "symbol": "Btu",
+      "conversion": 0.000947817
+    },
+    {
+      "name": "US therm",
+      "symbol": "thm",
+      "conversion": 0.0000000094804
+    },
+    {
+      "name": "Foot-pound",
+      "symbol": "ft⋅lb",
+      "conversion": 0.737562
+    }
+  ],
   "Length": [
     {
       "name": "Meter",
