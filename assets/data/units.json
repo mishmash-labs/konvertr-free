@@ -451,6 +451,34 @@
       "conversion": 0.00750062
     }
   ],
+  "Speed": [
+    {
+      "name": "Kilometres per hour",
+      "symbol": "km/h",
+      "conversion": 1.0,
+      "base_unit": true
+    },
+    {
+      "name": "Miles per hour",
+      "symbol": "mph",
+      "conversion": 0.621371
+    },
+    {
+      "name": "Foot per second",
+      "symbol": "ft/s",
+      "conversion": 0.911344
+    },
+    {
+      "name": "Metres per second",
+      "symbol": "m/s",
+      "conversion": 0.277778
+    },
+    {
+      "name": "Knot",
+      "symbol": "kn",
+      "conversion": 0.539957
+    }
+  ],
   "Time": [
     {
       "name": "Second",
