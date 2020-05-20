@@ -22,4 +22,5 @@ Future<void> _retrieveLocalCategories(BuildContext context) async {
 
     _categories.add(category);
   });
+  // Notify
 }

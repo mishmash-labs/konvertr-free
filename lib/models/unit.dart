@@ -1,17 +1,23 @@
-import 'package:flutter/material.dart';
-
 class Unit {
+  String name;
+  double conversion;
+  bool baseUnit;
+
   Unit({
-    @required this.name,
-    @required this.conversion,
+    this.name,
+    this.conversion,
+    this.baseUnit,
   });
 
-  Unit.fromJson(Map json)
-      : assert(json['name'] != null),
-        assert(json['conversion'] != null),
-        name = json['name'],
-        conversion = json['conversion'].toDouble();
+  factory Unit.fromJson(Map<String, dynamic> json) => Unit(
+        name: json["name"],
+        conversion: json["conversion"].toDouble(),
+        baseUnit: json["base_unit"] == null ? null : json["base_unit"],
+      );
 
-  double conversion;
-  String name;
+  Map<String, dynamic> toJson() => {
+        "name": name,
+        "conversion": conversion,
+        "base_unit": baseUnit == null ? null : baseUnit,
+      };
 }
