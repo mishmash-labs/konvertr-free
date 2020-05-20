@@ -99,23 +99,3 @@ void _updateToUnit(dynamic unitName) {
     _updateConversion();
   }
 }
-
-final _categories = <Category>[];
-
-Future<void> _retrieveLocalCategories(BuildContext context) async {
-  final json =
-      DefaultAssetBundle.of(context).loadString('assets/data/units.json');
-  final data = JsonDecoder().convert(await json);
-  if (data is! Map) {
-    throw ('Json is not a Map');
-  }
-  data.keys.forEach((key) {
-    final List<Unit> units =
-        data[key].map<Unit>((dynamic data) => Unit.fromJson(data)).toList();
-
-    var category = Category(
-        iconLocation: "assets/icons/" + key + ".png", name: key, units: units);
-
-    _categories.add(category);
-  });
-}
