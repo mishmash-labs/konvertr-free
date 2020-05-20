@@ -499,10 +499,65 @@
   ],
   "Time": [
     {
-      "name": "Second",
-      "symbol": "s",
+      "name": "Minute",
+      "symbol": "min",
       "conversion": 1.0,
       "base_unit": true
+    },
+    {
+      "name": "Nanosecond",
+      "symbol": "ns",
+      "conversion": 60000000000
+    },
+    {
+      "name": "Microsecond",
+      "symbol": "μs",
+      "conversion": 60000000
+    },
+    {
+      "name": "Millisecond",
+      "symbol": "ms",
+      "conversion": 60000
+    },
+    {
+      "name": "Second",
+      "symbol": "s",
+      "conversion": 60
+    },
+    {
+      "name": "Hour",
+      "symbol": "hr",
+      "conversion": 0.0166667
+    },
+    {
+      "name": "Day",
+      "symbol": "d",
+      "conversion": 0.000694444
+    },
+    {
+      "name": "Week",
+      "symbol": "wk",
+      "conversion": 0.000099206
+    },
+    {
+      "name": "Month",
+      "symbol": "mo",
+      "conversion": 0.000022831
+    },
+    {
+      "name": "Calendar Year",
+      "symbol": "yr",
+      "conversion": 0.0000019026
+    },
+    {
+      "name": "Decade",
+      "symbol": "dec",
+      "conversion": 0.00000019026
+    },
+    {
+      "name": "Century",
+      "symbol": "c",
+      "conversion": 0.000000019026
     }
   ],
   "Volume": [
