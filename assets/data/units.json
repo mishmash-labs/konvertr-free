@@ -423,6 +423,34 @@
       "conversion": 35.274
     }
   ],
+  "Pressure": [
+    {
+      "name": "Pascal",
+      "symbol": "s",
+      "conversion": 1.0,
+      "base_unit": true
+    },
+    {
+      "name": "Bar",
+      "symbol": "bar",
+      "conversion": 0.00001
+    },
+    {
+      "name": "Pound-force per square inch",
+      "symbol": "lbf/in²",
+      "conversion": 0.000145038
+    },
+    {
+      "name": "Standard Atmosphere",
+      "symbol": "atm",
+      "conversion": 0.0000098692
+    },
+    {
+      "name": "Torr",
+      "symbol": "Torr",
+      "conversion": 0.00750062
+    }
+  ],
   "Time": [
     {
       "name": "Second",
