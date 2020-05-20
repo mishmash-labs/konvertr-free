@@ -271,6 +271,29 @@
       "conversion": 0.737562
     }
   ],
+  "Frequency": [
+    {
+      "name": "Hertz",
+      "symbol": "Hz",
+      "conversion": 1.0,
+      "base_unit": true
+    },
+    {
+      "name": "Kilohertz",
+      "symbol": "kHz",
+      "conversion": 0.001
+    },
+    {
+      "name": "Megahertz",
+      "symbol": "MHz",
+      "conversion": 0.000001
+    },
+    {
+      "name": "Gigahertz",
+      "symbol": "GHz",
+      "conversion": 0.000000001
+    }
+  ],
   "Length": [
     {
       "name": "Meter",
