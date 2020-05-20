@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:konvertr/providers/converter_provider.dart';
 import 'package:provider/provider.dart';
 
 import 'providers/category_provider.dart';
+import 'screens/categories_screen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -17,9 +19,10 @@ class KonvertrHome extends StatelessWidget {
       providers: [
         ChangeNotifierProvider(
             create: (context) => CategoriesProvider(), lazy: false),
+        ChangeNotifierProvider(create: (context) => ConverterProvider()),
       ],
       child: MaterialApp(
-        home: Container(),
+        home: CategoriesScreen(),
       ),
     );
   }
