@@ -376,6 +376,51 @@
       "symbol": "kg",
       "conversion": 1.0,
       "base_unit": true
+    },
+    {
+      "name": "Tonnes",
+      "symbol": "t",
+      "conversion": 0.001
+    },
+    {
+      "name": "Gram",
+      "symbol": "g",
+      "conversion": 1000
+    },
+    {
+      "name": "Milligram",
+      "symbol": "mg",
+      "conversion": 1000000
+    },
+    {
+      "name": "Microgram",
+      "symbol": "μg",
+      "conversion": 1000000000
+    },
+    {
+      "name": "Imperial ton",
+      "symbol": "y",
+      "conversion": 0.000984207
+    },
+    {
+      "name": "US ton",
+      "symbol": "t",
+      "conversion": 0.00110231
+    },
+    {
+      "name": "Stone",
+      "symbol": "st",
+      "conversion": 0.157473
+    },
+    {
+      "name": "Pound",
+      "symbol": "lb",
+      "conversion": 2.20462
+    },
+    {
+      "name": "Ounce",
+      "symbol": "oz",
+      "conversion": 35.274
     }
   ],
   "Time": [
