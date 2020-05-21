@@ -566,6 +566,96 @@
       "symbol": "m³",
       "conversion": 1.0,
       "base_unit": true
+    },
+    {
+      "name": "US liquid gallon",
+      "symbol": "m³",
+      "conversion": 264.172
+    },
+    {
+      "name": "US liquid quart",
+      "symbol": "m³",
+      "conversion": 1056.69
+    },
+    {
+      "name": "UD liquid pint",
+      "symbol": "m³",
+      "conversion": 2113.38
+    },
+    {
+      "name": "US legal cup",
+      "symbol": "m³",
+      "conversion": 4166.67
+    },
+    {
+      "name": "Fluid ounces",
+      "symbol": "m³",
+      "conversion": 33814
+    },
+    {
+      "name": "US tablespoon",
+      "symbol": "m³",
+      "conversion": 67628
+    },
+    {
+      "name": "US teaspoon",
+      "symbol": "m³",
+      "conversion": 202884
+    },
+    {
+      "name": "Litres",
+      "symbol": "m³",
+      "conversion": 1000
+    },
+    {
+      "name": "Millilitres",
+      "symbol": "m³",
+      "conversion": 1e+6
+    },
+    {
+      "name": "Gallons",
+      "symbol": "m³",
+      "conversion": 219.969
+    },
+    {
+      "name": "Imperial quart",
+      "symbol": "m³",
+      "conversion": 879.877
+    },
+    {
+      "name": "Imperial pint",
+      "symbol": "m³",
+      "conversion": 1759.75
+    },
+    {
+      "name": "Imperial cup",
+      "symbol": "m³",
+      "conversion": 3519.51
+    },
+    {
+      "name": "Fluid ounces",
+      "symbol": "m³",
+      "conversion": 35195.1
+    },
+    {
+      "name": "Imperial tablespoon",
+      "symbol": "m³",
+      "conversion": 56312.1
+    },
+    {
+      "name": "Imperial teaspoon",
+      "symbol": "m³",
+      "conversion": 168936
+    },
+    {
+      "name": "Cubic foot",
+      "symbol": "m³",
+      "conversion": 35.3147
+    },
+    {
+      "name": "Cubic inch",
+      "symbol": "m³",
+      "conversion": 61023.7
     }
   ]
 }
