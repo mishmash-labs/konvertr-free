@@ -3,15 +3,17 @@ import 'package:flutter/material.dart';
 import '../models/unit.dart';
 
 class ConverterProvider extends ChangeNotifier {
-  /// Updates the [_fromUnit]
-  /// Updates the [_toUnit]
+  ConverterProvider({
+    @required this.units,
+  }) : assert(units != null);
+
+  final List<Unit> units;
 
   String _convertedValue = '';
   List<DropdownMenuItem> _dropdownItems;
   Unit _fromUnit;
   double _inputValue;
   Unit _toUnit;
-  List<Unit> _units;
 
   List<DropdownMenuItem> get dropdownItems => _dropdownItems;
 
@@ -33,8 +35,8 @@ class ConverterProvider extends ChangeNotifier {
   }
 
   void setDefaults() {
-    _fromUnit = _units[0];
-    _toUnit = _units[1];
+    _fromUnit = units[0];
+    _toUnit = units[1];
     if (_inputValue != null) {
       _updateConversion();
     }
@@ -43,7 +45,7 @@ class ConverterProvider extends ChangeNotifier {
   /// Creates the dropdowns of the Unit converter
   void createDropdownItems() {
     var newItems = <DropdownMenuItem>[];
-    for (var unit in _units) {
+    for (var unit in units) {
       newItems.add(DropdownMenuItem(
         value: unit.name,
         child: Container(
@@ -80,7 +82,7 @@ class ConverterProvider extends ChangeNotifier {
 
   /// Used as a getter method to get the required unit from the list of the given units
   Unit _getUnit(dynamic unitName) {
-    return _units.firstWhere(
+    return units.firstWhere(
       (Unit unit) {
         return unit.name == unitName;
       },

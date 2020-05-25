@@ -20,7 +20,7 @@ class KonvertrHome extends StatelessWidget {
       providers: [
         ChangeNotifierProvider(
             create: (context) => CategoriesProvider(), lazy: false),
-        ChangeNotifierProvider(create: (context) => ConverterProvider()),
+        // ChangeNotifierProvider(create: (context) => ConverterProvider()),
       ],
       child: MaterialApp(
         home: CategoriesScreen(),
