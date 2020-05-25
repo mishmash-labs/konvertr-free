@@ -29,7 +29,6 @@ class _ConverterKeypadState extends State<ConverterKeypad> {
                 converterProvider.updateInputString(value);
               } else {
                 String temp = converterProvider.inputValueString + value;
-                print(temp);
                 converterProvider.updateInputString(temp);
               }
             }
@@ -85,7 +84,6 @@ class _ConverterKeypadState extends State<ConverterKeypad> {
       return Expanded(
         child: InkWell(
           onTap: () {
-            print("test");
             String tempTo = converterProvider.toUnit.name;
             converterProvider.updateToUnit(converterProvider.fromUnit.name);
             converterProvider.updateFromUnit(tempTo);

@@ -37,7 +37,6 @@ class CategoriesProvider extends ChangeNotifier {
         .where((element) =>
             element.name.toLowerCase().contains(searchTerm.toLowerCase()))
         .toList();
-    print(_searchedList);
     _categories = _searchedList;
     notifyListeners();
   }

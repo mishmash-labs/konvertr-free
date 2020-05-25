@@ -20,7 +20,6 @@ class _CategoriesScreenState extends State<CategoriesScreen> {
   void didChangeDependencies() async {
     super.didChangeDependencies();
     value = context.read<CategoriesProvider>().categories;
-    print(searchController.text);
     if (value.isEmpty && searchController.text == "") {
       await context.read<CategoriesProvider>().loadCategories(context);
     }
