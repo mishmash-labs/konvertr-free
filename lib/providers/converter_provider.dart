@@ -16,8 +16,11 @@ class ConverterProvider extends ChangeNotifier {
   Unit _toUnit;
 
   String get convertedValue => _convertedValue;
+
   Unit get fromUnit => _fromUnit;
+
   Unit get toUnit => _toUnit;
+
   String get inputValueString => _inputValueString;
 
   String _format(double value) {
@@ -76,6 +79,7 @@ class ConverterProvider extends ChangeNotifier {
   /// Updates the input value and checks whether the input is in correct format or not
   void _updateInputVal() {
     if (_inputValueString == null || _inputValueString.isEmpty) {
+      _inputValue = null;
       _convertedValue = '';
       notifyListeners();
     } else {
@@ -101,6 +105,7 @@ class ConverterProvider extends ChangeNotifier {
 
   void updateFromUnit(dynamic unitName) {
     _fromUnit = _getUnit(unitName);
+    notifyListeners();
     if (_inputValue != null) {
       _updateConversion();
     }
@@ -108,6 +113,7 @@ class ConverterProvider extends ChangeNotifier {
 
   void updateToUnit(dynamic unitName) {
     _toUnit = _getUnit(unitName);
+    notifyListeners();
     if (_inputValue != null) {
       _updateConversion();
     }

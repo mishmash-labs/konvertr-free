@@ -4,9 +4,9 @@ import 'package:konvertr/utils/theme.dart';
 import 'package:provider/provider.dart';
 
 class ConverterKeypad extends StatefulWidget {
-  final TextEditingController amountController;
-
   const ConverterKeypad({Key key, this.amountController}) : super(key: key);
+
+  final TextEditingController amountController;
 
   @override
   _ConverterKeypadState createState() => _ConverterKeypadState();
@@ -79,7 +79,12 @@ class _ConverterKeypadState extends State<ConverterKeypad> {
     Widget swapButton() {
       return Expanded(
         child: InkWell(
-          onTap: () {},
+          onTap: () {
+            print("test");
+            String tempTo = converterProvider.toUnit.name;
+            converterProvider.updateToUnit(converterProvider.fromUnit.name);
+            converterProvider.updateFromUnit(tempTo);
+          },
           child: SizedBox(
             height: 85,
             width: double.infinity,
@@ -93,7 +98,9 @@ class _ConverterKeypadState extends State<ConverterKeypad> {
     Widget clearButton() {
       return Expanded(
         child: InkWell(
-          onTap: () {},
+          onTap: () {
+            converterProvider.updateInputString("");
+          },
           child: SizedBox(
               height: 85,
               width: double.infinity,
