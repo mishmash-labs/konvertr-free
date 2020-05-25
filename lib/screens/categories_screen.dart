@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:konvertr/components/category_card.dart';
 import 'package:provider/provider.dart';
 
 import '../models/category.dart';
@@ -29,7 +30,8 @@ class _CategoriesScreenState extends State<CategoriesScreen> {
 
     Widget _buildTopSection() {
       return Container(
-        color: mainPageTopColor,
+        height: 0.12 * MediaQuery.of(context).size.height,
+        color: primaryColor,
         child: Column(
           children: [
             SizedBox(height: 10.0),
@@ -44,17 +46,16 @@ class _CategoriesScreenState extends State<CategoriesScreen> {
                   hintText: "Search...",
                   prefixIcon: Icon(
                     Icons.search,
-                    color: searchBarDarkGrey,
+                    color: searchBarIcon,
                   ),
-                  fillColor: Color(0xffe6e7eb),
+                  fillColor: searchBarColor,
                   filled: true,
                   border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(15.0),
+                      borderRadius: BorderRadius.circular(10.0),
                       borderSide: BorderSide.none),
                 ),
               ),
             ),
-            SizedBox(height: 30.0)
           ],
         ),
       );
@@ -62,13 +63,13 @@ class _CategoriesScreenState extends State<CategoriesScreen> {
 
     AppBar _buildAppBar() {
       return AppBar(
-        backgroundColor: mainPageTopColor,
+        backgroundColor: primaryColor,
         centerTitle: true,
         title: Text(
           "Konvertr",
           style: GoogleFonts.roboto(
               letterSpacing: 1.5,
-              color: Colors.white,
+              color: searchBarColor,
               fontWeight: FontWeight.w600),
         ),
         elevation: 0.0,
@@ -77,31 +78,35 @@ class _CategoriesScreenState extends State<CategoriesScreen> {
             padding: const EdgeInsets.only(right: 16.0),
             child: Icon(
               Icons.favorite,
-              color: Colors.white,
+              color: searchBarColor,
             ),
           )
         ],
       );
     }
 
-    // Widget _buildCategories() {
-    //   return GridView.count(
-    //     shrinkWrap: true,
-    //     crossAxisCount: 3,
-    //     childAspectRatio: 1,
-    //     children: categoriesProvider.categories.map((Category cats) {
-    //       return CategoryTile(category: cats);
-    //     }).toList(),
-    //   );
-    // }
+    Widget _buildCategories() {
+      return GridView.count(
+        shrinkWrap: true,
+        crossAxisCount: 3,
+        childAspectRatio: 1,
+        children: categoriesProvider.categories.map((Category cats) {
+          return Padding(
+            padding: const EdgeInsets.all(4.0),
+            child: CategoryCard(convCategory: cats),
+          );
+        }).toList(),
+      );
+    }
 
     return Scaffold(
       appBar: _buildAppBar(),
+      backgroundColor: secondaryColor,
       body: Container(
         child: Column(
           children: [
             _buildTopSection(),
-            // _buildCategories(),
+            Expanded(child: _buildCategories()),
           ],
         ),
       ),
