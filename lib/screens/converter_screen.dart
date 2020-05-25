@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:konvertr/components/converter_numpad.dart';
 import 'package:konvertr/providers/converter_provider.dart';
+import 'package:konvertr/screens/units_screen.dart';
 import 'package:konvertr/utils/theme.dart';
 import 'package:provider/provider.dart';
 
@@ -13,7 +14,6 @@ class UnitConverter extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     ConverterProvider converterProvider = context.watch<ConverterProvider>();
-    TextEditingController amountController = TextEditingController();
 
     AppBar _buildAppBar() {
       return AppBar(
@@ -47,43 +47,56 @@ class UnitConverter extends StatelessWidget {
     }
 
     Widget _buildConverterSelection(String whichUnit, String currentUnit) {
-      return Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Text(
-            whichUnit,
-            style: GoogleFonts.roboto(color: Colors.white70),
-          ),
-          SizedBox(height: 8.0),
-          Container(
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(4.0),
-              color: Colors.white12,
+      return InkWell(
+        onTap: () {
+          Navigator.of(context).push(
+            MaterialPageRoute(
+                builder: (_) => UnitsScreen(
+                      converterProvider: converterProvider,
+                      whichUnit: whichUnit,
+                      currentUnit: currentUnit,
+                    )),
+          );
+        },
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              whichUnit,
+              style: GoogleFonts.roboto(color: Colors.white70),
             ),
-            height: 0.05 * MediaQuery.of(context).size.height,
-            width: 0.37 * MediaQuery.of(context).size.width,
-            child: Align(
-                alignment: Alignment.centerLeft,
-                child: Padding(
-                  padding: const EdgeInsets.only(left: 6.0),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Text(
-                        currentUnit,
-                        style: TextStyle(
-                            color: Colors.white70, fontWeight: FontWeight.w400),
-                      ),
-                      Icon(
-                        Icons.arrow_forward_ios,
-                        color: Colors.white70,
-                        size: 18.0,
-                      )
-                    ],
-                  ),
-                )),
-          )
-        ],
+            SizedBox(height: 8.0),
+            Container(
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(4.0),
+                color: Colors.white12,
+              ),
+              height: 0.05 * MediaQuery.of(context).size.height,
+              width: 0.37 * MediaQuery.of(context).size.width,
+              child: Align(
+                  alignment: Alignment.centerLeft,
+                  child: Padding(
+                    padding: const EdgeInsets.only(left: 6.0),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(
+                          currentUnit,
+                          style: TextStyle(
+                              color: Colors.white70,
+                              fontWeight: FontWeight.w400),
+                        ),
+                        Icon(
+                          Icons.arrow_forward_ios,
+                          color: Colors.white70,
+                          size: 18.0,
+                        )
+                      ],
+                    ),
+                  )),
+            )
+          ],
+        ),
       );
     }
 
@@ -200,10 +213,7 @@ class UnitConverter extends StatelessWidget {
           SizedBox(
             height: 100.0,
           ),
-          Expanded(
-              child: ConverterKeypad(
-            amountController: amountController,
-          )),
+          Expanded(child: ConverterKeypad()),
         ],
       ),
     );

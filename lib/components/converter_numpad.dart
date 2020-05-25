@@ -4,10 +4,6 @@ import 'package:konvertr/utils/theme.dart';
 import 'package:provider/provider.dart';
 
 class ConverterKeypad extends StatefulWidget {
-  const ConverterKeypad({Key key, this.amountController}) : super(key: key);
-
-  final TextEditingController amountController;
-
   @override
   _ConverterKeypadState createState() => _ConverterKeypadState();
 }
