@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:konvertr/providers/converter_provider.dart';
-import 'package:konvertr/utils/theme.dart';
 import 'package:provider/provider.dart';
+
+import '../providers/converter_provider.dart';
+import '../utils/theme.dart';
 
 class ConverterKeypad extends StatefulWidget {
   @override
@@ -17,12 +18,20 @@ class _ConverterKeypadState extends State<ConverterKeypad> {
       return Expanded(
         child: InkWell(
           onTap: () {
-            if (converterProvider.inputValueString == null) {
-              converterProvider.updateInputString(value);
+            if (value == "." && converterProvider.inputValueString != null) {
+              if (!converterProvider.inputValueString.endsWith(".") &&
+                  converterProvider.inputValueString.isNotEmpty) {
+                converterProvider.updateInputString(
+                    converterProvider.inputValueString + value);
+              }
             } else {
-              String temp = converterProvider.inputValueString + value;
-              print(temp);
-              converterProvider.updateInputString(temp);
+              if (converterProvider.inputValueString == null) {
+                converterProvider.updateInputString(value);
+              } else {
+                String temp = converterProvider.inputValueString + value;
+                print(temp);
+                converterProvider.updateInputString(temp);
+              }
             }
           },
           child: SizedBox(

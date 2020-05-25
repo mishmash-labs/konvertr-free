@@ -1,24 +1,27 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:konvertr/models/unit.dart';
-import 'package:konvertr/providers/converter_provider.dart';
-import 'package:konvertr/utils/theme.dart';
-import 'package:provider/provider.dart';
+
+import '../models/unit.dart';
+import '../providers/converter_provider.dart';
+import '../utils/theme.dart';
 
 class UnitsScreen extends StatefulWidget {
-  final ConverterProvider converterProvider;
-  final String whichUnit;
-  final String currentUnit;
   const UnitsScreen(
       {Key key, this.converterProvider, this.whichUnit, this.currentUnit})
       : super(key: key);
+
+  final ConverterProvider converterProvider;
+  final String currentUnit;
+  final String whichUnit;
+
   @override
   _UnitsScreenState createState() => _UnitsScreenState();
 }
 
 class _UnitsScreenState extends State<UnitsScreen> {
   var color;
+
   @override
   Widget build(BuildContext context) {
     Widget getListItem(Unit unit) {

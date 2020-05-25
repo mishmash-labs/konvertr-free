@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:konvertr/models/category.dart';
-import 'package:konvertr/providers/converter_provider.dart';
-import 'package:konvertr/screens/converter_screen.dart';
-import 'package:konvertr/utils/theme.dart';
 import 'package:provider/provider.dart';
+
+import '../models/category.dart';
+import '../providers/converter_provider.dart';
+import '../screens/converter_screen.dart';
+import '../utils/theme.dart';
 
 class CategoryCard extends StatelessWidget {
   const CategoryCard({Key key, this.convCategory}) : super(key: key);

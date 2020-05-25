@@ -4,7 +4,6 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 
 import 'providers/category_provider.dart';
-import 'providers/converter_provider.dart';
 import 'screens/categories_screen.dart';
 
 void main() async {
@@ -20,7 +19,6 @@ class KonvertrHome extends StatelessWidget {
       providers: [
         ChangeNotifierProvider(
             create: (context) => CategoriesProvider(), lazy: false),
-        // ChangeNotifierProvider(create: (context) => ConverterProvider()),
       ],
       child: MaterialApp(
         home: CategoriesScreen(),
