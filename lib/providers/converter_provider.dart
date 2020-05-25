@@ -3,21 +3,25 @@ import 'package:flutter/material.dart';
 import '../models/unit.dart';
 
 class ConverterProvider extends ChangeNotifier {
-  ConverterProvider({
-    @required this.units,
-  }) : assert(units != null);
+  ConverterProvider(this.units) {
+    setDefaults();
+  }
 
   final List<Unit> units;
 
   String _convertedValue = '';
   Unit _fromUnit;
   double _inputValue;
+  String _inputValueString;
   Unit _toUnit;
 
   String get convertedValue => _convertedValue;
+  Unit get fromUnit => _fromUnit;
+  Unit get toUnit => _toUnit;
+  String get inputValueString => _inputValueString;
 
   String _format(double value) {
-    var _outputVal = value.toStringAsPrecision(8);
+    var _outputVal = value.toStringAsPrecision(12);
     if (_outputVal.contains('.') && _outputVal.endsWith('0')) {
       var i = _outputVal.length - 1;
       while (_outputVal[i] == '0') {
@@ -60,15 +64,23 @@ class ConverterProvider extends ChangeNotifier {
   Future<void> _updateConversion() async {
     _convertedValue =
         _format(_inputValue * (_toUnit.conversion / _fromUnit.conversion));
+    notifyListeners();
+  }
+
+  updateInputString(String value) {
+    if (value != "." && value != "0" && value != "00")
+      _inputValueString = value;
+    _updateInputVal();
   }
 
   /// Updates the input value and checks whether the input is in correct format or not
-  void updateInputVal(String value) {
-    if (value == null || value.isEmpty) {
+  void _updateInputVal() {
+    if (_inputValueString == null || _inputValueString.isEmpty) {
       _convertedValue = '';
+      notifyListeners();
     } else {
       try {
-        final _inputDouble = double.parse(value);
+        final double _inputDouble = double.parse(_inputValueString);
         _inputValue = _inputDouble;
         _updateConversion();
       } catch (e) {
