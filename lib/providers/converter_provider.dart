@@ -10,12 +10,9 @@ class ConverterProvider extends ChangeNotifier {
   final List<Unit> units;
 
   String _convertedValue = '';
-  List<DropdownMenuItem> _dropdownItems;
   Unit _fromUnit;
   double _inputValue;
   Unit _toUnit;
-
-  List<DropdownMenuItem> get dropdownItems => _dropdownItems;
 
   String get convertedValue => _convertedValue;
 
@@ -43,21 +40,21 @@ class ConverterProvider extends ChangeNotifier {
   }
 
   /// Creates the dropdowns of the Unit converter
-  void createDropdownItems() {
-    var newItems = <DropdownMenuItem>[];
-    for (var unit in units) {
-      newItems.add(DropdownMenuItem(
-        value: unit.name,
-        child: Container(
-          child: Text(
-            unit.name,
-            softWrap: true,
-          ),
-        ),
-      ));
-    }
-    _dropdownItems = newItems;
-  }
+  // void createDropdownItems() {
+  //   var newItems = <DropdownMenuItem>[];
+  //   for (var unit in units) {
+  //     newItems.add(DropdownMenuItem(
+  //       value: unit.name,
+  //       child: Container(
+  //         child: Text(
+  //           unit.name,
+  //           softWrap: true,
+  //         ),
+  //       ),
+  //     ));
+  //   }
+  //   _dropdownItems = newItems;
+  // }
 
   /// Updates the conversion and returns the converted value
   Future<void> _updateConversion() async {

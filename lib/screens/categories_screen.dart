@@ -14,12 +14,14 @@ class CategoriesScreen extends StatefulWidget {
 
 class _CategoriesScreenState extends State<CategoriesScreen> {
   List<Category> value;
+  TextEditingController searchController = TextEditingController();
 
   @override
   void didChangeDependencies() async {
     super.didChangeDependencies();
     value = context.read<CategoriesProvider>().categories;
-    if (value.isEmpty) {
+    print(searchController.text);
+    if (value.isEmpty && searchController.text == "") {
       await context.read<CategoriesProvider>().loadCategories(context);
     }
   }
@@ -30,7 +32,7 @@ class _CategoriesScreenState extends State<CategoriesScreen> {
 
     Widget _buildTopSection() {
       return Container(
-        height: 0.12 * MediaQuery.of(context).size.height,
+        height: 0.11 * MediaQuery.of(context).size.height,
         color: primaryColor,
         child: Column(
           children: [
@@ -38,6 +40,7 @@ class _CategoriesScreenState extends State<CategoriesScreen> {
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 15.0),
               child: TextField(
+                controller: searchController,
                 onChanged: (val) {
                   categoriesProvider.searchCategories(val);
                 },
@@ -93,7 +96,9 @@ class _CategoriesScreenState extends State<CategoriesScreen> {
         children: categoriesProvider.categories.map((Category cats) {
           return Padding(
             padding: const EdgeInsets.all(4.0),
-            child: CategoryCard(convCategory: cats),
+            child: CategoryCard(
+              convCategory: cats,
+            ),
           );
         }).toList(),
       );
