@@ -20,7 +20,8 @@ class CategoryCard extends StatelessWidget {
         FocusScope.of(context).unfocus();
         Get.to(
           ChangeNotifierProvider(
-              create: (context) => ConverterProvider(convCategory.units),
+              create: (context) =>
+                  ConverterProvider(convCategory.units, convCategory.name),
               child: UnitConverter(categoryName: convCategory.name)),
         );
       },

@@ -111,6 +111,35 @@ class _ConverterKeypadState extends State<ConverterKeypad> {
       );
     }
 
+    Widget changeSymbolButton() {
+      return Expanded(
+        child: InkWell(
+          onTap: () {
+            if (converterProvider.inputValue != null) {
+              if (converterProvider.inputValue.isNegative) {
+                converterProvider.updateInputString(converterProvider
+                    .inputValueString
+                    .substring(1, converterProvider.inputValueString.length));
+              } else {
+                converterProvider.updateInputString(
+                    "-" + converterProvider.inputValueString);
+              }
+            }
+          },
+          child: SizedBox(
+            height: 0.1 * Get.height,
+            width: double.infinity,
+            child: Center(
+              child: Text(
+                "+/-",
+                style: TextStyle(color: Colors.white70, fontSize: 32),
+              ),
+            ),
+          ),
+        ),
+      );
+    }
+
     Widget clearButton() {
       return Expanded(
         child: InkWell(
@@ -174,7 +203,9 @@ class _ConverterKeypadState extends State<ConverterKeypad> {
                 children: <Widget>[
                   keypadButton(value: '.'),
                   keypadButton(value: '0'),
-                  keypadButton(value: '00'),
+                  converterProvider.categoryName == "Temperature"
+                      ? changeSymbolButton()
+                      : keypadButton(value: '00'),
                   eraseButton(),
                 ],
               ),

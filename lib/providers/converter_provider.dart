@@ -3,12 +3,13 @@ import 'package:flutter/material.dart';
 import '../models/unit.dart';
 
 class ConverterProvider extends ChangeNotifier {
-  ConverterProvider(this.units) {
+  ConverterProvider(this.units, this._categoryName) {
     setDefaults();
   }
 
   final List<Unit> units;
 
+  String _categoryName;
   String _convertedValue = '';
   Unit _fromUnit;
   double _inputValue;
@@ -22,6 +23,10 @@ class ConverterProvider extends ChangeNotifier {
   Unit get toUnit => _toUnit;
 
   String get inputValueString => _inputValueString;
+
+  double get inputValue => _inputValue;
+
+  String get categoryName => _categoryName;
 
   String _format(double value) {
     var _outputVal = value.toStringAsPrecision(12);
@@ -47,9 +52,36 @@ class ConverterProvider extends ChangeNotifier {
   }
 
   Future<void> _updateConversion() async {
-    _convertedValue =
-        _format(_inputValue * (_toUnit.conversion / _fromUnit.conversion));
+    if (_categoryName == "Temperature") {
+      double temp = _toKelvin();
+      _convertedValue = _format(_toTemperature(temp));
+    } else {
+      _convertedValue =
+          _format(_inputValue * (_toUnit.conversion / _fromUnit.conversion));
+    }
     notifyListeners();
+  }
+
+  double _toKelvin() {
+    switch (fromUnit.name) {
+      case "Celsius":
+        return _inputValue + 273.15;
+      case "Fahrenheit":
+        return (_inputValue - 32) * 5 / 9 + 273.15;
+      default:
+        return _inputValue;
+    }
+  }
+
+  double _toTemperature(double value) {
+    switch (toUnit.name) {
+      case "Celsius":
+        return value - 273.15;
+      case "Fahrenheit":
+        return (value - 273.15) * 9 / 5 + 32;
+      default:
+        return value;
+    }
   }
 
   updateInputString(String value) {
