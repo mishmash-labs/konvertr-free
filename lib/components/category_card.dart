@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 
@@ -36,8 +37,8 @@ class CategoryCard extends StatelessWidget {
             Image.asset(
               "assets/icons/${convCategory.name}.png",
               color: quaternaryColor,
-              height: 0.06 * MediaQuery.of(context).size.height,
-              width: 0.06 * MediaQuery.of(context).size.height,
+              height: 0.06 * Get.height,
+              width: 0.06 * Get.height,
             ),
             Text(
               convCategory.name,

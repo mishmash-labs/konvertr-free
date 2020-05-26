@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 
@@ -31,7 +32,7 @@ class _CategoriesScreenState extends State<CategoriesScreen> {
 
     Widget _buildTopSection() {
       return Container(
-        height: 0.11 * MediaQuery.of(context).size.height,
+        height: 0.11 * Get.height,
         color: primaryColor,
         child: Column(
           children: [
