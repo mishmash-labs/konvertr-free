@@ -18,11 +18,11 @@ class CategoryCard extends StatelessWidget {
     return GestureDetector(
       onTap: () {
         FocusScope.of(context).unfocus();
-        Navigator.of(context).push(MaterialPageRoute(
-          builder: (_) => ChangeNotifierProvider(
+        Get.to(
+          ChangeNotifierProvider(
               create: (context) => ConverterProvider(convCategory.units),
               child: UnitConverter(categoryName: convCategory.name)),
-        ));
+        );
       },
       child: Card(
         color: tertiaryColor,

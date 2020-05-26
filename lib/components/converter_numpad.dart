@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_clipboard_manager/flutter_clipboard_manager.dart';
 import 'package:get/get.dart';
 import 'package:provider/provider.dart';
 
@@ -69,7 +70,18 @@ class _ConverterKeypadState extends State<ConverterKeypad> {
     Widget copyButton() {
       return Expanded(
         child: InkWell(
-          onTap: () {},
+          onTap: () {
+            if (converterProvider.convertedValue != "") {
+              FlutterClipboardManager.copyToClipBoard(
+                      "${converterProvider.inputValueString} ${converterProvider.fromUnit.symbol} = ${converterProvider.convertedValue} ${converterProvider.toUnit.symbol}")
+                  .then((result) {
+                if (result) {
+                  Get.snackbar("Success", "Conversion copied to clipboard",
+                      colorText: Colors.white70);
+                }
+              });
+            }
+          },
           child: SizedBox(
             height: 0.1 * Get.height,
             width: double.infinity,

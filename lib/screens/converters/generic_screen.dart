@@ -34,7 +34,7 @@ class UnitConverter extends StatelessWidget {
             Icons.arrow_back_ios,
             color: searchBarColor,
           ),
-          onPressed: () => Navigator.of(context).pop(),
+          onPressed: () => Get.back(),
         ),
         actions: [
           Padding(
@@ -51,14 +51,11 @@ class UnitConverter extends StatelessWidget {
     Widget _buildConverterSelection(String whichUnit, String currentUnit) {
       return InkWell(
         onTap: () {
-          Navigator.of(context).push(
-            MaterialPageRoute(
-                builder: (_) => UnitsScreen(
-                      converterProvider: converterProvider,
-                      whichUnit: whichUnit,
-                      currentUnit: currentUnit,
-                    )),
-          );
+          Get.to(UnitsScreen(
+            converterProvider: converterProvider,
+            whichUnit: whichUnit,
+            currentUnit: currentUnit,
+          ));
         },
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
