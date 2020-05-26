@@ -46,24 +46,6 @@ class ConverterProvider extends ChangeNotifier {
     }
   }
 
-  /// Creates the dropdowns of the Unit converter
-  // void createDropdownItems() {
-  //   var newItems = <DropdownMenuItem>[];
-  //   for (var unit in units) {
-  //     newItems.add(DropdownMenuItem(
-  //       value: unit.name,
-  //       child: Container(
-  //         child: Text(
-  //           unit.name,
-  //           softWrap: true,
-  //         ),
-  //       ),
-  //     ));
-  //   }
-  //   _dropdownItems = newItems;
-  // }
-
-  /// Updates the conversion and returns the converted value
   Future<void> _updateConversion() async {
     _convertedValue =
         _format(_inputValue * (_toUnit.conversion / _fromUnit.conversion));
@@ -76,7 +58,6 @@ class ConverterProvider extends ChangeNotifier {
     _updateInputVal();
   }
 
-  /// Updates the input value and checks whether the input is in correct format or not
   void _updateInputVal() {
     if (_inputValueString == null || _inputValueString.isEmpty) {
       _inputValue = null;
@@ -93,7 +74,6 @@ class ConverterProvider extends ChangeNotifier {
     }
   }
 
-  /// Used as a getter method to get the required unit from the list of the given units
   Unit _getUnit(dynamic unitName) {
     return units.firstWhere(
       (Unit unit) {

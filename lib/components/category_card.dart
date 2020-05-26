@@ -4,7 +4,7 @@ import 'package:provider/provider.dart';
 
 import '../models/category.dart';
 import '../providers/converter_provider.dart';
-import '../screens/converter_screen.dart';
+import '../screens/converters/generic_screen.dart';
 import '../utils/theme.dart';
 
 class CategoryCard extends StatelessWidget {

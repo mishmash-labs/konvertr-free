@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 
-import '../components/converter_numpad.dart';
-import '../providers/converter_provider.dart';
-import '../utils/theme.dart';
-import 'units_screen.dart';
+import '../../components/converter_numpad.dart';
+import '../../providers/converter_provider.dart';
+import '../../utils/theme.dart';
+import '../units_screen.dart';
 
 class UnitConverter extends StatelessWidget {
   const UnitConverter({Key key, this.categoryName}) : super(key: key);
