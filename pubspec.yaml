@@ -1,7 +1,7 @@
 name: konvertr
 description: Unit Converter App built using Flutter
 
-version: 1.1.1+1
+version: 0.0.1+1
 
 environment:
   sdk: ">=2.1.0 <3.0.0"
@@ -10,7 +10,7 @@ dependencies:
   flutter:
     sdk: flutter
   flutter_clipboard_manager: ^0.0.2
-  get: ^2.6.3
+  get: ^2.7.1
   google_fonts: ^1.1.0
   provider: ^4.1.2
 
