@@ -76,15 +76,15 @@ class _CategoriesScreenState extends State<CategoriesScreen> {
               fontWeight: FontWeight.w600),
         ),
         elevation: 0.0,
-        actions: [
-          Padding(
-            padding: const EdgeInsets.only(right: 16.0),
-            child: Icon(
-              Icons.favorite,
-              color: searchBarColor,
-            ),
-          )
-        ],
+        // actions: [
+        //   Padding(
+        //     padding: const EdgeInsets.only(right: 16.0),
+        //     child: Icon(
+        //       Icons.favorite,
+        //       color: searchBarColor,
+        //     ),
+        //   )
+        // ],
       );
     }
 

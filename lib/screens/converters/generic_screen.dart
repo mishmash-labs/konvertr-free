@@ -36,15 +36,15 @@ class UnitConverter extends StatelessWidget {
           ),
           onPressed: () => Get.back(),
         ),
-        actions: [
-          Padding(
-            padding: const EdgeInsets.only(right: 16.0),
-            child: Icon(
-              Icons.favorite_border,
-              color: searchBarColor,
-            ),
-          )
-        ],
+        // actions: [
+        //   Padding(
+        //     padding: const EdgeInsets.only(right: 16.0),
+        //     child: Icon(
+        //       Icons.favorite_border,
+        //       color: searchBarColor,
+        //     ),
+        //   )
+        // ],
       );
     }
 
