@@ -1,8 +1,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.runedrune.konvertr">
+    package="com.mishmash.konvertr">
     <application
         android:name="io.flutter.app.FlutterApplication"
-        android:label="konvertr"
+        android:label="Konvertr"
         android:icon="@mipmap/ic_launcher">
         <activity
             android:name=".MainActivity"
