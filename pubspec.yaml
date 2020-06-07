@@ -1,7 +1,7 @@
 name: konvertr
 description: Unit Converter App built using Flutter
 
-version: 0.0.1+1
+version: 3.0.0+15
 
 environment:
   sdk: ">=2.1.0 <3.0.0"
@@ -19,4 +19,3 @@ flutter:
   uses-material-design: true
   assets:
     - assets/data/units.json
-    - assets/icons/
