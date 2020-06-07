@@ -35,11 +35,10 @@ class CategoryCard extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
-            Image.asset(
-              "assets/icons/${convCategory.name}.png",
+            Icon(
+              convCategory.icon,
               color: quaternaryColor,
-              height: 0.06 * Get.height,
-              width: 0.06 * Get.height,
+              size: 0.06 * Get.height,
             ),
             Text(
               convCategory.name,

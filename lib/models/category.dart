@@ -6,9 +6,11 @@ class Category {
   Category({
     @required this.name,
     @required this.units,
+    @required this.icon,
   })  : assert(name != null),
         assert(units != null);
 
   final String name;
   final List<Unit> units;
+  final IconData icon;
 }

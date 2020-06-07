@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_icons/flutter_icons.dart';
 
 import '../models/category.dart';
 import '../models/unit.dart';
@@ -10,6 +11,52 @@ class CategoriesProvider extends ChangeNotifier {
   List<Category> _categories = <Category>[];
 
   List<Category> get categories => _categories;
+
+  IconData getIconForCategory(String categoryName) {
+    switch (categoryName) {
+      case 'Area':
+        return FontAwesome.area_chart;
+        break;
+      case 'Data Transfer':
+        return FontAwesome.download;
+        break;
+      case 'Data':
+        return FontAwesome.database;
+        break;
+      case 'Energy':
+        return FontAwesome5Solid.plug;
+        break;
+      case 'Frequency':
+        return MaterialCommunityIcons.radio_tower;
+        break;
+      case 'Fuel Economy':
+        return FontAwesome5Solid.gas_pump;
+        break;
+      case 'Length':
+        return FontAwesome5Solid.ruler_combined;
+        break;
+      case 'Mass':
+        return FontAwesome5Solid.weight;
+        break;
+      case 'Pressure':
+        return MaterialCommunityIcons.pipe;
+        break;
+      case 'Speed':
+        return Ionicons.ios_speedometer;
+        break;
+      case 'Temperature':
+        return FontAwesome5Solid.thermometer_full;
+        break;
+      case 'Time':
+        return FontAwesome5Solid.clock;
+        break;
+      case 'Volume':
+        return MaterialCommunityIcons.beaker;
+        break;
+      default:
+        return FontAwesome.star_half_empty;
+    }
+  }
 
   Future<void> loadCategories(BuildContext context) async {
     final json =
@@ -22,7 +69,8 @@ class CategoriesProvider extends ChangeNotifier {
       final List<Unit> units =
           data[key].map<Unit>((dynamic data) => Unit.fromJson(data)).toList();
 
-      var category = Category(name: key, units: units);
+      var category =
+          Category(name: key, units: units, icon: getIconForCategory(key));
 
       _categories.add(category);
     });

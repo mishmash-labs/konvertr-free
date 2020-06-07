@@ -71,27 +71,16 @@ class UnitConverter extends StatelessWidget {
                 borderRadius: BorderRadius.circular(4.0),
                 color: Colors.white12,
               ),
-              height: 0.05 * Get.height,
+              height: 0.055 * Get.height,
               width: 0.4 * Get.width,
               child: Align(
                   alignment: Alignment.centerLeft,
                   child: Padding(
                     padding: const EdgeInsets.only(left: 4.0),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Text(
-                          currentUnit,
-                          style: TextStyle(
-                              color: Colors.white70,
-                              fontWeight: FontWeight.w400),
-                        ),
-                        Icon(
-                          Icons.arrow_forward_ios,
-                          color: Colors.white70,
-                          size: 18.0,
-                        )
-                      ],
+                    child: Text(
+                      currentUnit,
+                      style: TextStyle(
+                          color: Colors.white70, fontWeight: FontWeight.w400),
                     ),
                   )),
             )

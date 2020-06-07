@@ -436,8 +436,8 @@
       "conversion": 0.00001
     },
     {
-      "name": "Pound-force per square inch",
-      "symbol": "lbf/in²",
+      "name": "Pound per square inch",
+      "symbol": "psi",
       "conversion": 0.000145038
     },
     {

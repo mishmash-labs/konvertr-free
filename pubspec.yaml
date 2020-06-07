@@ -10,7 +10,8 @@ dependencies:
   flutter:
     sdk: flutter
   flutter_clipboard_manager: ^0.0.2
-  get: ^2.10.3
+  flutter_icons: ^1.1.0
+  get: ^2.11.0
   google_fonts: ^1.1.0
   provider: ^4.1.3
 
