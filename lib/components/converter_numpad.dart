@@ -158,7 +158,7 @@ class _ConverterKeypadState extends State<ConverterKeypad> {
               width: double.infinity,
               child: Center(
                 child: Text(
-                  "AC",
+                  "C",
                   style: TextStyle(color: Colors.white70, fontSize: 32),
                 ),
               )),
