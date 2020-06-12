@@ -36,7 +36,7 @@ class _ConverterKeypadState extends State<ConverterKeypad> {
             }
           },
           child: SizedBox(
-            height: 0.1 * Get.height,
+            height: 80 * Get.height / 798,
             width: double.infinity,
             child: Center(
               child: Text(
@@ -58,7 +58,7 @@ class _ConverterKeypadState extends State<ConverterKeypad> {
             converterProvider.updateInputString(temp);
           },
           child: SizedBox(
-            height: 0.1 * Get.height,
+            height: 80 * Get.height / 798,
             width: double.infinity,
             child: Center(
                 child: Icon(Icons.backspace, color: Colors.white70, size: 32)),
@@ -76,14 +76,21 @@ class _ConverterKeypadState extends State<ConverterKeypad> {
                       "${converterProvider.inputValueString} ${converterProvider.fromUnit.symbol} = ${converterProvider.convertedValue} ${converterProvider.toUnit.symbol}")
                   .then((result) {
                 if (result) {
-                  Get.snackbar("Success", "Conversion copied to clipboard",
-                      colorText: Colors.white70);
+                  Get.snackbar(
+                    "Clipboard Updated",
+                    "Conversion copied to clipboard.",
+                    colorText: Colors.white70,
+                    icon: Icon(
+                      Icons.content_copy,
+                      color: searchBarColor,
+                    ),
+                  );
                 }
               });
             }
           },
           child: SizedBox(
-            height: 0.1 * Get.height,
+            height: 80 * Get.height / 798,
             width: double.infinity,
             child: Center(
                 child:
@@ -102,10 +109,10 @@ class _ConverterKeypadState extends State<ConverterKeypad> {
             converterProvider.updateFromUnit(tempTo);
           },
           child: SizedBox(
-            height: 0.1 * Get.height,
+            height: 80 * Get.height / 798,
             width: double.infinity,
             child: Center(
-                child: Icon(Icons.swap_calls, color: Colors.white70, size: 32)),
+                child: Icon(Icons.swap_horiz, color: Colors.white70, size: 32)),
           ),
         ),
       );
@@ -127,7 +134,7 @@ class _ConverterKeypadState extends State<ConverterKeypad> {
             }
           },
           child: SizedBox(
-            height: 0.1 * Get.height,
+            height: 80 * Get.height / 798,
             width: double.infinity,
             child: Center(
               child: Text(
@@ -147,7 +154,7 @@ class _ConverterKeypadState extends State<ConverterKeypad> {
             converterProvider.updateInputString("");
           },
           child: SizedBox(
-              height: 0.1 * Get.height,
+              height: 80 * Get.height / 798,
               width: double.infinity,
               child: Center(
                 child: Text(
@@ -161,7 +168,7 @@ class _ConverterKeypadState extends State<ConverterKeypad> {
 
     return Container(
         color: primaryColor,
-        height: 0.41 * Get.height,
+        height: 320 * Get.height / 798,
         child: Column(
           children: [
             Container(

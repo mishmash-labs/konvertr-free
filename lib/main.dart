@@ -19,11 +19,12 @@ class KonvertrHome extends StatelessWidget {
     return MultiProvider(
       providers: [
         ChangeNotifierProvider(
-            create: (context) => CategoriesProvider(), lazy: false),
+            create: (context) => CategoriesProvider(context), lazy: false),
       ],
       child: GetMaterialApp(
         home: CategoriesScreen(),
         theme: ThemeData(
+          accentColor: Colors.white70,
           textTheme: GoogleFonts.robotoTextTheme(
             Theme.of(context).textTheme,
           ),

@@ -9,8 +9,14 @@ import '../models/unit.dart';
 class CategoriesProvider extends ChangeNotifier {
   List<Category> _allCategories = <Category>[];
   List<Category> _categories = <Category>[];
+  bool _searchingCategory = false;
 
   List<Category> get categories => _categories;
+  bool get searchingCategory => _searchingCategory;
+
+  CategoriesProvider(BuildContext context) {
+    loadCategories(context);
+  }
 
   IconData getIconForCategory(String categoryName) {
     switch (categoryName) {
@@ -81,11 +87,21 @@ class CategoriesProvider extends ChangeNotifier {
   Future<void> searchCategories(String searchTerm) async {
     List<Category> _searchedList = List();
 
+    if (searchTerm.isNotEmpty) {
+      _searchingCategory = true;
+    } else
+      _searchingCategory = false;
+
     _searchedList = _allCategories
         .where((element) =>
             element.name.toLowerCase().contains(searchTerm.toLowerCase()))
         .toList();
     _categories = _searchedList;
+    notifyListeners();
+  }
+
+  void cancelSearch() {
+    _searchingCategory = false;
     notifyListeners();
   }
 }

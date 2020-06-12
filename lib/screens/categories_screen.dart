@@ -16,15 +16,7 @@ class CategoriesScreen extends StatefulWidget {
 class _CategoriesScreenState extends State<CategoriesScreen> {
   TextEditingController searchController = TextEditingController();
   List<Category> value;
-
-  @override
-  void didChangeDependencies() async {
-    super.didChangeDependencies();
-    value = context.read<CategoriesProvider>().categories;
-    if (value.isEmpty && searchController.text == "") {
-      await context.read<CategoriesProvider>().loadCategories(context);
-    }
-  }
+  FocusNode searchNode = FocusNode();
 
   @override
   Widget build(BuildContext context) {
@@ -32,34 +24,46 @@ class _CategoriesScreenState extends State<CategoriesScreen> {
 
     Widget _buildTopSection() {
       return Container(
-        height: 0.11 * Get.height,
+        height: 70 * Get.height / 798,
         color: primaryColor,
-        child: Column(
-          children: [
-            SizedBox(height: 10.0),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 15.0),
-              child: TextField(
-                controller: searchController,
-                onChanged: (val) {
-                  categoriesProvider.searchCategories(val);
-                },
-                maxLines: 1,
-                decoration: InputDecoration(
-                  hintText: "Search...",
-                  prefixIcon: Icon(
-                    Icons.search,
-                    color: searchBarIcon,
-                  ),
-                  fillColor: searchBarColor,
-                  filled: true,
-                  border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(10.0),
-                      borderSide: BorderSide.none),
-                ),
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 15.0),
+          child: TextField(
+            focusNode: searchNode,
+            cursorColor: primaryColor,
+            controller: searchController,
+            onChanged: (val) {
+              categoriesProvider.searchCategories(val);
+            },
+            maxLines: 1,
+            decoration: InputDecoration(
+              hintText: "Search Categories",
+              hintStyle: TextStyle(color: primaryColor),
+              prefixIcon: Icon(
+                Icons.search,
+                color: primaryColor,
               ),
+              suffixIcon: categoriesProvider.searchingCategory
+                  ? IconButton(
+                      icon: Icon(
+                        Icons.cancel,
+                        color: primaryColor,
+                      ),
+                      onPressed: () {
+                        categoriesProvider.searchCategories("");
+                        searchController.clear();
+                        categoriesProvider.cancelSearch();
+                        searchNode.unfocus();
+                      },
+                    )
+                  : null,
+              fillColor: Colors.white70,
+              filled: true,
+              border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(10.0),
+                  borderSide: BorderSide.none),
             ),
-          ],
+          ),
         ),
       );
     }
@@ -71,20 +75,11 @@ class _CategoriesScreenState extends State<CategoriesScreen> {
         title: Text(
           "Konvertr",
           style: GoogleFonts.roboto(
-              letterSpacing: 1.5,
+              letterSpacing: 1.7,
               color: searchBarColor,
-              fontWeight: FontWeight.w600),
+              fontWeight: FontWeight.w400),
         ),
         elevation: 0.0,
-        // actions: [
-        //   Padding(
-        //     padding: const EdgeInsets.only(right: 16.0),
-        //     child: Icon(
-        //       Icons.favorite,
-        //       color: searchBarColor,
-        //     ),
-        //   )
-        // ],
       );
     }
 

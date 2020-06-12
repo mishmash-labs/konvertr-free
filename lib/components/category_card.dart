@@ -38,13 +38,14 @@ class CategoryCard extends StatelessWidget {
             Icon(
               convCategory.icon,
               color: quaternaryColor,
-              size: 0.06 * Get.height,
+              size: 48 * Get.height / 798,
             ),
             Text(
               convCategory.name,
+              overflow: TextOverflow.ellipsis,
               style: GoogleFonts.roboto(
                   fontSize: 16.0,
-                  fontWeight: FontWeight.w800,
+                  fontWeight: FontWeight.w400,
                   color: quaternaryColor),
             )
           ],
