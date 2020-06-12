@@ -81,45 +81,16 @@ class UnitConverter extends StatelessWidget {
       );
     }
 
-    Widget _buildTopSection() {
+    Widget _buildTopBackground() {
       return Container(
         height: 200 * Get.height / 798,
         color: primaryColor,
-        child: Column(
-          children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                _buildConverterSelection(
-                    "From", converterProvider.fromUnit.name),
-                Padding(
-                  padding: const EdgeInsets.only(top: 25.0),
-                  child: InkWell(
-                    onTap: () {
-                      String tempTo = converterProvider.toUnit.name;
-                      converterProvider
-                          .updateToUnit(converterProvider.fromUnit.name);
-                      converterProvider.updateFromUnit(tempTo);
-                    },
-                    child: Icon(
-                      Icons.swap_horiz,
-                      color: searchBarColor,
-                      size: 28.0,
-                    ),
-                  ),
-                ),
-                _buildConverterSelection("To", converterProvider.toUnit.name)
-              ],
-            )
-          ],
-        ),
       );
     }
 
     Widget _buildTextFieldSection() {
       return Padding(
-        padding: EdgeInsets.only(
-            top: 90 * Get.height / 798, right: 16.0, left: 16.0),
+        padding: EdgeInsets.symmetric(vertical: 30.0, horizontal: 16.0),
         child: Card(
             child: Container(
           width: double.infinity,
@@ -199,14 +170,45 @@ class UnitConverter extends StatelessWidget {
       );
     }
 
+    Widget _buildTopSection() {
+      return Column(
+        children: [
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              _buildConverterSelection("From", converterProvider.fromUnit.name),
+              Padding(
+                padding: const EdgeInsets.only(top: 25.0),
+                child: InkWell(
+                  onTap: () {
+                    String tempTo = converterProvider.toUnit.name;
+                    converterProvider
+                        .updateToUnit(converterProvider.fromUnit.name);
+                    converterProvider.updateFromUnit(tempTo);
+                  },
+                  child: Icon(
+                    Icons.swap_horiz,
+                    color: searchBarColor,
+                    size: 28.0,
+                  ),
+                ),
+              ),
+              _buildConverterSelection("To", converterProvider.toUnit.name)
+            ],
+          ),
+          _buildTextFieldSection()
+        ],
+      );
+    }
+
     return Scaffold(
       appBar: _buildAppBar(),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Stack(children: [
+            _buildTopBackground(),
             _buildTopSection(),
-            _buildTextFieldSection(),
           ]),
           ConverterKeypad(),
         ],
