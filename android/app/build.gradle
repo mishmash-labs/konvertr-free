@@ -43,7 +43,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.mishmash.konvertr"
+        applicationId "com.mishmash.konvertrfree"
         minSdkVersion 19
         targetSdkVersion 29
         versionCode flutterVersionCode.toInteger()

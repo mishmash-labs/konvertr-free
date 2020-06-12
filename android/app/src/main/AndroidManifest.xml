@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.mishmash.konvertr">
+    package="com.mishmash.konvertrfree">
     <application
         android:name="io.flutter.app.FlutterApplication"
         android:label="Konvertr"

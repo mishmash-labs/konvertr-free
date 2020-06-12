@@ -1,4 +1,4 @@
-package com.mishmash.konvertr
+package com.mishmash.konvertrfree
 
 import io.flutter.embedding.android.FlutterActivity
 
