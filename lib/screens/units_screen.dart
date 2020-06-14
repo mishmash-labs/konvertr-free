@@ -25,6 +25,9 @@ class _UnitsScreenState extends State<UnitsScreen> {
 
   @override
   Widget build(BuildContext context) {
+    List<Unit> sortedUnits = widget.converterProvider.units
+      ..sort((a, b) => a.name.compareTo(b.name));
+
     Widget getListItem(Unit unit) {
       if (unit.name == widget.currentUnit)
         color = Colors.red;
@@ -65,9 +68,9 @@ class _UnitsScreenState extends State<UnitsScreen> {
           ),
         ),
         body: ListView.builder(
-            itemCount: widget.converterProvider.units.length,
+            itemCount: sortedUnits.length,
             itemBuilder: (BuildContext context, int index) {
-              return getListItem(widget.converterProvider.units[index]);
+              return getListItem(sortedUnits[index]);
             }));
   }
 }

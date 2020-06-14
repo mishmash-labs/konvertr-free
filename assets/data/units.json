@@ -1,4 +1,77 @@
 {
+  "Angle": [
+    {
+      "name": "Degree",
+      "symbol": "°",
+      "conversion": 1.0,
+      "base_unit": true
+    },
+    {
+      "name": "Radian",
+      "symbol": "rad",
+      "conversion": 0.017453293
+    },
+    {
+      "name": "Grad",
+      "symbol": "ᵍ",
+      "conversion": 1.111111111
+    },
+    {
+      "name": "Gon",
+      "symbol": "gon",
+      "conversion": 1.111111111
+    },
+    {
+      "name": "Minute",
+      "symbol": "'",
+      "conversion": 60
+    },
+    {
+      "name": "Second",
+      "symbol": "\"",
+      "conversion": 3600
+    },
+    {
+      "name": "Sign",
+      "symbol": "",
+      "conversion": 0.033333333
+    },
+    {
+      "name": "Mil",
+      "symbol": "",
+      "conversion": 17.777777778
+    },
+    {
+      "name": "Revolution",
+      "symbol": "r",
+      "conversion": 0.002777778
+    },
+    {
+      "name": "Circle",
+      "symbol": "",
+      "conversion": 0.002777778
+    },
+    {
+      "name": "Turn",
+      "symbol": "",
+      "conversion": 0.002777778
+    },
+    {
+      "name": "Quadrant",
+      "symbol": "",
+      "conversion": 0.011111111
+    },
+    {
+      "name": "Right Angle",
+      "symbol": "",
+      "conversion": 0.011111111
+    },
+    {
+      "name": "Sextant",
+      "symbol": "",
+      "conversion": 0.016666667
+    }
+  ],
   "Area": [
     {
       "name": "Square Meter",
@@ -40,6 +113,69 @@
       "name": "Acre",
       "symbol": "ac",
       "conversion": 0.000247105
+    },
+    {
+      "name": "Kanal",
+      "symbol": "",
+      "conversion": 0.00197684
+    },
+    {
+      "name": "Marla",
+      "symbol": "",
+      "conversion": 0.0395368
+    },
+    {
+      "name": "Small Marla",
+      "symbol": "",
+      "conversion": 0.04783956523
+    },
+    {
+      "name": "Bigha",
+      "symbol": "",
+      "conversion": 0.00049421
+    },
+    {
+      "name": "Kila",
+      "symbol": "",
+      "conversion": 0.000247105
+    },
+    {
+      "name": "Murabba",
+      "symbol": "",
+      "conversion": 0.0000098842
+    }
+  ],
+  "Electric Current": [
+    {
+      "name": "Ampere",
+      "symbol": "A",
+      "conversion": 1.0,
+      "base_unit": true
+    },
+    {
+      "name": "Kiloampere ",
+      "symbol": "kA",
+      "conversion": 0.001
+    },
+    {
+      "name": "Milliampere",
+      "symbol": "mA",
+      "conversion": 1000
+    },
+    {
+      "name": "Biot",
+      "symbol": "Bi",
+      "conversion": 0.1
+    },
+    {
+      "name": "Abampere",
+      "symbol": "abA",
+      "conversion": 0.1
+    },
+    {
+      "name": "Statampere",
+      "symbol": "stA",
+      "conversion": 2997924536.8
     }
   ],
   "Data Transfer": [
@@ -271,6 +407,174 @@
       "conversion": 0.737562
     }
   ],
+  "Force": [
+    {
+      "name": "Newton",
+      "symbol": "N",
+      "conversion": 1.0,
+      "base_unit": true
+    },
+    {
+      "name": "Exanewton",
+      "symbol": "EN",
+      "conversion": 1e-18
+    },
+    {
+      "name": "Petanewton",
+      "symbol": "PT",
+      "conversion": 1e-15
+    },
+    {
+      "name": "Teranewton",
+      "symbol": "TN",
+      "conversion": 1e-12
+    },
+    {
+      "name": "Giganewton",
+      "symbol": "GN",
+      "conversion": 0.000000001
+    },
+    {
+      "name": "Meganewtown",
+      "symbol": "MN",
+      "conversion": 0.000001
+    },
+    {
+      "name": "Kilonewton",
+      "symbol": "kN",
+      "conversion": 0.001
+    },
+    {
+      "name": "Hectonewton",
+      "symbol": "hN",
+      "conversion": 0.01
+    },
+    {
+      "name": "Dekanewton",
+      "symbol": "daN",
+      "conversion": 0.1
+    },
+    {
+      "name": "Decinewton",
+      "symbol": "dN",
+      "conversion": 10
+    },
+    {
+      "name": "Centinewton",
+      "symbol": "cN",
+      "conversion": 100
+    },
+    {
+      "name": "Millinewton",
+      "symbol": "mN",
+      "conversion": 1000
+    },
+    {
+      "name": "Micronewton",
+      "symbol": "uN",
+      "conversion": 1000000
+    },
+    {
+      "name": "Nanonewton",
+      "symbol": "nN",
+      "conversion": 1000000000
+    },
+    {
+      "name": "Piconewton",
+      "symbol": "pN",
+      "conversion": 1e+12
+    },
+    {
+      "name": "Femtonewton",
+      "symbol": "fN",
+      "conversion": 1e+15
+    },
+    {
+      "name": "Attonewton",
+      "symbol": "aN",
+      "conversion": 1e+18
+    },
+    {
+      "name": "Dyne",
+      "symbol": "dyn",
+      "conversion": 100000
+    },
+    {
+      "name": "Joule/Meter",
+      "symbol": "J/m",
+      "conversion": 1
+    },
+    {
+      "name": "Joule/Centimeter",
+      "symbol": "J/cm",
+      "conversion": 100
+    },
+    {
+      "name": "Gram-Force",
+      "symbol": "gF",
+      "conversion": 101.971621298
+    },
+    {
+      "name": "Kilogram-Force",
+      "symbol": "kgf",
+      "conversion": 0.101971621
+    },
+    {
+      "name": "Ton-Force (Short)",
+      "symbol": "tonf (US)",
+      "conversion": 0.000112404
+    },
+    {
+      "name": "Ton-Force (Long)",
+      "symbol": "tonf (UK)",
+      "conversion": 0.000100361
+    },
+    {
+      "name": "Ton-Force (Metric)",
+      "symbol": "tf",
+      "conversion": 0.000101972
+    },
+    {
+      "name": "Kip-Force",
+      "symbol": "kipf",
+      "conversion": 0.000224809
+    },
+    {
+      "name": "Kilopound-Force",
+      "symbol": "kipf",
+      "conversion": 0.000224809
+    },
+    {
+      "name": "Pound-Force",
+      "symbol": "lbf",
+      "conversion": 0.224808943
+    },
+    {
+      "name": "Ounce-Force",
+      "symbol": "ozf",
+      "conversion": 3.59694309
+    },
+    {
+      "name": "Poundal",
+      "symbol": "pdl",
+      "conversion": 7.233013851
+    },
+    {
+      "name": "Pound Foot/Square Second",
+      "symbol": "lb ft/s²",
+      "conversion": 7.233013851
+    },
+    {
+      "name": "Pond",
+      "symbol": "p",
+      "conversion": 101.971621298
+    },
+    {
+      "name": "Kilopond",
+      "symbol": "kp",
+      "conversion": 0.101971621
+    }
+  ],
   "Frequency": [
     {
       "name": "Hertz",
@@ -310,6 +614,64 @@
       "name": "Miles per gallon",
       "symbol": "mpg",
       "conversion": 2.82481
+    }
+  ],
+  "Illumination": [
+    {
+      "name": "Lux",
+      "symbol": "lx",
+      "conversion": 1.0,
+      "base_unit": true
+    },
+    {
+      "name": "Meter-Candle",
+      "symbol": "m c",
+      "conversion": 1
+    },
+    {
+      "name": "Centimeter-Candle",
+      "symbol": "cm c",
+      "conversion": 0.0001
+    },
+    {
+      "name": "Foot-Candle",
+      "symbol": "fc",
+      "conversion": 0.09290304
+    },
+    {
+      "name": "Flame",
+      "symbol": "",
+      "conversion": 0.02322576
+    },
+    {
+      "name": "Phot",
+      "symbol": "ph",
+      "conversion": 0.0001
+    },
+    {
+      "name": "Nox",
+      "symbol": "",
+      "conversion": 1000
+    },
+    {
+      "name": "Candela Steradian/Square Meter",
+      "symbol": "",
+      "conversion": 1
+    },
+    {
+      "name": "Lumen/Square Meter",
+      "symbol": "lm/m²",
+      "conversion": 1
+    },
+    {
+      "name": "Lumen/Square Centimeter",
+      "symbol": "lm/cm²",
+      "conversion": 0.0001
+    },
+    {
+      "name": "Lumen/Square Foot",
+      "symbol": "lm/ft²",
+      "conversion": 0.09290304
     }
   ],
   "Length": [
@@ -360,6 +722,11 @@
       "conversion": 3.28084
     },
     {
+      "name": "Karam",
+      "symbol": "",
+      "conversion": 0.59651636363
+    },
+    {
       "name": "Inch",
       "symbol": "in",
       "conversion": 39.3701
@@ -368,6 +735,99 @@
       "name": "Nautical Mile",
       "symbol": "nmi",
       "conversion": 0.000539957
+    }
+  ],
+  "Luminance": [
+    {
+      "name": "Nit",
+      "symbol": "nt",
+      "conversion": 1.0,
+      "base_unit": true
+    },
+    {
+      "name": "Candela/Square Meter",
+      "symbol": "cd/m²",
+      "conversion": 1
+    },
+    {
+      "name": "Candela/Square Centimeter ",
+      "symbol": "cd/cm²",
+      "conversion": 0.0001
+    },
+    {
+      "name": "Candela/Square Foot",
+      "symbol": "cd/ft²",
+      "conversion": 0.09290304
+    },
+    {
+      "name": "Candela/Square Inch",
+      "symbol": "cd/in²",
+      "conversion": 0.00064516
+    },
+    {
+      "name": "Kilocandela/Square Meter",
+      "symbol": "kcd/m²",
+      "conversion": 0.001
+    },
+    {
+      "name": "Stilb",
+      "symbol": "sb",
+      "conversion": 0.0001
+    },
+    {
+      "name": "Lumen/Square Meter/Steradian",
+      "symbol": "",
+      "conversion": 1
+    },
+    {
+      "name": "Lumen/Square Centimeter/Steradian",
+      "symbol": "",
+      "conversion": 0.0001
+    },
+    {
+      "name": "Lumen/Square Foot/Steradian",
+      "symbol": "",
+      "conversion": 0.09290304
+    },
+    {
+      "name": "Millinit",
+      "symbol": "mnt",
+      "conversion": 1000
+    },
+    {
+      "name": "Lambert",
+      "symbol": "L",
+      "conversion": 0.000314159
+    },
+    {
+      "name": "Millilambert",
+      "symbol": "mL",
+      "conversion": 0.314159265
+    },
+    {
+      "name": "Foot-Lambert",
+      "symbol": "fL",
+      "conversion": 0.291863508
+    },
+    {
+      "name": "Apostilb",
+      "symbol": "",
+      "conversion": 3.141592654
+    },
+    {
+      "name": "Blondel",
+      "symbol": "",
+      "conversion": 3.141592654
+    },
+    {
+      "name": "Bril",
+      "symbol": "",
+      "conversion": 31415926.535898
+    },
+    {
+      "name": "Skot",
+      "symbol": "",
+      "conversion": 3141.59265359
     }
   ],
   "Mass": [
@@ -449,6 +909,24 @@
       "name": "Torr",
       "symbol": "Torr",
       "conversion": 0.00750062
+    }
+  ],
+  "Sound": [
+    {
+      "name": "Decibel",
+      "symbol": "dB",
+      "conversion": 1.0,
+      "base_unit": true
+    },
+    {
+      "name": "Bel",
+      "symbol": "B",
+      "conversion": 0.1
+    },
+    {
+      "name": "Neper",
+      "symbol": "Np",
+      "conversion": 0.115127792
     }
   ],
   "Speed": [
@@ -558,6 +1036,157 @@
       "name": "Century",
       "symbol": "c",
       "conversion": 0.000000019026
+    }
+  ],
+  "Torque": [
+    {
+      "name": "Newton Meter",
+      "symbol": "N m",
+      "conversion": 1.0,
+      "base_unit": true
+    },
+    {
+      "name": "Newton Centimeter",
+      "symbol": "N cm",
+      "conversion": 100
+    },
+    {
+      "name": "Newton Millimeter",
+      "symbol": "N mm",
+      "conversion": 1000
+    },
+    {
+      "name": "Kilonewton Meter",
+      "symbol": "kN m",
+      "conversion": 0.001
+    },
+    {
+      "name": "Dyne Meter",
+      "symbol": "dyn m",
+      "conversion": 100000
+    },
+    {
+      "name": "Dyne Centimeter",
+      "symbol": "dyn cm",
+      "conversion": 10000000
+    },
+    {
+      "name": "Dyne Millimeter",
+      "symbol": "dyn mm",
+      "conversion": 100000000
+    },
+    {
+      "name": "Kilogram-Force Meter",
+      "symbol": "kgf m",
+      "conversion": 0.101971621
+    },
+    {
+      "name": "Kilogram-Force Centimeter",
+      "symbol": "kgf cm",
+      "conversion": 10.19716213
+    },
+    {
+      "name": "Kilogram-Force Millimeter",
+      "symbol": "kgf mm",
+      "conversion": 101.971621298
+    },
+    {
+      "name": "Gram-Force Meter",
+      "symbol": "gf m",
+      "conversion": 101.971621298
+    },
+    {
+      "name": "Gram-Force Centimeter",
+      "symbol": "gf cm",
+      "conversion": 10197.162129779
+    },
+    {
+      "name": "Gram-Force Millimeter",
+      "symbol": "gf mm",
+      "conversion": 10197.162129779
+    },
+    {
+      "name": "Ounce-Force Foot",
+      "symbol": "ozf ft",
+      "conversion": 11.800994078
+    },
+    {
+      "name": "Ounce-Force Inch",
+      "symbol": "ozf in",
+      "conversion": 141.611928936
+    },
+    {
+      "name": "Pound-Force Foot",
+      "symbol": "lbf ft",
+      "conversion": 0.737562121
+    },
+    {
+      "name": "Pound-Force Inch",
+      "symbol": "lbf in",
+      "conversion": 8.850745454
+    }
+  ],
+  "Typography": [
+    {
+      "name": "Millimeter",
+      "symbol": "mm",
+      "conversion": 1.0,
+      "base_unit": true
+    },
+    {
+      "name": "Twip",
+      "symbol": "twp",
+      "conversion": 56.692913386
+    },
+    {
+      "name": "Meter",
+      "symbol": "m",
+      "conversion": 0.001
+    },
+    {
+      "name": "Centimeter",
+      "symbol": "cm",
+      "conversion": 0.1
+    },
+    {
+      "name": "Character (X)",
+      "symbol": "",
+      "conversion": 0.472440945
+    },
+    {
+      "name": "Character (Y)",
+      "symbol": "",
+      "conversion": 0.236220472
+    },
+    {
+      "name": "Pixel",
+      "symbol": "px",
+      "conversion": 3.779527559
+    },
+    {
+      "name": "Inch",
+      "symbol": "in",
+      "conversion": 0.039370079
+    },
+    {
+      "name": "Pica (Computer)",
+      "symbol": "pc",
+      "conversion": 0.236220472
+    },
+    {
+      "name": "Pica (Printer)",
+      "symbol": "pc",
+      "conversion": 0.237106302
+    },
+    {
+      "name": "Point (Computer)",
+      "symbol": "pt",
+      "conversion": 2.834645669
+    },
+    {
+      "name": "Point (Printer)",
+      "symbol": "pt",
+      "conversion": 2.845275591
     }
   ],
   "Volume": [

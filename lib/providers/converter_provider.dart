@@ -85,8 +85,7 @@ class ConverterProvider extends ChangeNotifier {
   }
 
   updateInputString(String value) {
-    if (value != "." && value != "0" && value != "00")
-      _inputValueString = value;
+    if (value != ".") _inputValueString = value;
     _updateInputVal();
   }
 

@@ -20,8 +20,14 @@ class CategoriesProvider extends ChangeNotifier {
 
   IconData getIconForCategory(String categoryName) {
     switch (categoryName) {
+      case 'Angle':
+        return FontAwesome5Solid.drafting_compass;
+        break;
       case 'Area':
         return FontAwesome.area_chart;
+        break;
+      case 'Electric Current':
+        return FontAwesome5Solid.plug;
         break;
       case 'Data Transfer':
         return FontAwesome.download;
@@ -30,7 +36,10 @@ class CategoriesProvider extends ChangeNotifier {
         return FontAwesome.database;
         break;
       case 'Energy':
-        return FontAwesome5Solid.plug;
+        return FontAwesome5Solid.bolt;
+        break;
+      case 'Force':
+        return Ionicons.md_rocket;
         break;
       case 'Frequency':
         return MaterialCommunityIcons.radio_tower;
@@ -38,14 +47,23 @@ class CategoriesProvider extends ChangeNotifier {
       case 'Fuel Economy':
         return FontAwesome5Solid.gas_pump;
         break;
+      case 'Illumination':
+        return FontAwesome5Solid.lightbulb;
+        break;
       case 'Length':
         return FontAwesome5Solid.ruler_combined;
+        break;
+      case 'Luminance':
+        return FontAwesome5Solid.sun;
         break;
       case 'Mass':
         return FontAwesome5Solid.weight;
         break;
       case 'Pressure':
         return MaterialCommunityIcons.pipe;
+        break;
+      case 'Sound':
+        return MaterialCommunityIcons.volume_high;
         break;
       case 'Speed':
         return Ionicons.ios_speedometer;
@@ -55,6 +73,12 @@ class CategoriesProvider extends ChangeNotifier {
         break;
       case 'Time':
         return FontAwesome5Solid.clock;
+        break;
+      case 'Torque':
+        return FontAwesome5Solid.wrench;
+        break;
+      case 'Typography':
+        return MaterialCommunityIcons.format_font;
         break;
       case 'Volume':
         return MaterialCommunityIcons.beaker;

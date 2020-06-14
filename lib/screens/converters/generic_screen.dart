@@ -25,14 +25,14 @@ class UnitConverter extends StatelessWidget {
           categoryName,
           style: GoogleFonts.roboto(
               letterSpacing: 1.5,
-              color: searchBarColor,
+              color: Colors.white70,
               fontWeight: FontWeight.w600),
         ),
         elevation: 0.0,
         leading: IconButton(
           icon: Icon(
             Icons.arrow_back_ios,
-            color: searchBarColor,
+            color: Colors.white70,
           ),
           onPressed: () => Get.back(),
         ),
@@ -83,90 +83,92 @@ class UnitConverter extends StatelessWidget {
 
     Widget _buildTopBackground() {
       return Container(
-        height: 200 * Get.height / 798,
+        height: 210 * Get.height / 798,
         color: primaryColor,
       );
     }
 
     Widget _buildTextFieldSection() {
       return Padding(
-        padding: EdgeInsets.symmetric(vertical: 30.0, horizontal: 16.0),
+        padding:
+            EdgeInsets.symmetric(vertical: Get.height * 0.03, horizontal: 16.0),
         child: Card(
+            shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(8.0)),
+            elevation: 3.0,
             child: Container(
-          width: double.infinity,
-          child: Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Column(
-              children: [
-                Align(
-                  alignment: Alignment.centerLeft,
-                  child: Text(
-                    "Amount",
-                    style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        color: primaryColor,
-                        letterSpacing: 1),
-                  ),
-                ),
-                SizedBox(height: 6.0),
-                Container(
-                  height: 77 * Get.height / 798,
-                  child: InputDecorator(
-                    child: SingleChildScrollView(
-                      scrollDirection: Axis.horizontal,
+              width: double.infinity,
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    Align(
+                      alignment: Alignment.centerLeft,
                       child: Text(
-                        converterProvider.inputValueString == null
-                            ? ""
-                            : converterProvider.inputValueString,
-                        maxLines: 1,
+                        "Amount",
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            color: primaryColor,
+                            letterSpacing: 1),
+                      ),
+                    ),
+                    SizedBox(height: 6.0),
+                    InputDecorator(
+                      child: SingleChildScrollView(
+                        scrollDirection: Axis.horizontal,
+                        child: Text(
+                          converterProvider.inputValueString == null
+                              ? ""
+                              : converterProvider.inputValueString,
+                          maxLines: 1,
+                          style: TextStyle(color: primaryColor),
+                        ),
+                      ),
+                      decoration: InputDecoration(
+                        isDense: true,
+                        suffixText: converterProvider.fromUnit.symbol,
+                        suffixStyle: TextStyle(color: primaryColor),
+                        enabledBorder: OutlineInputBorder(
+                          borderSide: BorderSide(
+                            color: primaryColor,
+                            width: 1.5,
+                          ),
+                        ),
+                      ),
+                    ),
+                    SizedBox(height: 6.0),
+                    Align(
+                        alignment: Alignment.centerLeft,
+                        child: Text(
+                          "Converted To",
+                          style: TextStyle(
+                              fontWeight: FontWeight.w600,
+                              color: primaryColor,
+                              letterSpacing: 1),
+                        )),
+                    SizedBox(height: 6.0),
+                    InputDecorator(
+                      child: Text(
+                        converterProvider.convertedValue,
                         style: TextStyle(color: primaryColor),
                       ),
-                    ),
-                    decoration: InputDecoration(
-                      suffixText: converterProvider.fromUnit.symbol,
-                      suffixStyle: TextStyle(color: primaryColor),
-                      enabledBorder: OutlineInputBorder(
-                        borderSide: BorderSide(
-                          color: primaryColor,
-                          width: 1.5,
+                      decoration: InputDecoration(
+                        isDense: true,
+                        suffixText: converterProvider.toUnit.symbol,
+                        suffixStyle: TextStyle(color: primaryColor),
+                        enabledBorder: OutlineInputBorder(
+                          borderSide: BorderSide(
+                            color: primaryColor,
+                            width: 1.5,
+                          ),
                         ),
                       ),
                     ),
-                  ),
+                  ],
                 ),
-                Align(
-                    alignment: Alignment.centerLeft,
-                    child: Text(
-                      "Converted To",
-                      style: TextStyle(
-                          fontWeight: FontWeight.w600,
-                          color: primaryColor,
-                          letterSpacing: 1),
-                    )),
-                SizedBox(height: 6.0),
-                Container(
-                  height: 77 * Get.height / 798,
-                  child: InputDecorator(
-                    child: Text(
-                      converterProvider.convertedValue,
-                      style: TextStyle(color: primaryColor),
-                    ),
-                    decoration: InputDecoration(
-                      suffixText: converterProvider.toUnit.symbol,
-                      suffixStyle: TextStyle(color: primaryColor),
-                      enabledBorder: OutlineInputBorder(
-                        borderSide: BorderSide(
-                          color: primaryColor,
-                          width: 1.5,
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
-              ],
-            ),
-          ),
-        )),
+              ),
+            )),
       );
     }
 
@@ -188,7 +190,7 @@ class UnitConverter extends StatelessWidget {
                   },
                   child: Icon(
                     Icons.swap_horiz,
-                    color: searchBarColor,
+                    color: Colors.white70,
                     size: 28.0,
                   ),
                 ),

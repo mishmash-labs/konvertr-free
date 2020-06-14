@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 
@@ -15,54 +14,52 @@ class CategoriesScreen extends StatefulWidget {
 
 class _CategoriesScreenState extends State<CategoriesScreen> {
   TextEditingController searchController = TextEditingController();
-  List<Category> value;
   FocusNode searchNode = FocusNode();
+  List<Category> value;
 
   @override
   Widget build(BuildContext context) {
     CategoriesProvider categoriesProvider = context.watch<CategoriesProvider>();
 
     Widget _buildTopSection() {
-      return Container(
-        height: 70 * Get.height / 798,
-        color: primaryColor,
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 15.0),
-          child: TextField(
-            focusNode: searchNode,
-            cursorColor: primaryColor,
-            controller: searchController,
-            onChanged: (val) {
-              categoriesProvider.searchCategories(val);
-            },
-            maxLines: 1,
-            decoration: InputDecoration(
-              hintText: "Search Categories",
-              hintStyle: TextStyle(color: primaryColor),
-              prefixIcon: Icon(
-                Icons.search,
-                color: primaryColor,
-              ),
-              suffixIcon: categoriesProvider.searchingCategory
-                  ? IconButton(
-                      icon: Icon(
-                        Icons.cancel,
-                        color: primaryColor,
-                      ),
-                      onPressed: () {
-                        categoriesProvider.searchCategories("");
-                        searchController.clear();
-                        categoriesProvider.cancelSearch();
-                        searchNode.unfocus();
-                      },
-                    )
-                  : null,
-              fillColor: Colors.white70,
-              filled: true,
-              border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(10.0),
-                  borderSide: BorderSide.none),
+      return Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 15.0, vertical: 2.0),
+        child: TextField(
+          focusNode: searchNode,
+          cursorColor: primaryColor,
+          controller: searchController,
+          onChanged: (val) {
+            categoriesProvider.searchCategories(val);
+          },
+          style: TextStyle(color: primaryColor),
+          maxLines: 1,
+          decoration: InputDecoration(
+            isDense: true,
+            hintText: "Search Categories",
+            hintStyle: TextStyle(color: primaryColor),
+            prefixIcon: Icon(
+              Icons.search,
+              color: primaryColor,
             ),
+            suffixIcon: categoriesProvider.searchingCategory
+                ? IconButton(
+                    icon: Icon(
+                      Icons.cancel,
+                      color: primaryColor,
+                    ),
+                    onPressed: () {
+                      categoriesProvider.searchCategories("");
+                      searchController.clear();
+                      categoriesProvider.cancelSearch();
+                      searchNode.unfocus();
+                    },
+                  )
+                : null,
+            fillColor: Colors.white54,
+            filled: true,
+            border: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(10.0),
+                borderSide: BorderSide.none),
           ),
         ),
       );
@@ -76,7 +73,7 @@ class _CategoriesScreenState extends State<CategoriesScreen> {
           "Konvertr",
           style: GoogleFonts.roboto(
               letterSpacing: 1.7,
-              color: searchBarColor,
+              color: Colors.white70,
               fontWeight: FontWeight.w400),
         ),
         elevation: 0.0,
@@ -101,12 +98,24 @@ class _CategoriesScreenState extends State<CategoriesScreen> {
 
     return Scaffold(
       appBar: _buildAppBar(),
-      backgroundColor: secondaryColor,
+      backgroundColor: primaryColor,
       body: Container(
         child: Column(
           children: [
             _buildTopSection(),
-            Expanded(child: _buildCategories()),
+            Expanded(
+                child: categoriesProvider.categories.isEmpty
+                    ? Center(
+                        child: Text(
+                          "No Categories",
+                          style: GoogleFonts.roboto(
+                            fontSize: 25.0,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.white70,
+                          ),
+                        ),
+                      )
+                    : _buildCategories()),
           ],
         ),
       ),
