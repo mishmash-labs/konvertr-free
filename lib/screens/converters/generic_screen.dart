@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 
 import '../../components/converter_numpad.dart';
 import '../../providers/converter_provider.dart';
-import '../../utils/theme.dart';
 import '../units_screen.dart';
 
 class UnitConverter extends StatelessWidget {
@@ -19,11 +17,11 @@ class UnitConverter extends StatelessWidget {
 
     AppBar _buildAppBar() {
       return AppBar(
-        backgroundColor: primaryColor,
+        backgroundColor: Theme.of(context).primaryColor,
         centerTitle: true,
         title: Text(
           categoryName,
-          style: GoogleFonts.roboto(
+          style: TextStyle(
               letterSpacing: 1.5,
               color: Colors.white70,
               fontWeight: FontWeight.w600),
@@ -50,20 +48,19 @@ class UnitConverter extends StatelessWidget {
         },
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Text(
               whichUnit,
-              style: GoogleFonts.roboto(color: Colors.white70),
+              style: TextStyle(color: Colors.white70),
             ),
-            SizedBox(height: 10 * Get.height / 798),
+            SizedBox(height: 0.01 * Get.height),
             Container(
               decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(4.0),
+                borderRadius: BorderRadius.circular(6.0),
                 color: Colors.white12,
               ),
-              height: 40 * Get.height / 798,
-              width: 0.4 * Get.width,
+              height: 0.05 * Get.height,
+              width: 0.41 * Get.width,
               child: Align(
                   alignment: Alignment.centerLeft,
                   child: Padding(
@@ -83,18 +80,18 @@ class UnitConverter extends StatelessWidget {
 
     Widget _buildTopBackground() {
       return Container(
-        height: 210 * Get.height / 798,
-        color: primaryColor,
+        height: 0.25 * Get.height,
+        color: Theme.of(context).primaryColor,
       );
     }
 
     Widget _buildTextFieldSection() {
       return Padding(
-        padding:
-            EdgeInsets.symmetric(vertical: Get.height * 0.03, horizontal: 16.0),
+        padding: EdgeInsets.symmetric(
+            vertical: Get.height * 0.035, horizontal: 16.0),
         child: Card(
             shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(8.0)),
+                borderRadius: BorderRadius.circular(10.0)),
             elevation: 3.0,
             child: Container(
               width: double.infinity,
@@ -106,10 +103,10 @@ class UnitConverter extends StatelessWidget {
                     Align(
                       alignment: Alignment.centerLeft,
                       child: Text(
-                        "Amount",
+                        "amount",
                         style: TextStyle(
                             fontWeight: FontWeight.bold,
-                            color: primaryColor,
+                            color: Theme.of(context).primaryColor,
                             letterSpacing: 1),
                       ),
                     ),
@@ -122,44 +119,47 @@ class UnitConverter extends StatelessWidget {
                               ? ""
                               : converterProvider.inputValueString,
                           maxLines: 1,
-                          style: TextStyle(color: primaryColor),
+                          style:
+                              TextStyle(color: Theme.of(context).primaryColor),
                         ),
                       ),
                       decoration: InputDecoration(
                         isDense: true,
                         suffixText: converterProvider.fromUnit.symbol,
-                        suffixStyle: TextStyle(color: primaryColor),
+                        suffixStyle:
+                            TextStyle(color: Theme.of(context).primaryColor),
                         enabledBorder: OutlineInputBorder(
                           borderSide: BorderSide(
-                            color: primaryColor,
+                            color: Theme.of(context).primaryColor,
                             width: 1.5,
                           ),
                         ),
                       ),
                     ),
-                    SizedBox(height: 6.0),
+                    SizedBox(height: 12.0),
                     Align(
                         alignment: Alignment.centerLeft,
                         child: Text(
-                          "Converted To",
+                          "converted to",
                           style: TextStyle(
                               fontWeight: FontWeight.w600,
-                              color: primaryColor,
+                              color: Theme.of(context).primaryColor,
                               letterSpacing: 1),
                         )),
                     SizedBox(height: 6.0),
                     InputDecorator(
                       child: Text(
                         converterProvider.convertedValue,
-                        style: TextStyle(color: primaryColor),
+                        style: TextStyle(color: Theme.of(context).primaryColor),
                       ),
                       decoration: InputDecoration(
                         isDense: true,
                         suffixText: converterProvider.toUnit.symbol,
-                        suffixStyle: TextStyle(color: primaryColor),
+                        suffixStyle:
+                            TextStyle(color: Theme.of(context).primaryColor),
                         enabledBorder: OutlineInputBorder(
                           borderSide: BorderSide(
-                            color: primaryColor,
+                            color: Theme.of(context).primaryColor,
                             width: 1.5,
                           ),
                         ),
@@ -178,7 +178,8 @@ class UnitConverter extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              _buildConverterSelection("From", converterProvider.fromUnit.name),
+              _buildConverterSelection(
+                  "from", converterProvider.fromUnit.name.toLowerCase()),
               Padding(
                 padding: const EdgeInsets.only(top: 25.0),
                 child: InkWell(
@@ -190,12 +191,13 @@ class UnitConverter extends StatelessWidget {
                   },
                   child: Icon(
                     Icons.swap_horiz,
-                    color: Colors.white70,
+                    color: Colors.white60,
                     size: 28.0,
                   ),
                 ),
               ),
-              _buildConverterSelection("To", converterProvider.toUnit.name)
+              _buildConverterSelection(
+                  "to", converterProvider.toUnit.name.toLowerCase())
             ],
           ),
           _buildTextFieldSection()

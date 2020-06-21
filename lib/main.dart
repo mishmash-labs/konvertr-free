@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 
 import 'providers/category_provider.dart';
@@ -24,10 +23,8 @@ class KonvertrHome extends StatelessWidget {
       child: GetMaterialApp(
         home: CategoriesScreen(),
         theme: ThemeData(
+          primaryColor: Color(0xff380e7f),
           accentColor: Colors.white70,
-          textTheme: GoogleFonts.robotoTextTheme(
-            Theme.of(context).textTheme,
-          ),
         ),
       ),
     );

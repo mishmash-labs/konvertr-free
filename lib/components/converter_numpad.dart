@@ -4,7 +4,6 @@ import 'package:get/get.dart';
 import 'package:provider/provider.dart';
 
 import '../providers/converter_provider.dart';
-import '../utils/theme.dart';
 
 class ConverterKeypad extends StatefulWidget {
   @override
@@ -15,6 +14,7 @@ class _ConverterKeypadState extends State<ConverterKeypad> {
   @override
   Widget build(BuildContext context) {
     ConverterProvider converterProvider = context.watch<ConverterProvider>();
+    double buttonHeight = 0.09375;
 
     Widget keypadButton({String value}) {
       return Expanded(
@@ -36,8 +36,7 @@ class _ConverterKeypadState extends State<ConverterKeypad> {
             }
           },
           child: SizedBox(
-            height: 72 * Get.height / 798,
-            width: double.infinity,
+            height: buttonHeight * Get.height,
             child: Center(
               child: Text(
                 value,
@@ -58,8 +57,7 @@ class _ConverterKeypadState extends State<ConverterKeypad> {
             converterProvider.updateInputString(temp);
           },
           child: SizedBox(
-            height: 72 * Get.height / 798,
-            width: double.infinity,
+            height: buttonHeight * Get.height,
             child: Center(
                 child: Icon(Icons.backspace, color: Colors.white70, size: 32)),
           ),
@@ -90,8 +88,7 @@ class _ConverterKeypadState extends State<ConverterKeypad> {
             }
           },
           child: SizedBox(
-            height: 72 * Get.height / 798,
-            width: double.infinity,
+            height: buttonHeight * Get.height,
             child: Center(
                 child:
                     Icon(Icons.content_copy, color: Colors.white70, size: 32)),
@@ -109,8 +106,7 @@ class _ConverterKeypadState extends State<ConverterKeypad> {
             converterProvider.updateFromUnit(tempTo);
           },
           child: SizedBox(
-            height: 72 * Get.height / 798,
-            width: double.infinity,
+            height: buttonHeight * Get.height,
             child: Center(
                 child: Icon(Icons.swap_horiz, color: Colors.white70, size: 32)),
           ),
@@ -134,8 +130,7 @@ class _ConverterKeypadState extends State<ConverterKeypad> {
             }
           },
           child: SizedBox(
-            height: 72 * Get.height / 798,
-            width: double.infinity,
+            height: buttonHeight * Get.height,
             child: Center(
               child: Text(
                 "+/-",
@@ -154,8 +149,7 @@ class _ConverterKeypadState extends State<ConverterKeypad> {
             converterProvider.updateInputString("");
           },
           child: SizedBox(
-              height: 72 * Get.height / 798,
-              width: double.infinity,
+              height: buttonHeight * Get.height,
               child: Center(
                 child: Text(
                   "C",
@@ -167,55 +161,47 @@ class _ConverterKeypadState extends State<ConverterKeypad> {
     }
 
     return Container(
-        color: primaryColor,
-        height: 288 * Get.height / 798,
+        color: Theme.of(context).primaryColor,
+        height: 0.375 * Get.height,
         child: Column(
           children: [
-            Container(
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: <Widget>[
-                  keypadButton(value: '7'),
-                  keypadButton(value: '8'),
-                  keypadButton(value: '9'),
-                  copyButton(),
-                ],
-              ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: <Widget>[
+                keypadButton(value: '7'),
+                keypadButton(value: '8'),
+                keypadButton(value: '9'),
+                copyButton(),
+              ],
             ),
-            Container(
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: <Widget>[
-                  keypadButton(value: '4'),
-                  keypadButton(value: '5'),
-                  keypadButton(value: '6'),
-                  swapButton(),
-                ],
-              ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: <Widget>[
+                keypadButton(value: '4'),
+                keypadButton(value: '5'),
+                keypadButton(value: '6'),
+                swapButton(),
+              ],
             ),
-            Container(
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: <Widget>[
-                  keypadButton(value: '1'),
-                  keypadButton(value: '2'),
-                  keypadButton(value: '3'),
-                  clearButton(),
-                ],
-              ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: <Widget>[
+                keypadButton(value: '1'),
+                keypadButton(value: '2'),
+                keypadButton(value: '3'),
+                clearButton(),
+              ],
             ),
-            Container(
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: <Widget>[
-                  keypadButton(value: '.'),
-                  keypadButton(value: '0'),
-                  converterProvider.categoryName == "Temperature"
-                      ? changeSymbolButton()
-                      : keypadButton(value: '00'),
-                  eraseButton(),
-                ],
-              ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: <Widget>[
+                keypadButton(value: '.'),
+                keypadButton(value: '0'),
+                converterProvider.categoryName == "Temperature"
+                    ? changeSymbolButton()
+                    : keypadButton(value: '00'),
+                eraseButton(),
+              ],
             ),
           ],
         ));

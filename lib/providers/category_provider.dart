@@ -7,80 +7,81 @@ import '../models/category.dart';
 import '../models/unit.dart';
 
 class CategoriesProvider extends ChangeNotifier {
+  CategoriesProvider(BuildContext context) {
+    loadCategories(context);
+  }
+
   List<Category> _allCategories = <Category>[];
   List<Category> _categories = <Category>[];
   bool _searchingCategory = false;
 
   List<Category> get categories => _categories;
-  bool get searchingCategory => _searchingCategory;
 
-  CategoriesProvider(BuildContext context) {
-    loadCategories(context);
-  }
+  bool get searchingCategory => _searchingCategory;
 
   IconData getIconForCategory(String categoryName) {
     switch (categoryName) {
-      case 'Angle':
+      case 'angle':
         return FontAwesome5Solid.drafting_compass;
         break;
-      case 'Area':
+      case 'area':
         return FontAwesome.area_chart;
         break;
-      case 'Electric Current':
+      case 'electric current':
         return FontAwesome5Solid.plug;
         break;
-      case 'Data Transfer':
+      case 'data transfer':
         return FontAwesome.download;
         break;
-      case 'Data':
+      case 'data':
         return FontAwesome.database;
         break;
-      case 'Energy':
+      case 'energy':
         return FontAwesome5Solid.bolt;
         break;
-      case 'Force':
+      case 'force':
         return Ionicons.md_rocket;
         break;
-      case 'Frequency':
+      case 'frequency':
         return MaterialCommunityIcons.radio_tower;
         break;
-      case 'Fuel Economy':
+      case 'fuel economy':
         return FontAwesome5Solid.gas_pump;
         break;
-      case 'Illumination':
+      case 'illumination':
         return FontAwesome5Solid.lightbulb;
         break;
-      case 'Length':
+      case 'length':
         return FontAwesome5Solid.ruler_combined;
         break;
-      case 'Luminance':
+      case 'luminance':
         return FontAwesome5Solid.sun;
         break;
-      case 'Mass':
+      case 'mass':
         return FontAwesome5Solid.weight;
         break;
-      case 'Pressure':
+      case 'pressure':
         return MaterialCommunityIcons.pipe;
         break;
-      case 'Sound':
+      case 'sound':
         return MaterialCommunityIcons.volume_high;
         break;
-      case 'Speed':
+      case 'speed':
         return Ionicons.ios_speedometer;
         break;
-      case 'Temperature':
+      case 'temperature':
         return FontAwesome5Solid.thermometer_full;
         break;
-      case 'Time':
+      case 'time':
         return FontAwesome5Solid.clock;
         break;
-      case 'Torque':
+      case 'torque':
         return FontAwesome5Solid.wrench;
         break;
-      case 'Typography':
+      case 'typography':
         return MaterialCommunityIcons.format_font;
         break;
-      case 'Volume':
+      case 'volume':
         return MaterialCommunityIcons.beaker;
         break;
       default:

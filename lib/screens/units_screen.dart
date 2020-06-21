@@ -1,11 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 import '../models/unit.dart';
 import '../providers/converter_provider.dart';
-import '../utils/theme.dart';
 
 class UnitsScreen extends StatefulWidget {
   const UnitsScreen(
@@ -29,13 +27,13 @@ class _UnitsScreenState extends State<UnitsScreen> {
       ..sort((a, b) => a.name.compareTo(b.name));
 
     Widget getListItem(Unit unit) {
-      if (unit.name == widget.currentUnit)
+      if (unit.name.toLowerCase() == widget.currentUnit.toLowerCase())
         color = Colors.red;
       else
         color = Colors.white70;
       return InkWell(
         onTap: () {
-          if (widget.whichUnit == "From")
+          if (widget.whichUnit == "from")
             widget.converterProvider.updateFromUnit(unit.name);
           else
             widget.converterProvider.updateToUnit(unit.name);
@@ -43,10 +41,19 @@ class _UnitsScreenState extends State<UnitsScreen> {
         },
         child: Padding(
           padding: EdgeInsets.symmetric(horizontal: 25.0, vertical: 10.0),
-          child: Text(
-            unit.name,
-            style: GoogleFonts.roboto(
-              fontSize: 25.0,
+          child: Text.rich(
+            TextSpan(text: unit.name.toLowerCase(), children: [
+              if (unit.symbol != "")
+                TextSpan(
+                  text: "  " + unit.symbol,
+                  style: TextStyle(
+                      fontSize: 18.0,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white24),
+                )
+            ]),
+            style: TextStyle(
+              fontSize: 24.0,
               fontWeight: FontWeight.bold,
               color: color,
             ),
@@ -56,9 +63,9 @@ class _UnitsScreenState extends State<UnitsScreen> {
     }
 
     return Scaffold(
-        backgroundColor: primaryColor,
+        backgroundColor: Theme.of(context).primaryColor,
         appBar: AppBar(
-          backgroundColor: primaryColor,
+          backgroundColor: Theme.of(context).primaryColor,
           elevation: 0.0,
           leading: IconButton(
             icon: Icon(Icons.arrow_back_ios, color: Colors.white70),

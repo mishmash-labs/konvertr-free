@@ -3,8 +3,18 @@ import 'package:flutter/material.dart';
 import '../models/unit.dart';
 
 class ConverterProvider extends ChangeNotifier {
-  ConverterProvider(this.units, this._categoryName) {
-    setDefaults();
+  ConverterProvider(
+    this.units,
+    this._categoryName,
+    String fromUnit,
+    String toUnit,
+  ) {
+    if (fromUnit == null)
+      setDefaults();
+    else {
+      updateFromUnit(fromUnit);
+      updateToUnit(toUnit);
+    }
   }
 
   final List<Unit> units;
@@ -29,13 +39,10 @@ class ConverterProvider extends ChangeNotifier {
   String get categoryName => _categoryName;
 
   String _format(double value) {
-    var _outputVal = value.toStringAsPrecision(12);
+    var _tempVal = value.toStringAsFixed(10);
+    var _outputVal = double.parse(_tempVal).toStringAsPrecision(10);
     if (_outputVal.contains('.') && _outputVal.endsWith('0')) {
-      var i = _outputVal.length - 1;
-      while (_outputVal[i] == '0') {
-        i -= 1;
-      }
-      _outputVal = _outputVal.substring(0, i + 1);
+      _outputVal = _outputVal.replaceAll(RegExp(r'0*$'), '');
     }
     if (_outputVal.endsWith('.')) {
       _outputVal = _outputVal.substring(0, _outputVal.length - 1);
@@ -105,16 +112,15 @@ class ConverterProvider extends ChangeNotifier {
     }
   }
 
-  Unit _getUnit(dynamic unitName) {
+  Unit _getUnit(String unitName) {
     return units.firstWhere(
       (Unit unit) {
-        return unit.name == unitName;
+        return unit.name.toLowerCase() == unitName.toLowerCase();
       },
-      orElse: null,
     );
   }
 
-  void updateFromUnit(dynamic unitName) {
+  void updateFromUnit(String unitName) {
     _fromUnit = _getUnit(unitName);
     notifyListeners();
     if (_inputValue != null) {
@@ -122,7 +128,7 @@ class ConverterProvider extends ChangeNotifier {
     }
   }
 
-  void updateToUnit(dynamic unitName) {
+  void updateToUnit(String unitName) {
     _toUnit = _getUnit(unitName);
     notifyListeners();
     if (_inputValue != null) {

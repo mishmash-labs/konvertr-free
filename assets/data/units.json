@@ -1,5 +1,5 @@
 {
-  "Angle": [
+  "angle": [
     {
       "name": "Degree",
       "symbol": "°",
@@ -13,7 +13,7 @@
     },
     {
       "name": "Grad",
-      "symbol": "ᵍ",
+      "symbol": "",
       "conversion": 1.111111111
     },
     {
@@ -72,7 +72,7 @@
       "conversion": 0.016666667
     }
   ],
-  "Area": [
+  "area": [
     {
       "name": "Square Meter",
       "symbol": "m²",
@@ -145,7 +145,7 @@
       "conversion": 0.0000098842
     }
   ],
-  "Electric Current": [
+  "electric current": [
     {
       "name": "Ampere",
       "symbol": "A",
@@ -156,6 +156,11 @@
       "name": "Kiloampere ",
       "symbol": "kA",
       "conversion": 0.001
+    },
+    {
+      "name": "Microampere",
+      "symbol": "μA",
+      "conversion": 1000000
     },
     {
       "name": "Milliampere",
@@ -178,75 +183,75 @@
       "conversion": 2997924536.8
     }
   ],
-  "Data Transfer": [
+  "data transfer": [
     {
-      "name": "Megabyte per second",
+      "name": "Megabyte Per Second",
       "symbol": "MB/s",
       "conversion": 1.0,
       "base_unit": true
     },
     {
-      "name": "Bit per second",
+      "name": "Bit Per Second",
       "symbol": "b/s",
       "conversion": 8000000
     },
     {
-      "name": "Kilobit per second",
+      "name": "Kilobit Per Second",
       "symbol": "Kb/s",
       "conversion": 8000
     },
     {
-      "name": "Kilobyte per second",
+      "name": "Kilobyte Per Second",
       "symbol": "KB/s",
       "conversion": 1000
     },
     {
-      "name": "Kibibit per second",
+      "name": "Kibibit Per Second",
       "symbol": "Kibit/s",
       "conversion": 7812.5
     },
     {
-      "name": "Megabit per second",
+      "name": "Megabit Per Second",
       "symbol": "Mb/s",
       "conversion": 8
     },
     {
-      "name": "Mebibit per second",
+      "name": "Mebibit Per Second",
       "symbol": "Mibit/s",
       "conversion": 7.62939
     },
     {
-      "name": "Gigabit per second",
+      "name": "Gigabit Per Second",
       "symbol": "Gb/s",
       "conversion": 0.008
     },
     {
-      "name": "Gigabyte per second",
+      "name": "Gigabyte Per Second",
       "symbol": "GB/s",
       "conversion": 0.001
     },
     {
-      "name": "Gibibit per second",
+      "name": "Gibibit Per Second",
       "symbol": "Gibit/s",
       "conversion": 0.00745058
     },
     {
-      "name": "Terabit per second",
+      "name": "Terabit Per Second",
       "symbol": "Tb/s",
       "conversion": 0.000008
     },
     {
-      "name": "Terabyte per second",
+      "name": "Terabyte Per Second",
       "symbol": "TB/s",
       "conversion": 0.000001
     },
     {
-      "name": "Tebibit per second",
+      "name": "Tebibit Per Second",
       "symbol": "Tibit/s",
       "conversion": 0.000007276
     }
   ],
-  "Data": [
+  "data": [
     {
       "name": "Megabyte",
       "symbol": "MB",
@@ -354,7 +359,7 @@
       "conversion": 0.00000000088818
     }
   ],
-  "Energy": [
+  "energy": [
     {
       "name": "Joule",
       "symbol": "J",
@@ -367,7 +372,7 @@
       "conversion": 0.001
     },
     {
-      "name": "Gram calorie",
+      "name": "Calorie",
       "symbol": "cal",
       "conversion": 0.239006
     },
@@ -377,12 +382,12 @@
       "conversion": 0.000239006
     },
     {
-      "name": "Watt hour",
+      "name": "Watt Hour",
       "symbol": "Wh",
       "conversion": 0.000277778
     },
     {
-      "name": "Kilowatt hour",
+      "name": "Kilowatt Hour",
       "symbol": "kW h",
       "conversion": 0.00000027778
     },
@@ -397,17 +402,17 @@
       "conversion": 0.000947817
     },
     {
-      "name": "US therm",
+      "name": "US Therm",
       "symbol": "thm",
       "conversion": 0.0000000094804
     },
     {
-      "name": "Foot-pound",
+      "name": "Foot-Pound",
       "symbol": "ft⋅lb",
       "conversion": 0.737562
     }
   ],
-  "Force": [
+  "force": [
     {
       "name": "Newton",
       "symbol": "N",
@@ -575,7 +580,7 @@
       "conversion": 0.101971621
     }
   ],
-  "Frequency": [
+  "frequency": [
     {
       "name": "Hertz",
       "symbol": "Hz",
@@ -598,25 +603,25 @@
       "conversion": 0.000000001
     }
   ],
-  "Fuel Economy": [
+  "fuel economy": [
     {
-      "name": "Kilometre per litre",
+      "name": "Kilometre Per Litre",
       "symbol": "km/l",
       "conversion": 1.0,
       "base_unit": true
     },
     {
-      "name": "Miles per US gallon",
+      "name": "Miles Per US Gallon",
       "symbol": "mpg-US",
       "conversion": 2.35215
     },
     {
-      "name": "Miles per gallon",
+      "name": "Miles Per Gallon",
       "symbol": "mpg",
       "conversion": 2.82481
     }
   ],
-  "Illumination": [
+  "illumination": [
     {
       "name": "Lux",
       "symbol": "lx",
@@ -674,7 +679,7 @@
       "conversion": 0.09290304
     }
   ],
-  "Length": [
+  "length": [
     {
       "name": "Metre",
       "symbol": "m",
@@ -724,7 +729,7 @@
     {
       "name": "Karam",
       "symbol": "",
-      "conversion": 0.59651636363
+      "conversion": 0.59651634454784
     },
     {
       "name": "Inch",
@@ -737,7 +742,7 @@
       "conversion": 0.000539957
     }
   ],
-  "Luminance": [
+  "luminance": [
     {
       "name": "Nit",
       "symbol": "nt",
@@ -830,7 +835,7 @@
       "conversion": 3141.59265359
     }
   ],
-  "Mass": [
+  "mass": [
     {
       "name": "Kilogram",
       "symbol": "kg",
@@ -858,12 +863,12 @@
       "conversion": 1000000000
     },
     {
-      "name": "Imperial ton",
+      "name": "Imperial Ton",
       "symbol": "y",
       "conversion": 0.000984207
     },
     {
-      "name": "US ton",
+      "name": "US Ton",
       "symbol": "t",
       "conversion": 0.00110231
     },
@@ -883,7 +888,7 @@
       "conversion": 35.274
     }
   ],
-  "Pressure": [
+  "pressure": [
     {
       "name": "Pascal",
       "symbol": "s",
@@ -896,7 +901,7 @@
       "conversion": 0.00001
     },
     {
-      "name": "Pound per square inch",
+      "name": "Pound Per Square Inch",
       "symbol": "psi",
       "conversion": 0.000145038
     },
@@ -911,7 +916,7 @@
       "conversion": 0.00750062
     }
   ],
-  "Sound": [
+  "sound": [
     {
       "name": "Decibel",
       "symbol": "dB",
@@ -929,25 +934,25 @@
       "conversion": 0.115127792
     }
   ],
-  "Speed": [
+  "speed": [
     {
-      "name": "Kilometres per hour",
+      "name": "Kilometres Per Hour",
       "symbol": "km/h",
       "conversion": 1.0,
       "base_unit": true
     },
     {
-      "name": "Miles per hour",
+      "name": "Miles Per Hour",
       "symbol": "mph",
       "conversion": 0.621371
     },
     {
-      "name": "Foot per second",
+      "name": "Foot Per Second",
       "symbol": "ft/s",
       "conversion": 0.911344
     },
     {
-      "name": "Metres per second",
+      "name": "Metres Per Second",
       "symbol": "m/s",
       "conversion": 0.277778
     },
@@ -957,7 +962,7 @@
       "conversion": 0.539957
     }
   ],
-  "Temperature": [
+  "temperature": [
     {
       "name": "Celsius",
       "symbol": "°C",
@@ -975,7 +980,7 @@
       "conversion": 1.0
     }
   ],
-  "Time": [
+  "time": [
     {
       "name": "Minute",
       "symbol": "min",
@@ -983,17 +988,17 @@
       "base_unit": true
     },
     {
-      "name": "Nanosecond",
+      "name": "NanoSecond",
       "symbol": "ns",
       "conversion": 60000000000
     },
     {
-      "name": "Microsecond",
+      "name": "MicroSecond",
       "symbol": "μs",
       "conversion": 60000000
     },
     {
-      "name": "Millisecond",
+      "name": "MilliSecond",
       "symbol": "ms",
       "conversion": 60000
     },
@@ -1038,7 +1043,7 @@
       "conversion": 0.000000019026
     }
   ],
-  "Torque": [
+  "torque": [
     {
       "name": "Newton Meter",
       "symbol": "N m",
@@ -1126,7 +1131,7 @@
       "conversion": 8.850745454
     }
   ],
-  "Typography": [
+  "typography": [
     {
       "name": "Millimeter",
       "symbol": "mm",
@@ -1189,7 +1194,7 @@
       "conversion": 2.845275591
     }
   ],
-  "Volume": [
+  "volume": [
     {
       "name": "Cubic Meter",
       "symbol": "m³",
@@ -1197,93 +1202,93 @@
       "base_unit": true
     },
     {
-      "name": "US liquid gallon",
-      "symbol": "m³",
+      "name": "US Liquid Gallon",
+      "symbol": "gal (US)",
       "conversion": 264.172
     },
     {
-      "name": "US liquid quart",
-      "symbol": "m³",
+      "name": "US Liquid Quart",
+      "symbol": "qt (US)",
       "conversion": 1056.69
     },
     {
-      "name": "UD liquid pint",
-      "symbol": "m³",
+      "name": "US Liquid Pint",
+      "symbol": "pt (US)",
       "conversion": 2113.38
     },
     {
-      "name": "US legal cup",
-      "symbol": "m³",
+      "name": "US Legal Cup",
+      "symbol": "Cup (US)",
       "conversion": 4166.67
     },
     {
-      "name": "Fluid ounces",
-      "symbol": "m³",
+      "name": "US Fluid Ounces",
+      "symbol": "fl oz (US)",
       "conversion": 33814
     },
     {
-      "name": "US tablespoon",
-      "symbol": "m³",
+      "name": "US Tablespoon",
+      "symbol": "tbsp (US)",
       "conversion": 67628
     },
     {
-      "name": "US teaspoon",
-      "symbol": "m³",
+      "name": "US Teaspoon",
+      "symbol": "tsp (US)",
       "conversion": 202884
     },
     {
       "name": "Litres",
-      "symbol": "m³",
+      "symbol": "L",
       "conversion": 1000
     },
     {
       "name": "Millilitres",
-      "symbol": "m³",
+      "symbol": "mL",
       "conversion": 1e+6
     },
     {
-      "name": "Gallons",
-      "symbol": "m³",
+      "name": "Imperial Gallons",
+      "symbol": "gal",
       "conversion": 219.969
     },
     {
-      "name": "Imperial quart",
-      "symbol": "m³",
+      "name": "Imperial Quart",
+      "symbol": "qt",
       "conversion": 879.877
     },
     {
-      "name": "Imperial pint",
-      "symbol": "m³",
+      "name": "Imperial Pint",
+      "symbol": "pt",
       "conversion": 1759.75
     },
     {
-      "name": "Imperial cup",
-      "symbol": "m³",
+      "name": "Imperial Cup",
+      "symbol": "cup",
       "conversion": 3519.51
     },
     {
-      "name": "Fluid ounces",
-      "symbol": "m³",
+      "name": "Fluid Ounces",
+      "symbol": "fl oz",
       "conversion": 35195.1
     },
     {
-      "name": "Imperial tablespoon",
-      "symbol": "m³",
+      "name": "Imperial Tablespoon",
+      "symbol": "tbsp",
       "conversion": 56312.1
     },
     {
-      "name": "Imperial teaspoon",
-      "symbol": "m³",
+      "name": "Imperial Teaspoon",
+      "symbol": "tsp",
       "conversion": 168936
     },
     {
-      "name": "Cubic foot",
-      "symbol": "m³",
+      "name": "Cubic Foot",
+      "symbol": "ft³",
       "conversion": 35.3147
     },
     {
-      "name": "Cubic inch",
-      "symbol": "m³",
+      "name": "Cubic Inch",
+      "symbol": "in³",
       "conversion": 61023.7
     }
   ]

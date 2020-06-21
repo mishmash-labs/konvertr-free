@@ -1,9 +1,4 @@
 class Unit {
-  String name;
-  String symbol;
-  double conversion;
-  bool baseUnit;
-
   Unit({
     this.name,
     this.symbol,
@@ -17,6 +12,11 @@ class Unit {
         conversion: json["conversion"].toDouble(),
         baseUnit: json["base_unit"] == null ? null : json["base_unit"],
       );
+
+  bool baseUnit;
+  double conversion;
+  String name;
+  String symbol;
 
   Map<String, dynamic> toJson() => {
         "name": name,

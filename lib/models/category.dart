@@ -10,7 +10,7 @@ class Category {
   })  : assert(name != null),
         assert(units != null);
 
+  final IconData icon;
   final String name;
   final List<Unit> units;
-  final IconData icon;
 }

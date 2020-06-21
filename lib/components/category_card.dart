@@ -1,12 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 
 import '../models/category.dart';
-import '../providers/converter_provider.dart';
-import '../screens/converters/generic_screen.dart';
-import '../utils/theme.dart';
 
 class CategoryCard extends StatelessWidget {
   const CategoryCard({Key key, this.convCategory}) : super(key: key);
@@ -15,41 +10,33 @@ class CategoryCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: () {
-        FocusScope.of(context).unfocus();
-        Get.to(
-          ChangeNotifierProvider(
-              create: (context) =>
-                  ConverterProvider(convCategory.units, convCategory.name),
-              child: UnitConverter(categoryName: convCategory.name)),
-        );
-      },
-      child: Card(
-        color: primaryColor,
-        elevation: 0.0,
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(10),
-        ),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
-          children: [
-            Icon(
-              convCategory.icon,
-              color: quaternaryColor,
-              size: 48 * Get.height / 798,
+    return Card(
+      color: Theme.of(context).primaryColor,
+      elevation: 0.0,
+      shape: RoundedRectangleBorder(
+        side: BorderSide(
+            color: Colors.white10, width: 1.0, style: BorderStyle.solid),
+        borderRadius: BorderRadius.circular(10),
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        children: [
+          Icon(
+            convCategory.icon,
+            color: Colors.white38,
+            size: 0.05625 * Get.height,
+          ),
+          Text(
+            convCategory.name,
+            overflow: TextOverflow.ellipsis,
+            style: TextStyle(
+              fontSize: 16.0,
+              fontWeight: FontWeight.w400,
+              color: Colors.white60,
             ),
-            Text(
-              convCategory.name,
-              overflow: TextOverflow.ellipsis,
-              style: GoogleFonts.roboto(
-                  fontSize: 16.0,
-                  fontWeight: FontWeight.w400,
-                  color: quaternaryColor),
-            )
-          ],
-        ),
+          )
+        ],
       ),
     );
   }
