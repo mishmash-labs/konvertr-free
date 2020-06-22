@@ -63,9 +63,9 @@ class _UnitsScreenState extends State<UnitsScreen> {
     }
 
     return Scaffold(
-        backgroundColor: Theme.of(context).primaryColor,
+        backgroundColor: Get.theme.primaryColor,
         appBar: AppBar(
-          backgroundColor: Theme.of(context).primaryColor,
+          backgroundColor: Get.theme.primaryColor,
           elevation: 0.0,
           leading: IconButton(
             icon: Icon(Icons.arrow_back_ios, color: Colors.white70),

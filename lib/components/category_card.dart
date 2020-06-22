@@ -11,11 +11,10 @@ class CategoryCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-      color: Theme.of(context).primaryColor,
+      color: Get.theme.primaryColor,
       elevation: 0.0,
       shape: RoundedRectangleBorder(
-        side: BorderSide(
-            color: Colors.white10, width: 1.0, style: BorderStyle.solid),
+        side: BorderSide(color: Colors.white10),
         borderRadius: BorderRadius.circular(10),
       ),
       child: Column(

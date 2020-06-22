@@ -1,5 +1,6 @@
 import 'package:animations/animations.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:provider/provider.dart';
 
 import '../components/category_card.dart';
@@ -20,47 +21,47 @@ class _CategoriesScreenState extends State<CategoriesScreen> {
 
   @override
   Widget build(BuildContext context) {
-    CategoriesProvider categoriesProvider = context.watch<CategoriesProvider>();
-
     Widget _buildTopSection() {
       return Padding(
         padding: const EdgeInsets.symmetric(horizontal: 15.0, vertical: 2.0),
-        child: TextField(
-          focusNode: searchNode,
-          cursorColor: Theme.of(context).primaryColor,
-          controller: searchController,
-          onChanged: (val) {
-            categoriesProvider.searchCategories(val);
-          },
-          style: TextStyle(color: Theme.of(context).primaryColor),
-          maxLines: 1,
-          decoration: InputDecoration(
-            isDense: true,
-            hintText: "search categories",
-            hintStyle: TextStyle(color: Theme.of(context).primaryColor),
-            prefixIcon: Icon(
-              Icons.search,
-              color: Theme.of(context).primaryColor,
+        child: Consumer<CategoriesProvider>(
+          builder: (_, cat, __) => TextField(
+            focusNode: searchNode,
+            cursorColor: Get.theme.primaryColor,
+            controller: searchController,
+            onChanged: (val) {
+              context.read<CategoriesProvider>().searchCategories(val);
+            },
+            style: TextStyle(color: Get.theme.primaryColor),
+            maxLines: 1,
+            decoration: InputDecoration(
+              isDense: true,
+              hintText: "search categories",
+              hintStyle: TextStyle(color: Get.theme.primaryColor),
+              prefixIcon: Icon(
+                Icons.search,
+                color: Get.theme.primaryColor,
+              ),
+              suffixIcon: cat.searchingCategory
+                  ? IconButton(
+                      icon: Icon(
+                        Icons.cancel,
+                        color: Get.theme.primaryColor,
+                      ),
+                      onPressed: () {
+                        context.read<CategoriesProvider>().searchCategories("");
+                        searchController.clear();
+                        context.read<CategoriesProvider>().cancelSearch();
+                        searchNode.unfocus();
+                      },
+                    )
+                  : null,
+              fillColor: Colors.white54,
+              filled: true,
+              border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(10.0),
+                  borderSide: BorderSide.none),
             ),
-            suffixIcon: categoriesProvider.searchingCategory
-                ? IconButton(
-                    icon: Icon(
-                      Icons.cancel,
-                      color: Theme.of(context).primaryColor,
-                    ),
-                    onPressed: () {
-                      categoriesProvider.searchCategories("");
-                      searchController.clear();
-                      categoriesProvider.cancelSearch();
-                      searchNode.unfocus();
-                    },
-                  )
-                : null,
-            fillColor: Colors.white54,
-            filled: true,
-            border: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(10.0),
-                borderSide: BorderSide.none),
           ),
         ),
       );
@@ -68,7 +69,7 @@ class _CategoriesScreenState extends State<CategoriesScreen> {
 
     AppBar _buildAppBar() {
       return AppBar(
-        backgroundColor: Theme.of(context).primaryColor,
+        backgroundColor: Get.theme.primaryColor,
         centerTitle: true,
         title: Text(
           "konvertr",
@@ -82,54 +83,57 @@ class _CategoriesScreenState extends State<CategoriesScreen> {
     }
 
     Widget _buildCategories() {
-      return GridView.count(
-        shrinkWrap: true,
-        crossAxisCount: 3,
-        childAspectRatio: 1,
-        children: categoriesProvider.categories.map((Category cats) {
-          return Padding(
-            padding: const EdgeInsets.all(2.0),
-            child: OpenContainer(
-                closedColor: Theme.of(context).primaryColor,
-                closedElevation: 0.0,
-                closedBuilder: (context, action) {
-                  return CategoryCard(
-                    convCategory: cats,
-                  );
-                },
-                openBuilder: (context, action) {
-                  FocusScope.of(context).unfocus();
-
-                  return ChangeNotifierProvider(
-                      create: (context) =>
-                          ConverterProvider(cats.units, cats.name, null, null),
-                      child: UnitConverter(categoryName: cats.name));
-                }),
-          );
-        }).toList(),
+      return Consumer<CategoriesProvider>(
+        builder: (_, cats, __) => GridView.count(
+          shrinkWrap: true,
+          crossAxisCount: 3,
+          childAspectRatio: 1,
+          children: cats.categories.map((Category cats) {
+            return Padding(
+              padding: const EdgeInsets.all(2.0),
+              child: OpenContainer(
+                  closedColor: Get.theme.primaryColor,
+                  closedElevation: 0.0,
+                  closedBuilder: (context, action) {
+                    return CategoryCard(
+                      convCategory: cats,
+                    );
+                  },
+                  openBuilder: (context, action) {
+                    FocusScope.of(context).unfocus();
+                    return ChangeNotifierProvider(
+                        create: (context) => ConverterProvider(
+                            cats.units, cats.name, null, null),
+                        child: UnitConverter(categoryName: cats.name));
+                  }),
+            );
+          }).toList(),
+        ),
       );
     }
 
     return Scaffold(
       appBar: _buildAppBar(),
-      backgroundColor: Theme.of(context).primaryColor,
+      backgroundColor: Get.theme.primaryColor,
       body: Container(
         child: Column(
           children: [
             _buildTopSection(),
-            Expanded(
-              child: categoriesProvider.categories.isEmpty
-                  ? Center(
-                      child: Text(
-                        "no categories",
-                        style: TextStyle(
-                          fontSize: 25.0,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.white70,
+            Consumer<CategoriesProvider>(
+              builder: (_, cats, __) => Expanded(
+                child: cats.categories.isEmpty
+                    ? Center(
+                        child: Text(
+                          "no categories",
+                          style: TextStyle(
+                            fontSize: 25.0,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.white70,
+                          ),
                         ),
-                      ),
-                    )
-                  : _buildCategories(),
+                      )
+                    : _buildCategories(),
+              ),
             ),
           ],
         ),

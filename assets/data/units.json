@@ -1,1293 +1,1293 @@
 {
   "angle": [
     {
-      "name": "Degree",
+      "name": "degree",
       "symbol": "°",
       "conversion": 1.0,
       "base_unit": true
     },
     {
-      "name": "Radian",
+      "name": "radian",
       "symbol": "rad",
       "conversion": 0.017453293
     },
     {
-      "name": "Grad",
+      "name": "rad",
       "symbol": "",
       "conversion": 1.111111111
     },
     {
-      "name": "Gon",
+      "name": "gon",
       "symbol": "gon",
       "conversion": 1.111111111
     },
     {
-      "name": "Minute",
+      "name": "minute",
       "symbol": "'",
       "conversion": 60
     },
     {
-      "name": "Second",
+      "name": "second",
       "symbol": "\"",
       "conversion": 3600
     },
     {
-      "name": "Sign",
+      "name": "sign",
       "symbol": "",
       "conversion": 0.033333333
     },
     {
-      "name": "Mil",
+      "name": "mil",
       "symbol": "",
       "conversion": 17.777777778
     },
     {
-      "name": "Revolution",
+      "name": "revolution",
       "symbol": "r",
       "conversion": 0.002777778
     },
     {
-      "name": "Circle",
+      "name": "circle",
       "symbol": "",
       "conversion": 0.002777778
     },
     {
-      "name": "Turn",
+      "name": "turn",
       "symbol": "",
       "conversion": 0.002777778
     },
     {
-      "name": "Quadrant",
+      "name": "quadrant",
       "symbol": "",
       "conversion": 0.011111111
     },
     {
-      "name": "Right Angle",
+      "name": "right angle",
       "symbol": "",
       "conversion": 0.011111111
     },
     {
-      "name": "Sextant",
+      "name": "sextant",
       "symbol": "",
       "conversion": 0.016666667
     }
   ],
   "area": [
     {
-      "name": "Square Meter",
+      "name": "square meter",
       "symbol": "m²",
       "conversion": 1.0,
       "base_unit": true
     },
     {
-      "name": "Square Kilometer",
+      "name": "square kilometer",
       "symbol": "km²",
       "conversion": 0.000001
     },
     {
-      "name": "Square Mile",
+      "name": "square mile",
       "symbol": "mi²",
       "conversion": 0.0000003861
     },
     {
-      "name": "Square Yard",
+      "name": "square yard",
       "symbol": "yd²",
       "conversion": 1.19599
     },
     {
-      "name": "Square Foot",
+      "name": "square foot",
       "symbol": "ft²",
       "conversion": 10.7639
     },
     {
-      "name": "Square Inch",
+      "name": "square inch",
       "symbol": "in²",
       "conversion": 1550
     },
     {
-      "name": "Hectare",
+      "name": "hectare",
       "symbol": "ha",
       "conversion": 0.0001
     },
     {
-      "name": "Acre",
+      "name": "acre",
       "symbol": "ac",
       "conversion": 0.000247105
     },
     {
-      "name": "Kanal",
+      "name": "kanal",
       "symbol": "",
       "conversion": 0.00197684
     },
     {
-      "name": "Marla",
+      "name": "marla",
       "symbol": "",
       "conversion": 0.0395368
     },
     {
-      "name": "Small Marla",
+      "name": "small marla",
       "symbol": "",
       "conversion": 0.04783956523
     },
     {
-      "name": "Bigha",
+      "name": "bigha",
       "symbol": "",
       "conversion": 0.00049421
     },
     {
-      "name": "Kila",
+      "name": "kila",
       "symbol": "",
       "conversion": 0.000247105
     },
     {
-      "name": "Murabba",
+      "name": "murabba",
       "symbol": "",
       "conversion": 0.0000098842
     }
   ],
   "electric current": [
     {
-      "name": "Ampere",
+      "name": "ampere",
       "symbol": "A",
       "conversion": 1.0,
       "base_unit": true
     },
     {
-      "name": "Kiloampere ",
+      "name": "kiloampere ",
       "symbol": "kA",
       "conversion": 0.001
     },
     {
-      "name": "Microampere",
+      "name": "microampere",
       "symbol": "μA",
       "conversion": 1000000
     },
     {
-      "name": "Milliampere",
+      "name": "milliampere",
       "symbol": "mA",
       "conversion": 1000
     },
     {
-      "name": "Biot",
+      "name": "biot",
       "symbol": "Bi",
       "conversion": 0.1
     },
     {
-      "name": "Abampere",
+      "name": "abampere",
       "symbol": "abA",
       "conversion": 0.1
     },
     {
-      "name": "Statampere",
+      "name": "statampere",
       "symbol": "stA",
       "conversion": 2997924536.8
     }
   ],
   "data transfer": [
     {
-      "name": "Megabyte Per Second",
+      "name": "megabyte per second",
       "symbol": "MB/s",
       "conversion": 1.0,
       "base_unit": true
     },
     {
-      "name": "Bit Per Second",
+      "name": "bit per second",
       "symbol": "b/s",
       "conversion": 8000000
     },
     {
-      "name": "Kilobit Per Second",
+      "name": "kilobit per second",
       "symbol": "Kb/s",
       "conversion": 8000
     },
     {
-      "name": "Kilobyte Per Second",
+      "name": "kilobyte per second",
       "symbol": "KB/s",
       "conversion": 1000
     },
     {
-      "name": "Kibibit Per Second",
+      "name": "kibibit per second",
       "symbol": "Kibit/s",
       "conversion": 7812.5
     },
     {
-      "name": "Megabit Per Second",
+      "name": "megabit per second",
       "symbol": "Mb/s",
       "conversion": 8
     },
     {
-      "name": "Mebibit Per Second",
+      "name": "mebibit per second",
       "symbol": "Mibit/s",
       "conversion": 7.62939
     },
     {
-      "name": "Gigabit Per Second",
+      "name": "gigabit per second",
       "symbol": "Gb/s",
       "conversion": 0.008
     },
     {
-      "name": "Gigabyte Per Second",
+      "name": "gigabyte per second",
       "symbol": "GB/s",
       "conversion": 0.001
     },
     {
-      "name": "Gibibit Per Second",
+      "name": "gibibit per second",
       "symbol": "Gibit/s",
       "conversion": 0.00745058
     },
     {
-      "name": "Terabit Per Second",
+      "name": "terabit per second",
       "symbol": "Tb/s",
       "conversion": 0.000008
     },
     {
-      "name": "Terabyte Per Second",
+      "name": "terabyte per second",
       "symbol": "TB/s",
       "conversion": 0.000001
     },
     {
-      "name": "Tebibit Per Second",
+      "name": "tebibit per second",
       "symbol": "Tibit/s",
       "conversion": 0.000007276
     }
   ],
   "data": [
     {
-      "name": "Megabyte",
+      "name": "megabyte",
       "symbol": "MB",
       "conversion": 1.0,
       "base_unit": true
     },
     {
-      "name": "Kilobit",
+      "name": "kilobit",
       "symbol": "Kb",
       "conversion": 8000
     },
     {
-      "name": "Kibibit",
+      "name": "kibibit",
       "symbol": "Kibit",
       "conversion": 7812.5
     },
     {
-      "name": "Megabit",
+      "name": "megabit",
       "symbol": "Mb",
       "conversion": 8
     },
     {
-      "name": "Mebibit",
+      "name": "mebibit",
       "symbol": "Mibit",
       "conversion": 7.62939
     },
     {
-      "name": "Gigabit",
+      "name": "gigabit",
       "symbol": "Gb",
       "conversion": 0.008
     },
     {
-      "name": "Gibibit",
+      "name": "gibibit",
       "symbol": "Gibit",
       "conversion": 0.00745058
     },
     {
-      "name": "Terabit",
+      "name": "terabit",
       "symbol": "Tb",
       "conversion": 0.000008
     },
     {
-      "name": "Tebibit",
+      "name": "tebibit",
       "symbol": "Tibit",
       "conversion": 0.000007276
     },
     {
-      "name": "Petabit",
+      "name": "petabit",
       "symbol": "Pb",
       "conversion": 0.000000008
     },
     {
-      "name": "Pebibit",
+      "name": "pebibit",
       "symbol": "Pibit",
       "conversion": 0.0000000071054
     },
     {
-      "name": "Byte",
+      "name": "byte",
       "symbol": "B",
       "conversion": 1000000
     },
     {
-      "name": "Kilobyte",
+      "name": "kilobyte",
       "symbol": "KB",
       "conversion": 1000
     },
     {
-      "name": "Kibibyte",
+      "name": "kibibyte",
       "symbol": "KiB",
       "conversion": 976.563
     },
     {
-      "name": "Mebibyte",
+      "name": "mebibyte",
       "symbol": "MiB",
       "conversion": 0.953674
     },
     {
-      "name": "Gigabyte",
+      "name": "gigabyte",
       "symbol": "GB",
       "conversion": 0.001
     },
     {
-      "name": "Gibibyte",
+      "name": "gibibyte",
       "symbol": "GiB",
       "conversion": 0.000931323
     },
     {
-      "name": "Terabyte",
+      "name": "terabyte",
       "symbol": "TB",
       "conversion": 0.000001
     },
     {
-      "name": "Tebibyte",
+      "name": "tebibyte",
       "symbol": "TiB",
       "conversion": 0.00000090949
     },
     {
-      "name": "Petabyte",
+      "name": "petabyte",
       "symbol": "PB",
       "conversion": 0.000000001
     },
     {
-      "name": "Pebibyte",
+      "name": "pebibyte",
       "symbol": "PiB",
       "conversion": 0.00000000088818
     }
   ],
   "energy": [
     {
-      "name": "Joule",
+      "name": "joule",
       "symbol": "J",
       "conversion": 1.0,
       "base_unit": true
     },
     {
-      "name": "Kilojoule",
+      "name": "kilojoule",
       "symbol": "kJ",
       "conversion": 0.001
     },
     {
-      "name": "Calorie",
+      "name": "calorie",
       "symbol": "cal",
       "conversion": 0.239006
     },
     {
-      "name": "Kilocalorie",
+      "name": "kilocalorie",
       "symbol": "kcal",
       "conversion": 0.000239006
     },
     {
-      "name": "Watt Hour",
+      "name": "watt hour",
       "symbol": "Wh",
       "conversion": 0.000277778
     },
     {
-      "name": "Kilowatt Hour",
+      "name": "kilowatt hour",
       "symbol": "kW h",
       "conversion": 0.00000027778
     },
     {
-      "name": "Electronvolt",
+      "name": "electronvolt",
       "symbol": "eV",
       "conversion": 6242000000000000000
     },
     {
-      "name": "British Thermal Unit",
+      "name": "british thermal unit",
       "symbol": "Btu",
       "conversion": 0.000947817
     },
     {
-      "name": "US Therm",
+      "name": "us therm",
       "symbol": "thm",
       "conversion": 0.0000000094804
     },
     {
-      "name": "Foot-Pound",
+      "name": "foot-pound",
       "symbol": "ft⋅lb",
       "conversion": 0.737562
     }
   ],
   "force": [
     {
-      "name": "Newton",
+      "name": "newton",
       "symbol": "N",
       "conversion": 1.0,
       "base_unit": true
     },
     {
-      "name": "Exanewton",
+      "name": "exanewton",
       "symbol": "EN",
       "conversion": 1e-18
     },
     {
-      "name": "Petanewton",
+      "name": "petanewton",
       "symbol": "PT",
       "conversion": 1e-15
     },
     {
-      "name": "Teranewton",
+      "name": "teranewton",
       "symbol": "TN",
       "conversion": 1e-12
     },
     {
-      "name": "Giganewton",
+      "name": "giganewton",
       "symbol": "GN",
       "conversion": 0.000000001
     },
     {
-      "name": "Meganewtown",
+      "name": "meganewtown",
       "symbol": "MN",
       "conversion": 0.000001
     },
     {
-      "name": "Kilonewton",
+      "name": "kilonewton",
       "symbol": "kN",
       "conversion": 0.001
     },
     {
-      "name": "Hectonewton",
+      "name": "hectonewton",
       "symbol": "hN",
       "conversion": 0.01
     },
     {
-      "name": "Dekanewton",
+      "name": "dekanewton",
       "symbol": "daN",
       "conversion": 0.1
     },
     {
-      "name": "Decinewton",
+      "name": "decinewton",
       "symbol": "dN",
       "conversion": 10
     },
     {
-      "name": "Centinewton",
+      "name": "centinewton",
       "symbol": "cN",
       "conversion": 100
     },
     {
-      "name": "Millinewton",
+      "name": "millinewton",
       "symbol": "mN",
       "conversion": 1000
     },
     {
-      "name": "Micronewton",
+      "name": "micronewton",
       "symbol": "uN",
       "conversion": 1000000
     },
     {
-      "name": "Nanonewton",
+      "name": "nanonewton",
       "symbol": "nN",
       "conversion": 1000000000
     },
     {
-      "name": "Piconewton",
+      "name": "piconewton",
       "symbol": "pN",
       "conversion": 1e+12
     },
     {
-      "name": "Femtonewton",
+      "name": "femtonewton",
       "symbol": "fN",
       "conversion": 1e+15
     },
     {
-      "name": "Attonewton",
+      "name": "attonewton",
       "symbol": "aN",
       "conversion": 1e+18
     },
     {
-      "name": "Dyne",
+      "name": "dyne",
       "symbol": "dyn",
       "conversion": 100000
     },
     {
-      "name": "Joule/Meter",
+      "name": "joule/meter",
       "symbol": "J/m",
       "conversion": 1
     },
     {
-      "name": "Joule/Centimeter",
+      "name": "joule/centimeter",
       "symbol": "J/cm",
       "conversion": 100
     },
     {
-      "name": "Gram-Force",
+      "name": "gram-force",
       "symbol": "gF",
       "conversion": 101.971621298
     },
     {
-      "name": "Kilogram-Force",
+      "name": "kilogram-force",
       "symbol": "kgf",
       "conversion": 0.101971621
     },
     {
-      "name": "Ton-Force (Short)",
+      "name": "ton-force (short)",
       "symbol": "tonf (US)",
       "conversion": 0.000112404
     },
     {
-      "name": "Ton-Force (Long)",
+      "name": "ton-force (long)",
       "symbol": "tonf (UK)",
       "conversion": 0.000100361
     },
     {
-      "name": "Ton-Force (Metric)",
+      "name": "ton-force (metric)",
       "symbol": "tf",
       "conversion": 0.000101972
     },
     {
-      "name": "Kip-Force",
+      "name": "kip-force",
       "symbol": "kipf",
       "conversion": 0.000224809
     },
     {
-      "name": "Kilopound-Force",
+      "name": "kilopound-force",
       "symbol": "kipf",
       "conversion": 0.000224809
     },
     {
-      "name": "Pound-Force",
+      "name": "pound-force",
       "symbol": "lbf",
       "conversion": 0.224808943
     },
     {
-      "name": "Ounce-Force",
+      "name": "ounce-force",
       "symbol": "ozf",
       "conversion": 3.59694309
     },
     {
-      "name": "Poundal",
+      "name": "poundal",
       "symbol": "pdl",
       "conversion": 7.233013851
     },
     {
-      "name": "Pound Foot/Square Second",
+      "name": "pound foot/square second",
       "symbol": "lb ft/s²",
       "conversion": 7.233013851
     },
     {
-      "name": "Pond",
+      "name": "pond",
       "symbol": "p",
       "conversion": 101.971621298
     },
     {
-      "name": "Kilopond",
+      "name": "kilopond",
       "symbol": "kp",
       "conversion": 0.101971621
     }
   ],
   "frequency": [
     {
-      "name": "Hertz",
+      "name": "hertz",
       "symbol": "Hz",
       "conversion": 1.0,
       "base_unit": true
     },
     {
-      "name": "Kilohertz",
+      "name": "kilohertz",
       "symbol": "kHz",
       "conversion": 0.001
     },
     {
-      "name": "Megahertz",
+      "name": "megahertz",
       "symbol": "MHz",
       "conversion": 0.000001
     },
     {
-      "name": "Gigahertz",
+      "name": "gigahertz",
       "symbol": "GHz",
       "conversion": 0.000000001
     }
   ],
   "fuel economy": [
     {
-      "name": "Kilometre Per Litre",
+      "name": "kilometre per litre",
       "symbol": "km/l",
       "conversion": 1.0,
       "base_unit": true
     },
     {
-      "name": "Miles Per US Gallon",
+      "name": "miles per us gallon",
       "symbol": "mpg-US",
       "conversion": 2.35215
     },
     {
-      "name": "Miles Per Gallon",
+      "name": "miles per gallon",
       "symbol": "mpg",
       "conversion": 2.82481
     }
   ],
   "illumination": [
     {
-      "name": "Lux",
+      "name": "lux",
       "symbol": "lx",
       "conversion": 1.0,
       "base_unit": true
     },
     {
-      "name": "Meter-Candle",
+      "name": "meter-candle",
       "symbol": "m c",
       "conversion": 1
     },
     {
-      "name": "Centimeter-Candle",
+      "name": "centimeter-candle",
       "symbol": "cm c",
       "conversion": 0.0001
     },
     {
-      "name": "Foot-Candle",
+      "name": "foot-candle",
       "symbol": "fc",
       "conversion": 0.09290304
     },
     {
-      "name": "Flame",
+      "name": "flame",
       "symbol": "",
       "conversion": 0.02322576
     },
     {
-      "name": "Phot",
+      "name": "phot",
       "symbol": "ph",
       "conversion": 0.0001
     },
     {
-      "name": "Nox",
+      "name": "nox",
       "symbol": "",
       "conversion": 1000
     },
     {
-      "name": "Candela Steradian/Square Meter",
+      "name": "candela steradian/square meter",
       "symbol": "",
       "conversion": 1
     },
     {
-      "name": "Lumen/Square Meter",
+      "name": "lumen/square meter",
       "symbol": "lm/m²",
       "conversion": 1
     },
     {
-      "name": "Lumen/Square Centimeter",
+      "name": "lumen/square centimeter",
       "symbol": "lm/cm²",
       "conversion": 0.0001
     },
     {
-      "name": "Lumen/Square Foot",
+      "name": "lumen/square foot",
       "symbol": "lm/ft²",
       "conversion": 0.09290304
     }
   ],
   "length": [
     {
-      "name": "Metre",
+      "name": "metre",
       "symbol": "m",
       "conversion": 1.0,
       "base_unit": true
     },
     {
-      "name": "Kilometre",
+      "name": "kilometre",
       "symbol": "km",
       "conversion": 0.001
     },
     {
-      "name": "Centimetre",
+      "name": "centimetre",
       "symbol": "cm",
       "conversion": 100
     },
     {
-      "name": "Millimetre",
+      "name": "millimetre",
       "symbol": "mm",
       "conversion": 1000
     },
     {
-      "name": "Micrometre",
+      "name": "micrometre",
       "symbol": "µm",
       "conversion": 1000000
     },
     {
-      "name": "Nanometre",
+      "name": "nanometre",
       "symbol": "nm",
       "conversion": 1000000000
     },
     {
-      "name": "Mile",
+      "name": "mile",
       "symbol": "mi",
       "conversion": 0.000621371
     },
     {
-      "name": "Yard",
+      "name": "yard",
       "symbol": "yd",
       "conversion": 1.09361
     },
     {
-      "name": "Foot",
+      "name": "foot",
       "symbol": "ft",
       "conversion": 3.28084
     },
     {
-      "name": "Karam",
+      "name": "karam",
       "symbol": "",
       "conversion": 0.59651634454784
     },
     {
-      "name": "Inch",
+      "name": "inch",
       "symbol": "in",
       "conversion": 39.3701
     },
     {
-      "name": "Nautical Mile",
+      "name": "nautical mile",
       "symbol": "nmi",
       "conversion": 0.000539957
     }
   ],
   "luminance": [
     {
-      "name": "Nit",
+      "name": "nit",
       "symbol": "nt",
       "conversion": 1.0,
       "base_unit": true
     },
     {
-      "name": "Candela/Square Meter",
+      "name": "candela/square meter",
       "symbol": "cd/m²",
       "conversion": 1
     },
     {
-      "name": "Candela/Square Centimeter ",
+      "name": "candela/square centimeter ",
       "symbol": "cd/cm²",
       "conversion": 0.0001
     },
     {
-      "name": "Candela/Square Foot",
+      "name": "candela/square foot",
       "symbol": "cd/ft²",
       "conversion": 0.09290304
     },
     {
-      "name": "Candela/Square Inch",
+      "name": "candela/square inch",
       "symbol": "cd/in²",
       "conversion": 0.00064516
     },
     {
-      "name": "Kilocandela/Square Meter",
+      "name": "kilocandela/square meter",
       "symbol": "kcd/m²",
       "conversion": 0.001
     },
     {
-      "name": "Stilb",
+      "name": "stilb",
       "symbol": "sb",
       "conversion": 0.0001
     },
     {
-      "name": "Lumen/Square Meter/Steradian",
+      "name": "lumen/square meter/steradian",
       "symbol": "",
       "conversion": 1
     },
     {
-      "name": "Lumen/Square Centimeter/Steradian",
+      "name": "lumen/square centimeter/steradian",
       "symbol": "",
       "conversion": 0.0001
     },
     {
-      "name": "Lumen/Square Foot/Steradian",
+      "name": "lumen/square foot/steradian",
       "symbol": "",
       "conversion": 0.09290304
     },
     {
-      "name": "Millinit",
+      "name": "millinit",
       "symbol": "mnt",
       "conversion": 1000
     },
     {
-      "name": "Lambert",
+      "name": "lambert",
       "symbol": "L",
       "conversion": 0.000314159
     },
     {
-      "name": "Millilambert",
+      "name": "millilambert",
       "symbol": "mL",
       "conversion": 0.314159265
     },
     {
-      "name": "Foot-Lambert",
+      "name": "foot-lambert",
       "symbol": "fL",
       "conversion": 0.291863508
     },
     {
-      "name": "Apostilb",
+      "name": "apostilb",
       "symbol": "",
       "conversion": 3.141592654
     },
     {
-      "name": "Blondel",
+      "name": "blondel",
       "symbol": "",
       "conversion": 3.141592654
     },
     {
-      "name": "Bril",
+      "name": "bril",
       "symbol": "",
       "conversion": 31415926.535898
     },
     {
-      "name": "Skot",
+      "name": "skot",
       "symbol": "",
       "conversion": 3141.59265359
     }
   ],
   "mass": [
     {
-      "name": "Kilogram",
+      "name": "kilogram",
       "symbol": "kg",
       "conversion": 1.0,
       "base_unit": true
     },
     {
-      "name": "Tonnes",
+      "name": "tonnes",
       "symbol": "t",
       "conversion": 0.001
     },
     {
-      "name": "Gram",
+      "name": "gram",
       "symbol": "g",
       "conversion": 1000
     },
     {
-      "name": "Milligram",
+      "name": "milligram",
       "symbol": "mg",
       "conversion": 1000000
     },
     {
-      "name": "Microgram",
+      "name": "microgram",
       "symbol": "μg",
       "conversion": 1000000000
     },
     {
-      "name": "Imperial Ton",
+      "name": "imperial ton",
       "symbol": "y",
       "conversion": 0.000984207
     },
     {
-      "name": "US Ton",
+      "name": "us ton",
       "symbol": "t",
       "conversion": 0.00110231
     },
     {
-      "name": "Stone",
+      "name": "stone",
       "symbol": "st",
       "conversion": 0.157473
     },
     {
-      "name": "Pound",
+      "name": "pound",
       "symbol": "lb",
       "conversion": 2.20462
     },
     {
-      "name": "Ounce",
+      "name": "ounce",
       "symbol": "oz",
       "conversion": 35.274
     }
   ],
   "pressure": [
     {
-      "name": "Pascal",
+      "name": "pascal",
       "symbol": "s",
       "conversion": 1.0,
       "base_unit": true
     },
     {
-      "name": "Bar",
+      "name": "bar",
       "symbol": "bar",
       "conversion": 0.00001
     },
     {
-      "name": "Pound Per Square Inch",
+      "name": "pound per square inch",
       "symbol": "psi",
       "conversion": 0.000145038
     },
     {
-      "name": "Standard Atmosphere",
+      "name": "standard atmosphere",
       "symbol": "atm",
       "conversion": 0.0000098692
     },
     {
-      "name": "Torr",
+      "name": "torr",
       "symbol": "Torr",
       "conversion": 0.00750062
     }
   ],
   "sound": [
     {
-      "name": "Decibel",
+      "name": "decibel",
       "symbol": "dB",
       "conversion": 1.0,
       "base_unit": true
     },
     {
-      "name": "Bel",
+      "name": "bel",
       "symbol": "B",
       "conversion": 0.1
     },
     {
-      "name": "Neper",
+      "name": "neper",
       "symbol": "Np",
       "conversion": 0.115127792
     }
   ],
   "speed": [
     {
-      "name": "Kilometres Per Hour",
+      "name": "kilometres per hour",
       "symbol": "km/h",
       "conversion": 1.0,
       "base_unit": true
     },
     {
-      "name": "Miles Per Hour",
+      "name": "miles per hour",
       "symbol": "mph",
       "conversion": 0.621371
     },
     {
-      "name": "Foot Per Second",
+      "name": "foot per second",
       "symbol": "ft/s",
       "conversion": 0.911344
     },
     {
-      "name": "Metres Per Second",
+      "name": "metres per second",
       "symbol": "m/s",
       "conversion": 0.277778
     },
     {
-      "name": "Knot",
+      "name": "knot",
       "symbol": "kn",
       "conversion": 0.539957
     }
   ],
   "temperature": [
     {
-      "name": "Celsius",
+      "name": "celsius",
       "symbol": "°C",
       "conversion": 1.0,
       "base_unit": true
     },
     {
-      "name": "Fahrenheit",
+      "name": "fahrenheit",
       "symbol": "°F",
       "conversion": 1.0
     },
     {
-      "name": "Kelvin",
+      "name": "kelvin",
       "symbol": "K",
       "conversion": 1.0
     }
   ],
   "time": [
     {
-      "name": "Minute",
+      "name": "minute",
       "symbol": "min",
       "conversion": 1.0,
       "base_unit": true
     },
     {
-      "name": "NanoSecond",
+      "name": "nanosecond",
       "symbol": "ns",
       "conversion": 60000000000
     },
     {
-      "name": "MicroSecond",
+      "name": "microsecond",
       "symbol": "μs",
       "conversion": 60000000
     },
     {
-      "name": "MilliSecond",
+      "name": "millisecond",
       "symbol": "ms",
       "conversion": 60000
     },
     {
-      "name": "Second",
+      "name": "second",
       "symbol": "s",
       "conversion": 60
     },
     {
-      "name": "Hour",
+      "name": "hour",
       "symbol": "hr",
       "conversion": 0.0166667
     },
     {
-      "name": "Day",
+      "name": "day",
       "symbol": "d",
       "conversion": 0.000694444
     },
     {
-      "name": "Week",
+      "name": "week",
       "symbol": "wk",
       "conversion": 0.000099206
     },
     {
-      "name": "Month",
+      "name": "month",
       "symbol": "mo",
       "conversion": 0.000022831
     },
     {
-      "name": "Calendar Year",
+      "name": "calendar year",
       "symbol": "yr",
       "conversion": 0.0000019026
     },
     {
-      "name": "Decade",
+      "name": "decade",
       "symbol": "dec",
       "conversion": 0.00000019026
     },
     {
-      "name": "Century",
+      "name": "century",
       "symbol": "c",
       "conversion": 0.000000019026
     }
   ],
   "torque": [
     {
-      "name": "Newton Meter",
+      "name": "newton meter",
       "symbol": "N m",
       "conversion": 1.0,
       "base_unit": true
     },
     {
-      "name": "Newton Centimeter",
+      "name": "newton centimeter",
       "symbol": "N cm",
       "conversion": 100
     },
     {
-      "name": "Newton Millimeter",
+      "name": "newton millimeter",
       "symbol": "N mm",
       "conversion": 1000
     },
     {
-      "name": "Kilonewton Meter",
+      "name": "kilonewton meter",
       "symbol": "kN m",
       "conversion": 0.001
     },
     {
-      "name": "Dyne Meter",
+      "name": "dyne meter",
       "symbol": "dyn m",
       "conversion": 100000
     },
     {
-      "name": "Dyne Centimeter",
+      "name": "dyne centimeter",
       "symbol": "dyn cm",
       "conversion": 10000000
     },
     {
-      "name": "Dyne Millimeter",
+      "name": "dyne millimeter",
       "symbol": "dyn mm",
       "conversion": 100000000
     },
     {
-      "name": "Kilogram-Force Meter",
+      "name": "kilogram-force meter",
       "symbol": "kgf m",
       "conversion": 0.101971621
     },
     {
-      "name": "Kilogram-Force Centimeter",
+      "name": "kilogram-force centimeter",
       "symbol": "kgf cm",
       "conversion": 10.19716213
     },
     {
-      "name": "Kilogram-Force Millimeter",
+      "name": "kilogram-force millimeter",
       "symbol": "kgf mm",
       "conversion": 101.971621298
     },
     {
-      "name": "Gram-Force Meter",
+      "name": "gram-force meter",
       "symbol": "gf m",
       "conversion": 101.971621298
     },
     {
-      "name": "Gram-Force Centimeter",
+      "name": "gram-force centimeter",
       "symbol": "gf cm",
       "conversion": 10197.162129779
     },
     {
-      "name": "Gram-Force Millimeter",
+      "name": "gram-force millimeter",
       "symbol": "gf mm",
       "conversion": 10197.162129779
     },
     {
-      "name": "Ounce-Force Foot",
+      "name": "ounce-force foot",
       "symbol": "ozf ft",
       "conversion": 11.800994078
     },
     {
-      "name": "Ounce-Force Inch",
+      "name": "ounce-force inch",
       "symbol": "ozf in",
       "conversion": 141.611928936
     },
     {
-      "name": "Pound-Force Foot",
+      "name": "pound-force foot",
       "symbol": "lbf ft",
       "conversion": 0.737562121
     },
     {
-      "name": "Pound-Force Inch",
+      "name": "pound-force inch",
       "symbol": "lbf in",
       "conversion": 8.850745454
     }
   ],
   "typography": [
     {
-      "name": "Millimeter",
+      "name": "millimeter",
       "symbol": "mm",
       "conversion": 1.0,
       "base_unit": true
     },
     {
-      "name": "Twip",
+      "name": "twip",
       "symbol": "twp",
       "conversion": 56.692913386
     },
     {
-      "name": "Meter",
+      "name": "meter",
       "symbol": "m",
       "conversion": 0.001
     },
     {
-      "name": "Centimeter",
+      "name": "centimeter",
       "symbol": "cm",
       "conversion": 0.1
     },
     {
-      "name": "Character (X)",
+      "name": "character (x)",
       "symbol": "",
       "conversion": 0.472440945
     },
     {
-      "name": "Character (Y)",
+      "name": "character (y)",
       "symbol": "",
       "conversion": 0.236220472
     },
     {
-      "name": "Pixel",
+      "name": "pixel",
       "symbol": "px",
       "conversion": 3.779527559
     },
     {
-      "name": "Inch",
+      "name": "inch",
       "symbol": "in",
       "conversion": 0.039370079
     },
     {
-      "name": "Pica (Computer)",
+      "name": "pica (computer)",
       "symbol": "pc",
       "conversion": 0.236220472
     },
     {
-      "name": "Pica (Printer)",
+      "name": "pica (printer)",
       "symbol": "pc",
       "conversion": 0.237106302
     },
     {
-      "name": "Point (Computer)",
+      "name": "point (computer)",
       "symbol": "pt",
       "conversion": 2.834645669
     },
     {
-      "name": "Point (Printer)",
+      "name": "point (printer)",
       "symbol": "pt",
       "conversion": 2.845275591
     }
   ],
   "volume": [
     {
-      "name": "Cubic Meter",
+      "name": "cubic meter",
       "symbol": "m³",
       "conversion": 1.0,
       "base_unit": true
     },
     {
-      "name": "US Liquid Gallon",
+      "name": "us liquid gallon",
       "symbol": "gal (US)",
       "conversion": 264.172
     },
     {
-      "name": "US Liquid Quart",
+      "name": "us liquid quart",
       "symbol": "qt (US)",
       "conversion": 1056.69
     },
     {
-      "name": "US Liquid Pint",
+      "name": "us liquid pint",
       "symbol": "pt (US)",
       "conversion": 2113.38
     },
     {
-      "name": "US Legal Cup",
+      "name": "us legal cup",
       "symbol": "Cup (US)",
       "conversion": 4166.67
     },
     {
-      "name": "US Fluid Ounces",
+      "name": "us fluid ounces",
       "symbol": "fl oz (US)",
       "conversion": 33814
     },
     {
-      "name": "US Tablespoon",
+      "name": "us tablespoon",
       "symbol": "tbsp (US)",
       "conversion": 67628
     },
     {
-      "name": "US Teaspoon",
+      "name": "us teaspoon",
       "symbol": "tsp (US)",
       "conversion": 202884
     },
     {
-      "name": "Litres",
+      "name": "litres",
       "symbol": "L",
       "conversion": 1000
     },
     {
-      "name": "Millilitres",
+      "name": "millilitres",
       "symbol": "mL",
       "conversion": 1e+6
     },
     {
-      "name": "Imperial Gallons",
+      "name": "imperial gallons",
       "symbol": "gal",
       "conversion": 219.969
     },
     {
-      "name": "Imperial Quart",
+      "name": "imperial quart",
       "symbol": "qt",
       "conversion": 879.877
     },
     {
-      "name": "Imperial Pint",
+      "name": "imperial pint",
       "symbol": "pt",
       "conversion": 1759.75
     },
     {
-      "name": "Imperial Cup",
+      "name": "imperial cup",
       "symbol": "cup",
       "conversion": 3519.51
     },
     {
-      "name": "Fluid Ounces",
+      "name": "fluid ounces",
       "symbol": "fl oz",
       "conversion": 35195.1
     },
     {
-      "name": "Imperial Tablespoon",
+      "name": "imperial tablespoon",
       "symbol": "tbsp",
       "conversion": 56312.1
     },
     {
-      "name": "Imperial Teaspoon",
+      "name": "imperial teaspoon",
       "symbol": "tsp",
       "conversion": 168936
     },
     {
-      "name": "Cubic Foot",
+      "name": "cubic foot",
       "symbol": "ft³",
       "conversion": 35.3147
     },
     {
-      "name": "Cubic Inch",
+      "name": "cubic inch",
       "symbol": "in³",
       "conversion": 61023.7
     }

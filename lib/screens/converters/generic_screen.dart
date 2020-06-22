@@ -13,11 +13,12 @@ class UnitConverter extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    ConverterProvider converterProvider = context.watch<ConverterProvider>();
+    ConverterProvider convProvider =
+        Provider.of<ConverterProvider>(context, listen: false);
 
     AppBar _buildAppBar() {
       return AppBar(
-        backgroundColor: Theme.of(context).primaryColor,
+        backgroundColor: Get.theme.primaryColor,
         centerTitle: true,
         title: Text(
           categoryName,
@@ -41,7 +42,7 @@ class UnitConverter extends StatelessWidget {
       return InkWell(
         onTap: () {
           Get.to(UnitsScreen(
-            converterProvider: converterProvider,
+            converterProvider: convProvider,
             whichUnit: whichUnit,
             currentUnit: currentUnit,
           ));
@@ -81,7 +82,7 @@ class UnitConverter extends StatelessWidget {
     Widget _buildTopBackground() {
       return Container(
         height: 0.25 * Get.height,
-        color: Theme.of(context).primaryColor,
+        color: Get.theme.primaryColor,
       );
     }
 
@@ -106,61 +107,63 @@ class UnitConverter extends StatelessWidget {
                         "amount",
                         style: TextStyle(
                             fontWeight: FontWeight.bold,
-                            color: Theme.of(context).primaryColor,
+                            color: Get.theme.primaryColor,
                             letterSpacing: 1),
                       ),
                     ),
                     SizedBox(height: 6.0),
-                    InputDecorator(
-                      child: SingleChildScrollView(
-                        scrollDirection: Axis.horizontal,
-                        child: Text(
-                          converterProvider.inputValueString == null
-                              ? ""
-                              : converterProvider.inputValueString,
-                          maxLines: 1,
-                          style:
-                              TextStyle(color: Theme.of(context).primaryColor),
+                    Consumer<ConverterProvider>(
+                      builder: (_, conv, __) => InputDecorator(
+                        child: SingleChildScrollView(
+                          scrollDirection: Axis.horizontal,
+                          child: Text(
+                            conv.inputValueString == null
+                                ? ""
+                                : conv.inputValueString,
+                            maxLines: 1,
+                            style: TextStyle(color: Get.theme.primaryColor),
+                          ),
                         ),
-                      ),
-                      decoration: InputDecoration(
-                        isDense: true,
-                        suffixText: converterProvider.fromUnit.symbol,
-                        suffixStyle:
-                            TextStyle(color: Theme.of(context).primaryColor),
-                        enabledBorder: OutlineInputBorder(
-                          borderSide: BorderSide(
-                            color: Theme.of(context).primaryColor,
-                            width: 1.5,
+                        decoration: InputDecoration(
+                          isDense: true,
+                          suffixText: conv.fromUnit.symbol,
+                          suffixStyle: TextStyle(color: Get.theme.primaryColor),
+                          enabledBorder: OutlineInputBorder(
+                            borderSide: BorderSide(
+                              color: Get.theme.primaryColor,
+                              width: 1.5,
+                            ),
                           ),
                         ),
                       ),
                     ),
                     SizedBox(height: 12.0),
                     Align(
-                        alignment: Alignment.centerLeft,
-                        child: Text(
-                          "converted to",
-                          style: TextStyle(
-                              fontWeight: FontWeight.w600,
-                              color: Theme.of(context).primaryColor,
-                              letterSpacing: 1),
-                        )),
-                    SizedBox(height: 6.0),
-                    InputDecorator(
+                      alignment: Alignment.centerLeft,
                       child: Text(
-                        converterProvider.convertedValue,
-                        style: TextStyle(color: Theme.of(context).primaryColor),
+                        "converted to",
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            color: Get.theme.primaryColor,
+                            letterSpacing: 1),
                       ),
-                      decoration: InputDecoration(
-                        isDense: true,
-                        suffixText: converterProvider.toUnit.symbol,
-                        suffixStyle:
-                            TextStyle(color: Theme.of(context).primaryColor),
-                        enabledBorder: OutlineInputBorder(
-                          borderSide: BorderSide(
-                            color: Theme.of(context).primaryColor,
-                            width: 1.5,
+                    ),
+                    SizedBox(height: 6.0),
+                    Consumer<ConverterProvider>(
+                      builder: (_, conv, __) => InputDecorator(
+                        child: Text(
+                          conv.convertedValue,
+                          style: TextStyle(color: Get.theme.primaryColor),
+                        ),
+                        decoration: InputDecoration(
+                          isDense: true,
+                          suffixText: conv.toUnit.symbol,
+                          suffixStyle: TextStyle(color: Get.theme.primaryColor),
+                          enabledBorder: OutlineInputBorder(
+                            borderSide: BorderSide(
+                              color: Get.theme.primaryColor,
+                              width: 1.5,
+                            ),
                           ),
                         ),
                       ),
@@ -178,16 +181,17 @@ class UnitConverter extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              _buildConverterSelection(
-                  "from", converterProvider.fromUnit.name.toLowerCase()),
+              Consumer<ConverterProvider>(
+                builder: (_, conv, __) => _buildConverterSelection(
+                    "from", conv.fromUnit.name.toLowerCase()),
+              ),
               Padding(
                 padding: const EdgeInsets.only(top: 25.0),
                 child: InkWell(
                   onTap: () {
-                    String tempTo = converterProvider.toUnit.name;
-                    converterProvider
-                        .updateToUnit(converterProvider.fromUnit.name);
-                    converterProvider.updateFromUnit(tempTo);
+                    String tempTo = convProvider.toUnit.name;
+                    convProvider.updateToUnit(convProvider.fromUnit.name);
+                    convProvider.updateFromUnit(tempTo);
                   },
                   child: Icon(
                     Icons.swap_horiz,
@@ -196,8 +200,10 @@ class UnitConverter extends StatelessWidget {
                   ),
                 ),
               ),
-              _buildConverterSelection(
-                  "to", converterProvider.toUnit.name.toLowerCase())
+              Consumer<ConverterProvider>(
+                builder: (_, conv, __) => _buildConverterSelection(
+                    "to", conv.toUnit.name.toLowerCase()),
+              )
             ],
           ),
           _buildTextFieldSection()
@@ -214,7 +220,7 @@ class UnitConverter extends StatelessWidget {
             _buildTopBackground(),
             _buildTopSection(),
           ]),
-          ConverterKeypad(),
+          RepaintBoundary(child: ConverterKeypad()),
         ],
       ),
     );

@@ -59,7 +59,7 @@ class ConverterProvider extends ChangeNotifier {
   }
 
   Future<void> _updateConversion() async {
-    if (_categoryName == "Temperature") {
+    if (_categoryName == "temperature") {
       double temp = _toKelvin();
       _convertedValue = _format(_toTemperature(temp));
     } else {
@@ -70,10 +70,10 @@ class ConverterProvider extends ChangeNotifier {
   }
 
   double _toKelvin() {
-    switch (fromUnit.name) {
-      case "Celsius":
+    switch (fromUnit.name.toLowerCase()) {
+      case "celsius":
         return _inputValue + 273.15;
-      case "Fahrenheit":
+      case "fahrenheit":
         return (_inputValue - 32) * 5 / 9 + 273.15;
       default:
         return _inputValue;
@@ -81,10 +81,10 @@ class ConverterProvider extends ChangeNotifier {
   }
 
   double _toTemperature(double value) {
-    switch (toUnit.name) {
-      case "Celsius":
+    switch (toUnit.name.toLowerCase()) {
+      case "celsius":
         return value - 273.15;
-      case "Fahrenheit":
+      case "fahrenheit":
         return (value - 273.15) * 9 / 5 + 32;
       default:
         return value;

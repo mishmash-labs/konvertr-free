@@ -13,7 +13,8 @@ class ConverterKeypad extends StatefulWidget {
 class _ConverterKeypadState extends State<ConverterKeypad> {
   @override
   Widget build(BuildContext context) {
-    ConverterProvider converterProvider = context.watch<ConverterProvider>();
+    ConverterProvider converterProvider =
+        Provider.of<ConverterProvider>(context, listen: false);
     double buttonHeight = 0.09375;
 
     Widget keypadButton({String value}) {
@@ -75,8 +76,8 @@ class _ConverterKeypadState extends State<ConverterKeypad> {
                   .then((result) {
                 if (result) {
                   Get.snackbar(
-                    "Clipboard Updated",
-                    "Conversion copied to clipboard.",
+                    "clipboard updated",
+                    "conversion copied to clipboard.",
                     colorText: Colors.white70,
                     icon: Icon(
                       Icons.content_copy,
@@ -161,7 +162,7 @@ class _ConverterKeypadState extends State<ConverterKeypad> {
     }
 
     return Container(
-        color: Theme.of(context).primaryColor,
+        color: Get.theme.primaryColor,
         height: 0.375 * Get.height,
         child: Column(
           children: [
@@ -197,7 +198,7 @@ class _ConverterKeypadState extends State<ConverterKeypad> {
               children: <Widget>[
                 keypadButton(value: '.'),
                 keypadButton(value: '0'),
-                converterProvider.categoryName == "Temperature"
+                converterProvider.categoryName == "temperature"
                     ? changeSymbolButton()
                     : keypadButton(value: '00'),
                 eraseButton(),
