@@ -1,7 +1,7 @@
 name: konvertr_free
 description: Unit Converter App built using Flutter
 
-version: 0.2.1+4
+version: 0.4.0+6
 
 environment:
   sdk: ">=2.3.0 <3.0.0"

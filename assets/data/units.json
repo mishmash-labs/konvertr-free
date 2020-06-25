@@ -145,6 +145,79 @@
       "conversion": 0.0000098842
     }
   ],
+  "charge": [
+    {
+      "name": "coulomb",
+      "symbol": "C",
+      "conversion": 1.0,
+      "base_unit": true
+    },
+    {
+      "name": "megacoulomb",
+      "symbol": "MC",
+      "conversion": 0.000001
+    },
+    {
+      "name": "kilocoulomb",
+      "symbol": "kC",
+      "conversion": 0.001
+    },
+    {
+      "name": "millicoulomb",
+      "symbol": "mC",
+      "conversion": 1000
+    },
+    {
+      "name": "microcoulomb",
+      "symbol": "µC",
+      "conversion": 1000000
+    },
+    {
+      "name": "nanocoulomb",
+      "symbol": "nC",
+      "conversion": 1000000000
+    },
+    {
+      "name": "picocoulomb",
+      "symbol": "pC",
+      "conversion": 1e+12
+    },
+    {
+      "name": "abcoulomb",
+      "symbol": "abC",
+      "conversion": 0.1
+    },
+    {
+      "name": "statcoulomb",
+      "symbol": "stC",
+      "conversion": 2997924579.9996
+    },
+    {
+      "name": "franklin",
+      "symbol": "Fr",
+      "conversion": 2997924579.9996
+    },
+    {
+      "name": "ampere-hour",
+      "symbol": "A*h",
+      "conversion": 0.000277778
+    },
+    {
+      "name": "ampere-minute",
+      "symbol": "A*min",
+      "conversion": 0.016666667
+    },
+    {
+      "name": "ampere-second",
+      "symbol": "A*s",
+      "conversion": 1
+    },
+    {
+      "name": "elementary charge",
+      "symbol": "e",
+      "conversion": 6.241506363e+18
+    }
+  ],
   "electric current": [
     {
       "name": "ampere",
@@ -410,6 +483,214 @@
       "name": "foot-pound",
       "symbol": "ft⋅lb",
       "conversion": 0.737562
+    }
+  ],
+  "flow": [
+    {
+      "name": "cubic meter/second",
+      "symbol": "m³/s",
+      "conversion": 1.0,
+      "base_unit": true
+    },
+    {
+      "name": "cubic meter/day",
+      "symbol": "m³/d",
+      "conversion": 86400
+    },
+    {
+      "name": "cubic meter/hour",
+      "symbol": "m³/h",
+      "conversion": 3600
+    },
+    {
+      "name": "cubic meter/minute",
+      "symbol": "m³/min",
+      "conversion": 60
+    },
+    {
+      "name": "cubic centimeter/day",
+      "symbol": "cm³/d",
+      "conversion": 8.64e+10
+    },
+    {
+      "name": "cubic centimeter/hour",
+      "symbol": "cm³/h",
+      "conversion": 3600000000
+    },
+    {
+      "name": "cubic centimeter/minute",
+      "symbol": "cm³/min",
+      "conversion": 60000000
+    },
+    {
+      "name": "cubic centimeter/second",
+      "symbol": "cm³/s",
+      "conversion": 1000000
+    },
+    {
+      "name": "liter/day ",
+      "symbol": "L/d",
+      "conversion": 86400000
+    },
+    {
+      "name": "liter/hour",
+      "symbol": "L/h",
+      "conversion": 3600000
+    },
+    {
+      "name": "liter/minute",
+      "symbol": "L/min",
+      "conversion": 60000
+    },
+    {
+      "name": "liter/second ",
+      "symbol": "L/s",
+      "conversion": 1000
+    },
+    {
+      "name": "milliliter/day",
+      "symbol": "mL/d",
+      "conversion": 8.64e+10
+    },
+    {
+      "name": "milliliter/hour",
+      "symbol": "mL/h",
+      "conversion": 3600000000
+    },
+    {
+      "name": "milliliter/minute",
+      "symbol": "mL/min",
+      "conversion": 60000000
+    },
+    {
+      "name": "milliliter/second",
+      "symbol": "mL/s",
+      "conversion": 1000000
+    },
+    {
+      "name": "gallon (us)/day",
+      "symbol": "gal (US)/d",
+      "conversion": 22824465.323744
+    },
+    {
+      "name": "gallon (us)/hour",
+      "symbol": "gal (US)/h",
+      "conversion": 951019.38848933
+    },
+    {
+      "name": "gallon (us)/minute",
+      "symbol": "gal (US)/min",
+      "conversion": 15850.323141489
+    },
+    {
+      "name": "gallon (us)/second",
+      "symbol": "gal (US)/s",
+      "conversion": 264.172052358
+    },
+    {
+      "name": "gallon (uk)/day",
+      "symbol": "gal (UK)/d",
+      "conversion": 19005343.053041
+    },
+    {
+      "name": "gallon (uk)/hour",
+      "symbol": "gal (UK)/h",
+      "conversion": 791889.29387672
+    },
+    {
+      "name": "gallon (uk)/minute",
+      "symbol": "gal (UK)/min",
+      "conversion": 13198.154897945
+    },
+    {
+      "name": "gallon (uk)/second",
+      "symbol": "gal (UK)/s",
+      "conversion": 219.969248299
+    },
+    {
+      "name": "kilobarrel (us)/day",
+      "symbol": "kbbl (US)/d",
+      "conversion": 543.439650565
+    },
+    {
+      "name": "barrel (us)/day",
+      "symbol": "bbl (US)/d",
+      "conversion": 543439.65056533
+    },
+    {
+      "name": "barrel (us)/hour",
+      "symbol": "bbl (US)/h",
+      "conversion": 22643.318773556
+    },
+    {
+      "name": "barrel (us)/minute",
+      "symbol": "bbl (US)/min",
+      "conversion": 377.388646226
+    },
+    {
+      "name": "barrel (us)/second",
+      "symbol": "bbl (US)/s",
+      "conversion": 6.28981077
+    },
+    {
+      "name": "acre-foot/year",
+      "symbol": "ac*ft/y",
+      "conversion": 25566.549012752
+    },
+    {
+      "name": "acre-foot/day",
+      "symbol": "ac*ft/d",
+      "conversion": 70.045339761
+    },
+    {
+      "name": "acre-foot/hour",
+      "symbol": "ac*ft/h",
+      "conversion": 2.918555823
+    },
+    {
+      "name": "ounce/hour",
+      "symbol": "oz/h",
+      "conversion": 121730481.72663
+    },
+    {
+      "name": "ounce/minute",
+      "symbol": "oz/min",
+      "conversion": 2028841.3621106
+    },
+    {
+      "name": "ounce/second",
+      "symbol": "oz/s",
+      "conversion": 33814.022701843
+    },
+    {
+      "name": "cubic foot/hour",
+      "symbol": "ft³/h",
+      "conversion": 127132.80019736
+    },
+    {
+      "name": "cubic foot/minute",
+      "symbol": "ft³/min",
+      "conversion": 2118.880003185
+    },
+    {
+      "name": "cubic foot/second",
+      "symbol": "ft³/s",
+      "conversion": 35.31466672
+    },
+    {
+      "name": "cubic inch/hour",
+      "symbol": "in³/h",
+      "conversion": 219685478.73026
+    },
+    {
+      "name": "cubic inch/minute",
+      "symbol": "in³/min",
+      "conversion": 3661424.6456839
+    },
+    {
+      "name": "cubic inch/second",
+      "symbol": "in³/s",
+      "conversion": 61023.744094732
     }
   ],
   "force": [
@@ -888,6 +1169,159 @@
       "conversion": 35.274
     }
   ],
+  "power": [
+    {
+      "name": "watt",
+      "symbol": "W",
+      "conversion": 1,
+      "base_unit": true
+    },
+    {
+      "name": "exawatt",
+      "symbol": "EW",
+      "conversion": 1e-18
+    },
+    {
+      "name": "petawatt",
+      "symbol": "PW",
+      "conversion": 1e-15
+    },
+    {
+      "name": "terawatt",
+      "symbol": "TW",
+      "conversion": 1e-12
+    },
+    {
+      "name": "gigawatt",
+      "symbol": "GW",
+      "conversion": 0.000000001
+    },
+    {
+      "name": "megawatt",
+      "symbol": "MW",
+      "conversion": 0.000001
+    },
+    {
+      "name": "kilowatt",
+      "symbol": "kW",
+      "conversion": 0.001
+    },
+    {
+      "name": "hectowatt",
+      "symbol": "hW",
+      "conversion": 0.01
+    },
+    {
+      "name": "dekawatt",
+      "symbol": "daW",
+      "conversion": 0.1
+    },
+    {
+      "name": "deciwatt",
+      "symbol": "dW",
+      "conversion": 10
+    },
+    {
+      "name": "centiwatt",
+      "symbol": "cW",
+      "conversion": 100
+    },
+    {
+      "name": "milliwatt",
+      "symbol": "mW",
+      "conversion": 1000
+    },
+    {
+      "name": "microwatt",
+      "symbol": "µW",
+      "conversion": 1000000
+    },
+    {
+      "name": "nanowatt",
+      "symbol": "nW",
+      "conversion": 1000000000
+    },
+    {
+      "name": "picowatt",
+      "symbol": "pW",
+      "conversion": 1e+12
+    },
+    {
+      "name": "femtowatt",
+      "symbol": "fW",
+      "conversion": 1e+15
+    },
+    {
+      "name": "attowatt",
+      "symbol": "aW",
+      "conversion": 1e+18
+    },
+    {
+      "name": "horsepower",
+      "symbol": "hp",
+      "conversion": 0.001341022
+    },
+    {
+      "name": "pferdestarke",
+      "symbol": "ps",
+      "conversion": 0.001359622
+    },
+    {
+      "name": "btu (th)/hour",
+      "symbol": "Btu (th)/h",
+      "conversion": 3.41442595
+    },
+    {
+      "name": "kilovolt ampere",
+      "symbol": "kV*A",
+      "conversion": 0.001
+    },
+    {
+      "name": "volt ampere",
+      "symbol": "V*A",
+      "conversion": 1
+    },
+    {
+      "name": "calorie (th)/hour",
+      "symbol": "cal (th)/h",
+      "conversion": 860.420650096
+    },
+    {
+      "name": "calorie (th)/minute",
+      "symbol": "cal (th)/min",
+      "conversion": 14.340344168
+    },
+    {
+      "name": "calorie (th)/second",
+      "symbol": "cal (th)/s",
+      "conversion": 0.239005736
+    },
+    {
+      "name": "kilojoule/hour",
+      "symbol": "kJ/h",
+      "conversion": 3.6
+    },
+    {
+      "name": "kilojoule/minute",
+      "symbol": "kJ/min",
+      "conversion": 0.06
+    },
+    {
+      "name": "joule/hour",
+      "symbol": "J/h",
+      "conversion": 3600
+    },
+    {
+      "name": "joule/minute",
+      "symbol": "J/min",
+      "conversion": 60
+    },
+    {
+      "name": "joule/second",
+      "symbol": "J/s",
+      "conversion": 1
+    }
+  ],
   "pressure": [
     {
       "name": "pascal",
@@ -914,6 +1348,119 @@
       "name": "torr",
       "symbol": "Torr",
       "conversion": 0.00750062
+    }
+  ],
+  "radiation": [
+    {
+      "name": "gray/second",
+      "symbol": "Gy/s",
+      "conversion": 1.0,
+      "base_unit": true
+    },
+    {
+      "name": "exagray/second",
+      "symbol": "EGy/s",
+      "conversion": 1e-18
+    },
+    {
+      "name": "petagray/second",
+      "symbol": "PGy/s",
+      "conversion": 1e-15
+    },
+    {
+      "name": "teragray/second",
+      "symbol": "TGy/s",
+      "conversion": 1e-12
+    },
+    {
+      "name": "gigagray/second",
+      "symbol": "GGy/s",
+      "conversion": 0.000000001
+    },
+    {
+      "name": "megagray/second",
+      "symbol": "MGy/s",
+      "conversion": 0.000001
+    },
+    {
+      "name": "kilogray/second",
+      "symbol": "kGy/s",
+      "conversion": 0.001
+    },
+    {
+      "name": "hectogray/second",
+      "symbol": "hGy/s",
+      "conversion": 0.01
+    },
+    {
+      "name": "dekagray/second",
+      "symbol": "daGy/s",
+      "conversion": 0.1
+    },
+    {
+      "name": "decigray/second",
+      "symbol": "dGy/s",
+      "conversion": 10
+    },
+    {
+      "name": "centigray/second",
+      "symbol": "cGy/s",
+      "conversion": 100
+    },
+    {
+      "name": "milligray/second",
+      "symbol": "mGy/s",
+      "conversion": 1000
+    },
+    {
+      "name": "microgray/second",
+      "symbol": "µGy/s",
+      "conversion": 1000000
+    },
+    {
+      "name": "nanogray/second",
+      "symbol": "nGy/s",
+      "conversion": 1000000000
+    },
+    {
+      "name": "picogray/second",
+      "symbol": "pGy/s",
+      "conversion": 1e+12
+    },
+    {
+      "name": "femtogray/second",
+      "symbol": "fGy/s",
+      "conversion": 1e+15
+    },
+    {
+      "name": "attogray/second",
+      "symbol": "aGy/s",
+      "conversion": 1e+18
+    },
+    {
+      "name": "rad/second",
+      "symbol": "rad/s",
+      "conversion": 100
+    },
+    {
+      "name": "joule/kilogram/second",
+      "symbol": "J/(kg*s)",
+      "conversion": 1
+    },
+    {
+      "name": "watt/kilogram",
+      "symbol": "W/kg",
+      "conversion": 1
+    },
+    {
+      "name": "sievert/second",
+      "symbol": "Sv/s",
+      "conversion": 1
+    },
+    {
+      "name": "rem/second",
+      "symbol": "rem/s",
+      "conversion": 100
     }
   ],
   "sound": [
