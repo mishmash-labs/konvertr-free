@@ -27,6 +27,9 @@ class CategoriesProvider extends ChangeNotifier {
       case 'area':
         return FontAwesome.area_chart;
         break;
+      case 'charge':
+        return MaterialCommunityIcons.battery_charging;
+        break;
       case 'electric current':
         return FontAwesome5Solid.plug;
         break;
@@ -38,6 +41,9 @@ class CategoriesProvider extends ChangeNotifier {
         break;
       case 'energy':
         return FontAwesome5Solid.bolt;
+        break;
+      case 'flow':
+        return MaterialCommunityIcons.water_pump;
         break;
       case 'force':
         return Ionicons.md_rocket;
@@ -60,8 +66,14 @@ class CategoriesProvider extends ChangeNotifier {
       case 'mass':
         return FontAwesome5Solid.weight;
         break;
+      case 'power':
+        return FontAwesome5Solid.power_off;
+        break;
       case 'pressure':
         return MaterialCommunityIcons.pipe;
+        break;
+      case 'radiation':
+        return MaterialCommunityIcons.radioactive;
         break;
       case 'sound':
         return MaterialCommunityIcons.volume_high;
@@ -92,30 +104,27 @@ class CategoriesProvider extends ChangeNotifier {
   Future<void> loadCategories(BuildContext context) async {
     final json =
         DefaultAssetBundle.of(context).loadString('assets/data/units.json');
-    final data = JsonDecoder().convert(await json);
-    if (data is! Map) {
-      throw ('Json is not a Map');
-    }
+    final data = const JsonDecoder().convert(await json);
+
     data.keys.forEach((key) {
       final List<Unit> units =
-          data[key].map<Unit>((dynamic data) => Unit.fromJson(data)).toList();
+          data[key].map<Unit>((data) => Unit.fromJson(data)).toList();
 
-      var category =
+      final category =
           Category(name: key, units: units, icon: getIconForCategory(key));
 
       _categories.add(category);
     });
-    _allCategories = _categories;
+    _allCategories = _categories..sort((a, b) => a.name.compareTo(b.name));
     notifyListeners();
   }
 
-  Future<void> searchCategories(String searchTerm) async {
-    List<Category> _searchedList = List();
+  void searchCategories(String searchTerm) {
+    var _searchedList = <Category>[];
 
-    if (searchTerm.isNotEmpty) {
-      _searchingCategory = true;
-    } else
-      _searchingCategory = false;
+    (searchTerm.isNotEmpty)
+        ? _searchingCategory = true
+        : _searchingCategory = false;
 
     _searchedList = _allCategories
         .where((element) =>

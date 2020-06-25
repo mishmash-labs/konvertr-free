@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_clipboard_manager/flutter_clipboard_manager.dart';
+import 'package:flutter_icons/flutter_icons.dart';
 import 'package:get/get.dart';
 import 'package:provider/provider.dart';
 
 import '../providers/converter_provider.dart';
 
 class ConverterKeypad extends StatefulWidget {
+  const ConverterKeypad({Key key}) : super(key: key);
+
   @override
   _ConverterKeypadState createState() => _ConverterKeypadState();
 }
@@ -13,16 +16,18 @@ class ConverterKeypad extends StatefulWidget {
 class _ConverterKeypadState extends State<ConverterKeypad> {
   @override
   Widget build(BuildContext context) {
-    ConverterProvider converterProvider =
+    final converterProvider =
         Provider.of<ConverterProvider>(context, listen: false);
-    double buttonHeight = 0.09375;
+    const buttonHeight = 0.09375;
 
-    Widget keypadButton({String value}) {
-      return Expanded(
-        child: InkWell(
+    Widget keypadButton({String value}) => InkWell(
           onTap: () {
-            if (value == "." && converterProvider.inputValueString != null) {
-              if (!converterProvider.inputValueString.endsWith(".") &&
+            if (value == '.' && converterProvider.inputValueString == null ||
+                value == '.' && converterProvider.inputValueString == '') {
+              converterProvider.updateInputString('0.');
+            } else if (value == '.' &&
+                converterProvider.inputValueString != null) {
+              if (!converterProvider.inputValueString.endsWith('.') &&
                   converterProvider.inputValueString.isNotEmpty) {
                 converterProvider.updateInputString(
                     converterProvider.inputValueString + value);
@@ -31,7 +36,7 @@ class _ConverterKeypadState extends State<ConverterKeypad> {
               if (converterProvider.inputValueString == null) {
                 converterProvider.updateInputString(value);
               } else {
-                String temp = converterProvider.inputValueString + value;
+                final temp = converterProvider.inputValueString + value;
                 converterProvider.updateInputString(temp);
               }
             }
@@ -41,46 +46,39 @@ class _ConverterKeypadState extends State<ConverterKeypad> {
             child: Center(
               child: Text(
                 value,
-                style: TextStyle(color: Colors.white70, fontSize: 32),
+                style: const TextStyle(color: Colors.white70, fontSize: 32),
               ),
             ),
           ),
-        ),
-      );
-    }
+        );
 
-    Widget eraseButton() {
-      return Expanded(
-        child: InkWell(
+    Widget eraseButton() => InkWell(
           onTap: () {
-            String temp = converterProvider.inputValueString
+            final temp = converterProvider.inputValueString
                 .substring(0, converterProvider.inputValueString.length - 1);
             converterProvider.updateInputString(temp);
           },
           child: SizedBox(
             height: buttonHeight * Get.height,
-            child: Center(
-                child: Icon(Icons.backspace, color: Colors.white70, size: 32)),
+            child: const Center(
+                child: Icon(MaterialCommunityIcons.backspace_outline,
+                    color: Colors.white70, size: 32)),
           ),
-        ),
-      );
-    }
+        );
 
-    Widget copyButton() {
-      return Expanded(
-        child: InkWell(
+    Widget copyButton() => InkWell(
           onTap: () {
-            if (converterProvider.convertedValue != "") {
+            if (converterProvider.convertedValue != '') {
               FlutterClipboardManager.copyToClipBoard(
-                      "${converterProvider.inputValueString} ${converterProvider.fromUnit.symbol} = ${converterProvider.convertedValue} ${converterProvider.toUnit.symbol}")
+                      '${converterProvider.inputValueString} ${converterProvider.fromUnit.symbol} = ${converterProvider.convertedValue} ${converterProvider.toUnit.symbol}')
                   .then((result) {
                 if (result) {
                   Get.snackbar(
-                    "clipboard updated",
-                    "conversion copied to clipboard.",
+                    'clipboard updated',
+                    'conversion copied to clipboard.',
                     colorText: Colors.white70,
-                    icon: Icon(
-                      Icons.content_copy,
+                    icon: const Icon(
+                      Feather.copy,
                       color: Colors.white70,
                     ),
                   );
@@ -90,34 +88,26 @@ class _ConverterKeypadState extends State<ConverterKeypad> {
           },
           child: SizedBox(
             height: buttonHeight * Get.height,
-            child: Center(
-                child:
-                    Icon(Icons.content_copy, color: Colors.white70, size: 32)),
+            child: const Center(
+                child: Icon(Feather.copy, color: Colors.white70, size: 32)),
           ),
-        ),
-      );
-    }
+        );
 
-    Widget swapButton() {
-      return Expanded(
-        child: InkWell(
+    Widget swapButton() => InkWell(
           onTap: () {
-            String tempTo = converterProvider.toUnit.name;
-            converterProvider.updateToUnit(converterProvider.fromUnit.name);
-            converterProvider.updateFromUnit(tempTo);
+            final tempTo = converterProvider.toUnit.name;
+            converterProvider
+              ..updateToUnit(converterProvider.fromUnit.name)
+              ..updateFromUnit(tempTo);
           },
           child: SizedBox(
             height: buttonHeight * Get.height,
-            child: Center(
-                child: Icon(Icons.swap_horiz, color: Colors.white70, size: 32)),
+            child: const Center(
+                child: Icon(AntDesign.swap, color: Colors.white70, size: 32)),
           ),
-        ),
-      );
-    }
+        );
 
-    Widget changeSymbolButton() {
-      return Expanded(
-        child: InkWell(
+    Widget changeSymbolButton() => InkWell(
           onTap: () {
             if (converterProvider.inputValue != null) {
               if (converterProvider.inputValue.isNegative) {
@@ -126,48 +116,38 @@ class _ConverterKeypadState extends State<ConverterKeypad> {
                     .substring(1, converterProvider.inputValueString.length));
               } else {
                 converterProvider.updateInputString(
-                    "-" + converterProvider.inputValueString);
+                    '-${converterProvider.inputValueString}');
               }
             }
           },
           child: SizedBox(
             height: buttonHeight * Get.height,
-            child: Center(
+            child: const Center(
               child: Text(
-                "+/-",
+                '+/-',
                 style: TextStyle(color: Colors.white70, fontSize: 32),
               ),
             ),
           ),
-        ),
-      );
-    }
+        );
 
-    Widget clearButton() {
-      return Expanded(
-        child: InkWell(
-          onTap: () {
-            converterProvider.updateInputString("");
-          },
+    Widget clearButton() => InkWell(
+          onTap: () => converterProvider.updateInputString(''),
           child: SizedBox(
               height: buttonHeight * Get.height,
-              child: Center(
+              child: const Center(
                 child: Text(
-                  "C",
+                  'C',
                   style: TextStyle(color: Colors.white70, fontSize: 32),
                 ),
               )),
-        ),
-      );
-    }
+        );
 
     return Container(
-        color: Get.theme.primaryColor,
-        height: 0.375 * Get.height,
-        child: Column(
+        color: Theme.of(context).primaryColor,
+        child: Table(
           children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            TableRow(
               children: <Widget>[
                 keypadButton(value: '7'),
                 keypadButton(value: '8'),
@@ -175,8 +155,7 @@ class _ConverterKeypadState extends State<ConverterKeypad> {
                 copyButton(),
               ],
             ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            TableRow(
               children: <Widget>[
                 keypadButton(value: '4'),
                 keypadButton(value: '5'),
@@ -184,8 +163,7 @@ class _ConverterKeypadState extends State<ConverterKeypad> {
                 swapButton(),
               ],
             ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            TableRow(
               children: <Widget>[
                 keypadButton(value: '1'),
                 keypadButton(value: '2'),
@@ -193,12 +171,11 @@ class _ConverterKeypadState extends State<ConverterKeypad> {
                 clearButton(),
               ],
             ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            TableRow(
               children: <Widget>[
                 keypadButton(value: '.'),
                 keypadButton(value: '0'),
-                converterProvider.categoryName == "temperature"
+                converterProvider.categoryName == 'temperature'
                     ? changeSymbolButton()
                     : keypadButton(value: '00'),
                 eraseButton(),

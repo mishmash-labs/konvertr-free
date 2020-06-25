@@ -4,14 +4,11 @@ import '../models/unit.dart';
 
 class ConverterProvider extends ChangeNotifier {
   ConverterProvider(
-    this.units,
-    this._categoryName,
-    String fromUnit,
-    String toUnit,
-  ) {
-    if (fromUnit == null)
+      this.units, this._categoryName, String fromUnit, String toUnit) {
+    _amountController = TextEditingController();
+    if (fromUnit == null) {
       setDefaults();
-    else {
+    } else {
       updateFromUnit(fromUnit);
       updateToUnit(toUnit);
     }
@@ -19,7 +16,8 @@ class ConverterProvider extends ChangeNotifier {
 
   final List<Unit> units;
 
-  String _categoryName;
+  TextEditingController _amountController;
+  final String _categoryName;
   String _convertedValue = '';
   Unit _fromUnit;
   double _inputValue;
@@ -34,13 +32,15 @@ class ConverterProvider extends ChangeNotifier {
 
   String get inputValueString => _inputValueString;
 
+  TextEditingController get amountController => _amountController;
+
   double get inputValue => _inputValue;
 
   String get categoryName => _categoryName;
 
   String _format(double value) {
-    var _tempVal = value.toStringAsFixed(10);
-    var _outputVal = double.parse(_tempVal).toStringAsPrecision(10);
+    final _tempVal = value.toStringAsFixed(10);
+    var _outputVal = double.parse(_tempVal).toStringAsPrecision(15);
     if (_outputVal.contains('.') && _outputVal.endsWith('0')) {
       _outputVal = _outputVal.replaceAll(RegExp(r'0*$'), '');
     }
@@ -59,8 +59,8 @@ class ConverterProvider extends ChangeNotifier {
   }
 
   Future<void> _updateConversion() async {
-    if (_categoryName == "temperature") {
-      double temp = _toKelvin();
+    if (_categoryName == 'temperature') {
+      final temp = _toKelvin();
       _convertedValue = _format(_toTemperature(temp));
     } else {
       _convertedValue =
@@ -71,9 +71,9 @@ class ConverterProvider extends ChangeNotifier {
 
   double _toKelvin() {
     switch (fromUnit.name.toLowerCase()) {
-      case "celsius":
+      case 'celsius':
         return _inputValue + 273.15;
-      case "fahrenheit":
+      case 'fahrenheit':
         return (_inputValue - 32) * 5 / 9 + 273.15;
       default:
         return _inputValue;
@@ -82,17 +82,23 @@ class ConverterProvider extends ChangeNotifier {
 
   double _toTemperature(double value) {
     switch (toUnit.name.toLowerCase()) {
-      case "celsius":
+      case 'celsius':
         return value - 273.15;
-      case "fahrenheit":
+      case 'fahrenheit':
         return (value - 273.15) * 9 / 5 + 32;
       default:
         return value;
     }
   }
 
-  updateInputString(String value) {
-    if (value != ".") _inputValueString = value;
+  void updateInputString(String value) {
+    if (value != '.') {
+      _inputValueString = value;
+      _amountController
+        ..text = value
+        ..selection = TextSelection.fromPosition(
+            TextPosition(offset: _amountController.text.length));
+    }
     _updateInputVal();
   }
 
@@ -102,23 +108,15 @@ class ConverterProvider extends ChangeNotifier {
       _convertedValue = '';
       notifyListeners();
     } else {
-      try {
-        final double _inputDouble = double.parse(_inputValueString);
-        _inputValue = _inputDouble;
-        _updateConversion();
-      } catch (e) {
-        print(e);
-      }
+      final _inputDouble = double.parse(_inputValueString);
+      _inputValue = _inputDouble;
+      _updateConversion();
     }
   }
 
-  Unit _getUnit(String unitName) {
-    return units.firstWhere(
-      (Unit unit) {
-        return unit.name.toLowerCase() == unitName.toLowerCase();
-      },
-    );
-  }
+  Unit _getUnit(String unitName) => units.firstWhere(
+        (unit) => unit.name.toLowerCase() == unitName.toLowerCase(),
+      );
 
   void updateFromUnit(String unitName) {
     _fromUnit = _getUnit(unitName);
