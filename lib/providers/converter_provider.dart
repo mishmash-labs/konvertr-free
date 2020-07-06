@@ -14,6 +14,8 @@ class ConverterProvider extends ChangeNotifier {
     }
   }
 
+  int decimalPoints;
+  int precision;
   final List<Unit> units;
 
   TextEditingController _amountController;
@@ -41,13 +43,16 @@ class ConverterProvider extends ChangeNotifier {
   String _format(double value) {
     final _tempVal = value.toStringAsFixed(10);
     var _outputVal = double.parse(_tempVal).toStringAsPrecision(15);
-    if (_outputVal.contains('.') && _outputVal.endsWith('0')) {
+    if (_outputVal.contains('.') &&
+        _outputVal.endsWith('0') &&
+        !_outputVal.contains('e')) {
       _outputVal = _outputVal.replaceAll(RegExp(r'0*$'), '');
     }
     if (_outputVal.endsWith('.')) {
       _outputVal = _outputVal.substring(0, _outputVal.length - 1);
     }
-    return _outputVal;
+    final finalOutput = _thousandsFormatter(_outputVal);
+    return finalOutput;
   }
 
   void setDefaults() {
@@ -94,8 +99,9 @@ class ConverterProvider extends ChangeNotifier {
   void updateInputString(String value) {
     if (value != '.') {
       _inputValueString = value;
+      final formattedValue = _thousandsFormatter(value);
       _amountController
-        ..text = value
+        ..text = formattedValue
         ..selection = TextSelection.fromPosition(
             TextPosition(offset: _amountController.text.length));
     }
@@ -133,4 +139,19 @@ class ConverterProvider extends ChangeNotifier {
       _updateConversion();
     }
   }
+}
+
+String _thousandsFormatter(String value) {
+  final regExp = RegExp(r'(\d{1,3})(?=(\d{3})+(?!\d))');
+  final output = value.replaceAllMapped(regExp, (match) {
+    final matchValue = value.substring(match.start, match.end);
+    return '$matchValue,';
+  });
+
+  final regExp2 = RegExp(r'\.(\d{1,3},)+(\d+)?');
+  final last = output.replaceAllMapped(regExp2, (match) {
+    final value = output.substring(match.start, match.end);
+    return value.replaceAll(',', '');
+  });
+  return last;
 }

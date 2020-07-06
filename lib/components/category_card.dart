@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 
 import '../models/category.dart';
 
@@ -13,16 +12,16 @@ class CategoryCard extends StatelessWidget {
         color: Theme.of(context).primaryColor,
         elevation: 0,
         shape: RoundedRectangleBorder(
-          side: const BorderSide(color: Colors.white10),
-          borderRadius: BorderRadius.circular(10),
+          side: const BorderSide(width: 1.5, color: Colors.white10),
+          borderRadius: BorderRadius.circular(8),
         ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
             Icon(
               convCategory.icon,
-              color: Colors.white38,
-              size: 0.05625 * Get.height,
+              color: Colors.white30,
+              size: 0.05625 * MediaQuery.of(context).size.height,
             ),
             Text(
               convCategory.name,
@@ -30,7 +29,7 @@ class CategoryCard extends StatelessWidget {
               style: const TextStyle(
                 fontSize: 16,
                 fontWeight: FontWeight.w400,
-                color: Colors.white60,
+                color: Colors.white54,
               ),
             )
           ],

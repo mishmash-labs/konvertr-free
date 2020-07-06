@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:get/get.dart';
 import 'package:provider/provider.dart';
 
 import 'providers/category_provider.dart';
@@ -20,7 +19,7 @@ class KonvertrHome extends StatelessWidget {
         ChangeNotifierProvider(
             create: (context) => CategoriesProvider(context), lazy: false),
       ],
-      child: GetMaterialApp(
+      child: MaterialApp(
         home: CategoriesScreen(),
         theme: ThemeData(
           primaryColor: Color(0xff380e7f),
