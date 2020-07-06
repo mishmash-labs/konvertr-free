@@ -1,6 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 
 import '../models/unit.dart';
 import '../providers/converter_provider.dart';
@@ -29,7 +28,7 @@ class _UnitsScreenState extends State<UnitsScreen> {
             widget.whichUnit == 'from'
                 ? widget.converterProvider.updateFromUnit(unit.name)
                 : widget.converterProvider.updateToUnit(unit.name);
-            Get.back();
+            Navigator.pop(context);
           },
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 25, vertical: 10),
@@ -50,7 +49,7 @@ class _UnitsScreenState extends State<UnitsScreen> {
                 color:
                     unit.name.toLowerCase() == widget.currentUnit.toLowerCase()
                         ? Colors.red
-                        : Colors.white70,
+                        : Colors.white60,
               ),
             ),
           ),
@@ -63,7 +62,7 @@ class _UnitsScreenState extends State<UnitsScreen> {
         elevation: 0,
         leading: IconButton(
           icon: const Icon(Icons.arrow_back_ios, color: Colors.white70),
-          onPressed: Get.back,
+          onPressed: () => Navigator.pop(context),
         ),
       ),
       body: ListView.builder(

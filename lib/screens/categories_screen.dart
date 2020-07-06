@@ -1,11 +1,13 @@
 import 'package:animations/animations.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_icons/flutter_icons.dart';
 import 'package:provider/provider.dart';
 
 import '../components/category_card.dart';
 import '../models/category.dart';
 import '../providers/category_provider.dart';
 import '../providers/converter_provider.dart';
+import '../utils/theme.dart';
 import 'converters/generic_screen.dart';
 
 class CategoriesScreen extends StatefulWidget {
@@ -36,30 +38,26 @@ class _CategoriesScreenState extends State<CategoriesScreen> {
     return Scaffold(
       appBar: _buildAppBar(),
       backgroundColor: Theme.of(context).primaryColor,
-      body: NestedScrollView(
-        floatHeaderSlivers: true,
-        headerSliverBuilder: (context, innerBoxIsScrolled) => <Widget>[
+      body: CustomScrollView(
+        slivers: [
           SliverAppBar(
             elevation: 0,
             floating: true,
             snap: true,
+            backgroundColor: Colors.transparent,
             title: SearchBar(
                 searchNode: searchNode, searchController: searchController),
           ),
+          Consumer<CategoriesProvider>(
+            builder: (_, cats, __) => cats.categories.isEmpty
+                ? const SliverFillRemaining(
+                    hasScrollBody: false, child: NoCategories())
+                : CategoriesGrid(
+                    cats: cats,
+                    searchNode: searchNode,
+                  ),
+          ),
         ],
-        body: Column(
-          children: [
-            Consumer<CategoriesProvider>(
-              builder: (_, cats, __) => Expanded(
-                child: cats.categories.isEmpty
-                    ? const NoCategories()
-                    : CategoriesGrid(
-                        cats: cats,
-                      ),
-              ),
-            ),
-          ],
-        ),
       ),
     );
   }
@@ -71,15 +69,24 @@ class NoCategories extends StatelessWidget {
   }) : super(key: key);
 
   @override
-  Widget build(BuildContext context) => const Center(
-        child: Text(
-          'no categories',
-          style: TextStyle(
-            fontSize: 25,
-            fontWeight: FontWeight.bold,
-            color: Colors.white70,
+  Widget build(BuildContext context) => Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          const Icon(
+            MaterialCommunityIcons.swap_horizontal_variant,
+            color: Colors.white54,
+            size: 75,
           ),
-        ),
+          const SizedBox(height: 8),
+          const Text(
+            'no categories',
+            style: TextStyle(
+              fontSize: 25,
+              fontWeight: FontWeight.w400,
+              color: Colors.white54,
+            ),
+          ),
+        ],
       );
 }
 
@@ -100,23 +107,23 @@ class SearchBar extends StatelessWidget {
     return Consumer<CategoriesProvider>(
       builder: (_, cat, __) => TextField(
         focusNode: searchNode,
-        cursorColor: Theme.of(context).primaryColor,
+        cursorColor: Colors.white38,
         controller: searchController,
         onChanged: convCategory.searchCategories,
-        style: TextStyle(color: Theme.of(context).primaryColor),
+        style: const TextStyle(color: Colors.white54),
         decoration: InputDecoration(
           isDense: true,
           hintText: 'search categories',
-          hintStyle: TextStyle(color: Theme.of(context).primaryColor),
-          prefixIcon: Icon(
+          hintStyle: const TextStyle(color: Colors.white38),
+          prefixIcon: const Icon(
             Icons.search,
-            color: Theme.of(context).primaryColor,
+            color: Colors.white38,
           ),
           suffixIcon: cat.searchingCategory
               ? IconButton(
-                  icon: Icon(
+                  icon: const Icon(
                     Icons.cancel,
-                    color: Theme.of(context).primaryColor,
+                    color: Colors.white38,
                   ),
                   onPressed: () {
                     convCategory.searchCategories('');
@@ -126,7 +133,7 @@ class SearchBar extends StatelessWidget {
                   },
                 )
               : null,
-          fillColor: Colors.white54,
+          fillColor: secondaryColor,
           filled: true,
           border: OutlineInputBorder(
               borderRadius: BorderRadius.circular(10),
@@ -141,13 +148,14 @@ class CategoriesGrid extends StatelessWidget {
   const CategoriesGrid({
     Key key,
     this.cats,
+    this.searchNode,
   }) : super(key: key);
 
   final CategoriesProvider cats;
+  final FocusNode searchNode;
 
   @override
-  Widget build(BuildContext context) => GridView.count(
-        shrinkWrap: true,
+  Widget build(BuildContext context) => SliverGrid.count(
         crossAxisCount: 3,
         children: cats.categories
             .map((cats) => Padding(
@@ -158,10 +166,13 @@ class CategoriesGrid extends StatelessWidget {
                       closedBuilder: (context, action) => CategoryCard(
                             convCategory: cats,
                           ),
-                      openBuilder: (context, action) => ChangeNotifierProvider(
-                          create: (context) => ConverterProvider(
-                              cats.units, cats.name, null, null),
-                          child: UnitConverter(categoryName: cats.name))),
+                      openBuilder: (context, action) {
+                        searchNode.unfocus();
+                        return ChangeNotifierProvider(
+                            create: (context) => ConverterProvider(
+                                cats.units, cats.name, null, null),
+                            child: UnitConverter(categoryName: cats.name));
+                      }),
                 ))
             .toList(),
       );

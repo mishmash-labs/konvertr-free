@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_icons/flutter_icons.dart';
-import 'package:get/get.dart';
 import 'package:provider/provider.dart';
 
 import '../../components/converter_numpad.dart';
 import '../../providers/converter_provider.dart';
+import '../../utils/theme.dart';
 import '../units_screen.dart';
 
 class UnitConverter extends StatelessWidget {
@@ -28,16 +28,16 @@ class UnitConverter extends StatelessWidget {
           ),
           elevation: 0,
           leading: IconButton(
-            icon: const Icon(
-              Icons.arrow_back_ios,
-              color: Colors.white70,
-            ),
-            onPressed: Get.back,
-          ),
+              icon: const Icon(
+                Icons.arrow_back_ios,
+                color: Colors.white70,
+              ),
+              onPressed: () => Navigator.pop(context)),
         );
 
     return Scaffold(
       appBar: _buildAppBar(),
+      backgroundColor: secondaryColor,
       body: Column(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
@@ -108,12 +108,16 @@ class ConversionCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => Padding(
-        padding:
-            EdgeInsets.symmetric(vertical: Get.height * 0.035, horizontal: 16),
+        padding: EdgeInsets.symmetric(
+            vertical: MediaQuery.of(context).size.height * 0.035,
+            horizontal: 16),
         child: Card(
-            shape:
-                RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
-            elevation: 3,
+            color: secondaryColor,
+            shape: RoundedRectangleBorder(
+              side: const BorderSide(width: 2, color: Colors.white10),
+              borderRadius: BorderRadius.circular(10),
+            ),
+            elevation: 0,
             child: SizedBox(
               width: double.infinity,
               child: Padding(
@@ -121,42 +125,40 @@ class ConversionCard extends StatelessWidget {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
-                    Align(
+                    const Align(
                       alignment: Alignment.centerLeft,
                       child: Text(
                         'amount',
                         style: TextStyle(
                             fontWeight: FontWeight.bold,
-                            color: Theme.of(context).primaryColor,
+                            color: Colors.white54,
                             letterSpacing: 1),
                       ),
                     ),
                     const SizedBox(height: 6),
                     Consumer<ConverterProvider>(
                       builder: (_, conv, __) => TextField(
-                        style: TextStyle(
-                            color: Theme.of(context).primaryColor,
-                            fontSize: 14),
+                        style: const TextStyle(
+                            color: Colors.white54, fontSize: 14),
                         enabled: true,
                         autofocus: true,
                         readOnly: true,
                         showCursor: true,
                         controller: conv.amountController,
-                        cursorColor: Theme.of(context).primaryColor,
+                        cursorColor: Colors.white54,
                         decoration: InputDecoration(
                           isDense: true,
                           suffixText: conv.fromUnit.symbol,
-                          suffixStyle:
-                              TextStyle(color: Theme.of(context).primaryColor),
-                          focusedBorder: OutlineInputBorder(
+                          suffixStyle: const TextStyle(color: Colors.white54),
+                          focusedBorder: const OutlineInputBorder(
                             borderSide: BorderSide(
-                              color: Theme.of(context).primaryColor,
+                              color: Colors.white54,
                               width: 1.5,
                             ),
                           ),
-                          border: OutlineInputBorder(
+                          border: const OutlineInputBorder(
                             borderSide: BorderSide(
-                              color: Theme.of(context).primaryColor,
+                              color: Colors.white54,
                               width: 1.5,
                             ),
                           ),
@@ -164,13 +166,13 @@ class ConversionCard extends StatelessWidget {
                       ),
                     ),
                     const SizedBox(height: 12),
-                    Align(
+                    const Align(
                       alignment: Alignment.centerLeft,
                       child: Text(
                         'converted to',
                         style: TextStyle(
                             fontWeight: FontWeight.bold,
-                            color: Theme.of(context).primaryColor,
+                            color: Colors.white54,
                             letterSpacing: 1),
                       ),
                     ),
@@ -180,20 +182,18 @@ class ConversionCard extends StatelessWidget {
                         decoration: InputDecoration(
                           isDense: true,
                           suffixText: conv.toUnit.symbol,
-                          suffixStyle:
-                              TextStyle(color: Theme.of(context).primaryColor),
-                          enabledBorder: OutlineInputBorder(
+                          suffixStyle: const TextStyle(color: Colors.white54),
+                          enabledBorder: const OutlineInputBorder(
                             borderSide: BorderSide(
-                              color: Theme.of(context).primaryColor,
+                              color: Colors.white54,
                               width: 1.5,
                             ),
                           ),
                         ),
                         child: Text(
                           conv.convertedValue,
-                          style: TextStyle(
-                              color: Theme.of(context).primaryColor,
-                              fontSize: 14),
+                          style: const TextStyle(
+                              color: Colors.white54, fontSize: 14),
                         ),
                       ),
                     ),
@@ -211,8 +211,12 @@ class TopBackground extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => Container(
-        height: 0.25 * Get.height,
-        color: Theme.of(context).primaryColor,
+        decoration: BoxDecoration(
+            color: Theme.of(context).primaryColor,
+            borderRadius: const BorderRadius.only(
+                bottomLeft: Radius.circular(30),
+                bottomRight: Radius.circular(30))),
+        height: 0.25 * MediaQuery.of(context).size.height,
       );
 }
 
@@ -230,11 +234,18 @@ class ConverterSelection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => InkWell(
-        onTap: () => Get.to(UnitsScreen(
-          converterProvider: convProvider,
-          whichUnit: whichUnit,
-          currentUnit: currentUnit,
-        )),
+        onTap: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => UnitsScreen(
+                converterProvider: convProvider,
+                whichUnit: whichUnit,
+                currentUnit: currentUnit,
+              ),
+            ),
+          );
+        },
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -242,14 +253,14 @@ class ConverterSelection extends StatelessWidget {
               whichUnit,
               style: const TextStyle(color: Colors.white70),
             ),
-            SizedBox(height: 0.01 * Get.height),
+            SizedBox(height: 0.01 * MediaQuery.of(context).size.height),
             Container(
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(6),
-                color: Colors.white12,
+                color: secondaryColor,
               ),
-              height: 0.05 * Get.height,
-              width: 0.41 * Get.width,
+              height: 0.05 * MediaQuery.of(context).size.height,
+              width: 0.41 * MediaQuery.of(context).size.width,
               child: Align(
                   alignment: Alignment.centerLeft,
                   child: Padding(
