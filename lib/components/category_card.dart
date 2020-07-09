@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import '../models/category.dart';
 
 class CategoryCard extends StatelessWidget {
-  const CategoryCard({Key key, this.convCategory}) : super(key: key);
+  const CategoryCard({key, this.convCategory}) : super(key: key);
 
   final Category convCategory;
 

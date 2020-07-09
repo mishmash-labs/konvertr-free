@@ -1,10 +1,14 @@
+import 'package:flushbar/flushbar.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_clipboard_manager/flutter_clipboard_manager.dart';
+import 'package:flutter_icons/flutter_icons.dart';
+import 'package:konvertr_free/utils/theme.dart';
 
 import '../models/unit.dart';
 
 class ConverterProvider extends ChangeNotifier {
   ConverterProvider(
-      this.units, this._categoryName, String fromUnit, String toUnit) {
+      this._units, this._categoryName, String fromUnit, String toUnit) {
     _amountController = TextEditingController();
     if (fromUnit == null) {
       setDefaults();
@@ -14,10 +18,6 @@ class ConverterProvider extends ChangeNotifier {
     }
   }
 
-  int decimalPoints;
-  int precision;
-  final List<Unit> units;
-
   TextEditingController _amountController;
   final String _categoryName;
   String _convertedValue = '';
@@ -25,6 +25,7 @@ class ConverterProvider extends ChangeNotifier {
   double _inputValue;
   String _inputValueString;
   Unit _toUnit;
+  final List<Unit> _units;
 
   String get convertedValue => _convertedValue;
 
@@ -32,13 +33,11 @@ class ConverterProvider extends ChangeNotifier {
 
   Unit get toUnit => _toUnit;
 
-  String get inputValueString => _inputValueString;
-
   TextEditingController get amountController => _amountController;
 
-  double get inputValue => _inputValue;
-
   String get categoryName => _categoryName;
+
+  List<Unit> get units => _units;
 
   String _format(double value) {
     final _tempVal = value.toStringAsFixed(10);
@@ -51,8 +50,7 @@ class ConverterProvider extends ChangeNotifier {
     if (_outputVal.endsWith('.')) {
       _outputVal = _outputVal.substring(0, _outputVal.length - 1);
     }
-    final finalOutput = _thousandsFormatter(_outputVal);
-    return finalOutput;
+    return _thousandsFormatter(_outputVal);
   }
 
   void setDefaults() {
@@ -63,10 +61,96 @@ class ConverterProvider extends ChangeNotifier {
     }
   }
 
+  void executeButton(BuildContext context, String value) {
+    switch (value) {
+      case 'C':
+        _updateInputString('');
+        break;
+      case 'del':
+        _updateInputString(
+            _inputValueString.substring(0, _inputValueString.length - 1));
+        break;
+      case 'swap':
+        final tempTo = toUnit.name;
+        updateToUnit(fromUnit.name);
+        updateFromUnit(tempTo);
+        break;
+      case '+/-':
+        if (_inputValue != null) {
+          if (_inputValue.isNegative) {
+            _updateInputString(
+                _inputValueString.substring(1, _inputValueString.length));
+          } else {
+            _updateInputString('-$_inputValueString');
+          }
+        }
+        break;
+      case 'copy':
+        if (convertedValue != '') {
+          FlutterClipboardManager.copyToClipBoard(
+                  '$_inputValueString ${fromUnit.name} = $convertedValue ${toUnit.name}')
+              .then(
+            (result) {
+              if (result) {
+                Flushbar(
+                  margin: const EdgeInsets.all(8),
+                  borderRadius: 8,
+                  flushbarPosition: FlushbarPosition.TOP,
+                  message: 'conversion copied to clipboard',
+                  icon: const Icon(
+                    Feather.copy,
+                    color: Colors.white60,
+                  ),
+                  backgroundColor: secondaryColor,
+                  barBlur: 8,
+                  shouldIconPulse: true,
+                  duration: const Duration(seconds: 3),
+                ).show(context);
+              }
+            },
+          );
+        }
+        break;
+      case '.':
+        if (_inputValueString == null || _inputValueString == '') {
+          _updateInputString('0.');
+        } else if (_inputValueString != null) {
+          if (!_inputValueString.contains('.') &&
+              _inputValueString.isNotEmpty) {
+            _updateInputString(_inputValueString + value);
+          }
+        }
+        break;
+      case '00':
+        if (_inputValueString == null || _inputValueString == '') {
+        } else {
+          _updateInputString(_inputValueString + value);
+        }
+        break;
+      case '0':
+        if (_inputValueString == null || _inputValueString == '') {
+          _updateInputString('0.');
+        } else {
+          _updateInputString(_inputValueString + value);
+        }
+
+        break;
+      default:
+        _buttonValue(value);
+    }
+  }
+
+  void _buttonValue(String value) {
+    if (_inputValueString == null) {
+      _updateInputString(value);
+    } else {
+      _updateInputString(_inputValueString + value);
+    }
+  }
+
   Future<void> _updateConversion() async {
     if (_categoryName == 'temperature') {
-      final temp = _toKelvin();
-      _convertedValue = _format(_toTemperature(temp));
+      _convertedValue = _format(_toTemperature());
     } else {
       _convertedValue =
           _format(_inputValue * (_toUnit.conversion / _fromUnit.conversion));
@@ -74,34 +158,34 @@ class ConverterProvider extends ChangeNotifier {
     notifyListeners();
   }
 
-  double _toKelvin() {
+  double _toTemperature() {
+    double finalVal;
     switch (fromUnit.name.toLowerCase()) {
       case 'celsius':
-        return _inputValue + 273.15;
+        finalVal = _inputValue + 273.15;
+        break;
       case 'fahrenheit':
-        return (_inputValue - 32) * 5 / 9 + 273.15;
+        finalVal = (_inputValue - 32) * 5 / 9 + 273.15;
+        break;
       default:
-        return _inputValue;
+        finalVal = _inputValue;
     }
-  }
 
-  double _toTemperature(double value) {
     switch (toUnit.name.toLowerCase()) {
       case 'celsius':
-        return value - 273.15;
+        return finalVal - 273.15;
       case 'fahrenheit':
-        return (value - 273.15) * 9 / 5 + 32;
+        return (finalVal - 273.15) * 9 / 5 + 32;
       default:
-        return value;
+        return finalVal;
     }
   }
 
-  void updateInputString(String value) {
+  void _updateInputString(String value) {
     if (value != '.') {
       _inputValueString = value;
-      final formattedValue = _thousandsFormatter(value);
       _amountController
-        ..text = formattedValue
+        ..text = _thousandsFormatter(value)
         ..selection = TextSelection.fromPosition(
             TextPosition(offset: _amountController.text.length));
     }
@@ -114,8 +198,7 @@ class ConverterProvider extends ChangeNotifier {
       _convertedValue = '';
       notifyListeners();
     } else {
-      final _inputDouble = double.parse(_inputValueString);
-      _inputValue = _inputDouble;
+      _inputValue = double.parse(_inputValueString);
       _updateConversion();
     }
   }
@@ -139,19 +222,17 @@ class ConverterProvider extends ChangeNotifier {
       _updateConversion();
     }
   }
-}
 
-String _thousandsFormatter(String value) {
-  final regExp = RegExp(r'(\d{1,3})(?=(\d{3})+(?!\d))');
-  final output = value.replaceAllMapped(regExp, (match) {
-    final matchValue = value.substring(match.start, match.end);
-    return '$matchValue,';
-  });
+  String _thousandsFormatter(String value) {
+    final output =
+        value.replaceAllMapped(RegExp(r'(\d{1,3})(?=(\d{3})+(?!\d))'), (match) {
+      final matchValue = value.substring(match.start, match.end);
+      return '$matchValue,';
+    });
 
-  final regExp2 = RegExp(r'\.(\d{1,3},)+(\d+)?');
-  final last = output.replaceAllMapped(regExp2, (match) {
-    final value = output.substring(match.start, match.end);
-    return value.replaceAll(',', '');
-  });
-  return last;
+    return output.replaceAllMapped(RegExp(r'\.(\d{1,3},)+(\d+)?'), (match) {
+      final value = output.substring(match.start, match.end);
+      return value.replaceAll(',', '');
+    });
+  }
 }

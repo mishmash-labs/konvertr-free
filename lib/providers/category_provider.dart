@@ -110,8 +110,10 @@ class CategoriesProvider extends ChangeNotifier {
       final List<Unit> units =
           data[key].map<Unit>((data) => Unit.fromJson(data)).toList();
 
-      final category =
-          Category(name: key, units: units, icon: getIconForCategory(key));
+      final category = Category(
+          name: key,
+          units: units..sort((a, b) => a.name.compareTo(b.name)),
+          icon: getIconForCategory(key));
 
       _categories.add(category);
     });
@@ -120,17 +122,15 @@ class CategoriesProvider extends ChangeNotifier {
   }
 
   void searchCategories(String searchTerm) {
-    var _searchedList = <Category>[];
-
-    (searchTerm.isNotEmpty)
+    searchTerm.isNotEmpty
         ? _searchingCategory = true
         : _searchingCategory = false;
 
-    _searchedList = _allCategories
+    _categories = _allCategories
         .where((element) =>
             element.name.toLowerCase().contains(searchTerm.toLowerCase()))
         .toList();
-    _categories = _searchedList;
+
     notifyListeners();
   }
 

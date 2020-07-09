@@ -1,21 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_icons/flutter_icons.dart';
+import 'package:konvertr_free/utils/theme.dart';
 import 'package:provider/provider.dart';
 
-import '../../components/converter_numpad.dart';
-import '../../providers/converter_provider.dart';
-import '../../utils/theme.dart';
-import '../units_screen.dart';
+import '../components/converter_numpad.dart';
+import '../providers/converter_provider.dart';
+import 'units_screen.dart';
 
-class UnitConverter extends StatelessWidget {
-  const UnitConverter({Key key, this.categoryName}) : super(key: key);
+class SingleConverter extends StatelessWidget {
+  const SingleConverter({key, this.categoryName}) : super(key: key);
 
   final String categoryName;
 
   @override
   Widget build(BuildContext context) {
-    final convProvider = Provider.of<ConverterProvider>(context);
-
     AppBar _buildAppBar() => AppBar(
           backgroundColor: Theme.of(context).primaryColor,
           centerTitle: true,
@@ -43,7 +41,7 @@ class UnitConverter extends StatelessWidget {
         children: [
           Stack(children: [
             const TopBackground(),
-            TopSection(convProvider: convProvider),
+            const TopSection(),
           ]),
           const RepaintBoundary(child: ConverterKeypad()),
         ],
@@ -53,58 +51,50 @@ class UnitConverter extends StatelessWidget {
 }
 
 class TopSection extends StatelessWidget {
-  const TopSection({
-    Key key,
-    @required this.convProvider,
-  }) : super(key: key);
-
-  final ConverterProvider convProvider;
+  const TopSection({key}) : super(key: key);
 
   @override
-  Widget build(BuildContext context) => Column(
-        children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              Consumer<ConverterProvider>(
-                builder: (_, conv, __) => ConverterSelection(
-                    convProvider: conv,
-                    whichUnit: 'from',
-                    currentUnit: conv.fromUnit.name.toLowerCase()),
-              ),
-              Padding(
-                padding: const EdgeInsets.only(top: 25),
-                child: InkWell(
-                  onTap: () {
-                    final tempTo = convProvider.toUnit.name;
-                    convProvider
-                      ..updateToUnit(convProvider.fromUnit.name)
-                      ..updateFromUnit(tempTo);
-                  },
-                  child: const Icon(
-                    AntDesign.swap,
-                    color: Colors.white60,
-                    size: 28,
-                  ),
+  Widget build(BuildContext context) {
+    final convProvider = Provider.of<ConverterProvider>(context);
+
+    return Column(
+      children: [
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            Consumer<ConverterProvider>(
+              builder: (_, conv, __) => ConverterSelection(
+                  convProvider: conv,
+                  whichUnit: 'from',
+                  currentUnit: conv.fromUnit.name.toLowerCase()),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(top: 25),
+              child: InkWell(
+                onTap: () => convProvider.executeButton(context, 'swap'),
+                child: const Icon(
+                  AntDesign.swap,
+                  color: Colors.white60,
+                  size: 28,
                 ),
               ),
-              Consumer<ConverterProvider>(
-                builder: (_, conv, __) => ConverterSelection(
-                    convProvider: conv,
-                    whichUnit: 'to',
-                    currentUnit: conv.toUnit.name.toLowerCase()),
-              )
-            ],
-          ),
-          const ConversionCard()
-        ],
-      );
+            ),
+            Consumer<ConverterProvider>(
+              builder: (_, conv, __) => ConverterSelection(
+                  convProvider: conv,
+                  whichUnit: 'to',
+                  currentUnit: conv.toUnit.name.toLowerCase()),
+            )
+          ],
+        ),
+        const ConversionCard()
+      ],
+    );
+  }
 }
 
 class ConversionCard extends StatelessWidget {
-  const ConversionCard({
-    Key key,
-  }) : super(key: key);
+  const ConversionCard({key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) => Padding(
@@ -205,9 +195,7 @@ class ConversionCard extends StatelessWidget {
 }
 
 class TopBackground extends StatelessWidget {
-  const TopBackground({
-    Key key,
-  }) : super(key: key);
+  const TopBackground({key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) => Container(
@@ -222,7 +210,7 @@ class TopBackground extends StatelessWidget {
 
 class ConverterSelection extends StatelessWidget {
   const ConverterSelection({
-    Key key,
+    key,
     @required this.convProvider,
     @required this.whichUnit,
     @required this.currentUnit,
@@ -239,7 +227,7 @@ class ConverterSelection extends StatelessWidget {
             context,
             MaterialPageRoute(
               builder: (context) => UnitsScreen(
-                converterProvider: convProvider,
+                convProvider: convProvider,
                 whichUnit: whichUnit,
                 currentUnit: currentUnit,
               ),
@@ -262,16 +250,17 @@ class ConverterSelection extends StatelessWidget {
               height: 0.05 * MediaQuery.of(context).size.height,
               width: 0.41 * MediaQuery.of(context).size.width,
               child: Align(
-                  alignment: Alignment.centerLeft,
-                  child: Padding(
-                    padding: const EdgeInsets.only(left: 4),
-                    child: Text(
-                      currentUnit,
-                      overflow: TextOverflow.ellipsis,
-                      style: const TextStyle(
-                          color: Colors.white70, fontWeight: FontWeight.w400),
-                    ),
-                  )),
+                alignment: Alignment.centerLeft,
+                child: Padding(
+                  padding: const EdgeInsets.only(left: 4),
+                  child: Text(
+                    currentUnit,
+                    overflow: TextOverflow.ellipsis,
+                    style: const TextStyle(
+                        color: Colors.white70, fontWeight: FontWeight.w400),
+                  ),
+                ),
+              ),
             )
           ],
         ),

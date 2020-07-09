@@ -1,24 +1,19 @@
 import 'package:animations/animations.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_icons/flutter_icons.dart';
+import 'package:konvertr_free/utils/theme.dart';
 import 'package:provider/provider.dart';
 
 import '../components/category_card.dart';
-import '../models/category.dart';
 import '../providers/category_provider.dart';
 import '../providers/converter_provider.dart';
-import '../utils/theme.dart';
-import 'converters/generic_screen.dart';
+import 'singleconvert_screen.dart';
 
-class CategoriesScreen extends StatefulWidget {
-  @override
-  _CategoriesScreenState createState() => _CategoriesScreenState();
-}
+class CategoriesScreen extends StatelessWidget {
+  const CategoriesScreen({key}) : super(key: key);
 
-class _CategoriesScreenState extends State<CategoriesScreen> {
-  TextEditingController searchController = TextEditingController();
-  FocusNode searchNode = FocusNode();
-  List<Category> value;
+  TextEditingController get searchController => TextEditingController();
+  FocusNode get searchNode => FocusNode();
 
   @override
   Widget build(BuildContext context) {
@@ -64,9 +59,7 @@ class _CategoriesScreenState extends State<CategoriesScreen> {
 }
 
 class NoCategories extends StatelessWidget {
-  const NoCategories({
-    Key key,
-  }) : super(key: key);
+  const NoCategories({key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) => Column(
@@ -92,7 +85,7 @@ class NoCategories extends StatelessWidget {
 
 class SearchBar extends StatelessWidget {
   const SearchBar({
-    Key key,
+    key,
     @required this.searchNode,
     @required this.searchController,
   }) : super(key: key);
@@ -102,14 +95,13 @@ class SearchBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final convCategory =
-        Provider.of<CategoriesProvider>(context, listen: false);
+    final catProvider = Provider.of<CategoriesProvider>(context, listen: false);
     return Consumer<CategoriesProvider>(
       builder: (_, cat, __) => TextField(
         focusNode: searchNode,
         cursorColor: Colors.white38,
         controller: searchController,
-        onChanged: convCategory.searchCategories,
+        onChanged: catProvider.searchCategories,
         style: const TextStyle(color: Colors.white54),
         decoration: InputDecoration(
           isDense: true,
@@ -126,9 +118,9 @@ class SearchBar extends StatelessWidget {
                     color: Colors.white38,
                   ),
                   onPressed: () {
-                    convCategory.searchCategories('');
+                    catProvider.searchCategories('');
                     searchController.clear();
-                    convCategory.cancelSearch();
+                    catProvider.cancelSearch();
                     searchNode.unfocus();
                   },
                 )
@@ -146,7 +138,7 @@ class SearchBar extends StatelessWidget {
 
 class CategoriesGrid extends StatelessWidget {
   const CategoriesGrid({
-    Key key,
+    key,
     this.cats,
     this.searchNode,
   }) : super(key: key);
@@ -158,22 +150,26 @@ class CategoriesGrid extends StatelessWidget {
   Widget build(BuildContext context) => SliverGrid.count(
         crossAxisCount: 3,
         children: cats.categories
-            .map((cats) => Padding(
-                  padding: const EdgeInsets.all(2),
-                  child: OpenContainer(
-                      closedColor: Theme.of(context).primaryColor,
-                      closedElevation: 0,
-                      closedBuilder: (context, action) => CategoryCard(
-                            convCategory: cats,
-                          ),
-                      openBuilder: (context, action) {
-                        searchNode.unfocus();
-                        return ChangeNotifierProvider(
-                            create: (context) => ConverterProvider(
-                                cats.units, cats.name, null, null),
-                            child: UnitConverter(categoryName: cats.name));
-                      }),
-                ))
+            .map(
+              (cats) => Padding(
+                padding: const EdgeInsets.all(2),
+                child: OpenContainer(
+                  closedColor: Theme.of(context).primaryColor,
+                  closedElevation: 0,
+                  closedBuilder: (context, action) => CategoryCard(
+                    convCategory: cats,
+                  ),
+                  openBuilder: (context, action) {
+                    searchNode.unfocus();
+
+                    return ChangeNotifierProvider(
+                        create: (context) => ConverterProvider(
+                            cats.units, cats.name, null, null),
+                        child: SingleConverter(categoryName: cats.name));
+                  },
+                ),
+              ),
+            )
             .toList(),
       );
 }
