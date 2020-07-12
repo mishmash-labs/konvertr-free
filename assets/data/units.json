@@ -226,7 +226,7 @@
       "base_unit": true
     },
     {
-      "name": "kiloampere ",
+      "name": "kiloampere",
       "symbol": "kA",
       "conversion": 0.001
     },
@@ -528,7 +528,7 @@
       "conversion": 1000000
     },
     {
-      "name": "liter/day ",
+      "name": "liter/day",
       "symbol": "L/d",
       "conversion": 86400000
     },
@@ -543,7 +543,7 @@
       "conversion": 60000
     },
     {
-      "name": "liter/second ",
+      "name": "liter/second",
       "symbol": "L/s",
       "conversion": 1000
     },
@@ -1036,7 +1036,7 @@
       "conversion": 1
     },
     {
-      "name": "candela/square centimeter ",
+      "name": "candela/square centimeter",
       "symbol": "cd/cm²",
       "conversion": 0.0001
     },

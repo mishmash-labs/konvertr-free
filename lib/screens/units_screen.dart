@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_translate/flutter_translate.dart';
 
+import '../components/my_appbar.dart';
 import '../models/unit.dart';
 import '../providers/converter_provider.dart';
 
@@ -14,21 +16,17 @@ class UnitsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final appBar = AppBar(
-      backgroundColor: Theme.of(context).primaryColor,
-      elevation: 0,
-      leading: IconButton(
-        icon: const Icon(Icons.arrow_back_ios, color: Colors.white70),
-        onPressed: () => Navigator.pop(context),
-      ),
-    );
-
     return Scaffold(
       backgroundColor: Theme.of(context).primaryColor,
-      appBar: appBar,
+      appBar: CustomAppBar(
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back_ios, color: Colors.white70),
+          onPressed: () => Navigator.pop(context),
+        ),
+      ),
       body: ListView.builder(
         itemCount: convProvider.units.length,
-        itemBuilder: (context, index) => UnitListItem(
+        itemBuilder: (context, index) => _UnitListItem(
           unit: convProvider.units[index],
           convProvider: convProvider,
           whichUnit: whichUnit,
@@ -39,8 +37,8 @@ class UnitsScreen extends StatelessWidget {
   }
 }
 
-class UnitListItem extends StatelessWidget {
-  const UnitListItem(
+class _UnitListItem extends StatelessWidget {
+  const _UnitListItem(
       {key, this.convProvider, this.currentUnit, this.whichUnit, this.unit})
       : super(key: key);
 
@@ -60,7 +58,7 @@ class UnitListItem extends StatelessWidget {
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 25, vertical: 10),
           child: Text.rich(
-            TextSpan(text: unit.name.toLowerCase(), children: [
+            TextSpan(text: translate(unit.name).toLowerCase(), children: [
               if (unit.symbol != '')
                 TextSpan(
                   text: '  ${unit.symbol}',

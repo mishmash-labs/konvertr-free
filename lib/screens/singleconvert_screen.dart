@@ -1,10 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_icons/flutter_icons.dart';
+import 'package:flutter_translate/flutter_translate.dart';
 import 'package:konvertr_free/utils/theme.dart';
 import 'package:provider/provider.dart';
 
 import '../components/converter_numpad.dart';
+import '../components/my_appbar.dart';
 import '../providers/converter_provider.dart';
+import '../utils/extensions.dart';
+import '../utils/keys.dart';
 import 'units_screen.dart';
 
 class SingleConverter extends StatelessWidget {
@@ -14,34 +18,23 @@ class SingleConverter extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    AppBar _buildAppBar() => AppBar(
-          backgroundColor: Theme.of(context).primaryColor,
-          centerTitle: true,
-          title: Text(
-            categoryName,
-            style: const TextStyle(
-                letterSpacing: 1.5,
-                color: Colors.white70,
-                fontWeight: FontWeight.w600),
-          ),
-          elevation: 0,
-          leading: IconButton(
-              icon: const Icon(
-                Icons.arrow_back_ios,
-                color: Colors.white70,
-              ),
-              onPressed: () => Navigator.pop(context)),
-        );
-
     return Scaffold(
-      appBar: _buildAppBar(),
+      appBar: CustomAppBar(
+        title: categoryName,
+        leading: IconButton(
+            icon: const Icon(
+              Icons.arrow_back_ios,
+              color: Colors.white70,
+            ),
+            onPressed: () => Navigator.pop(context)),
+      ),
       backgroundColor: secondaryColor,
       body: Column(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Stack(children: [
-            const TopBackground(),
-            const TopSection(),
+            const _TopBackground(),
+            const _TopSection(),
           ]),
           const RepaintBoundary(child: ConverterKeypad()),
         ],
@@ -50,8 +43,8 @@ class SingleConverter extends StatelessWidget {
   }
 }
 
-class TopSection extends StatelessWidget {
-  const TopSection({key}) : super(key: key);
+class _TopSection extends StatelessWidget {
+  const _TopSection({key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -87,14 +80,14 @@ class TopSection extends StatelessWidget {
             )
           ],
         ),
-        const ConversionCard()
+        const _ConversionCard()
       ],
     );
   }
 }
 
-class ConversionCard extends StatelessWidget {
-  const ConversionCard({key}) : super(key: key);
+class _ConversionCard extends StatelessWidget {
+  const _ConversionCard({key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) => Padding(
@@ -115,11 +108,11 @@ class ConversionCard extends StatelessWidget {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
-                    const Align(
+                    Align(
                       alignment: Alignment.centerLeft,
                       child: Text(
-                        'amount',
-                        style: TextStyle(
+                        translate(Keys.Converter_Amount).toLowerCase(),
+                        style: const TextStyle(
                             fontWeight: FontWeight.bold,
                             color: Colors.white54,
                             letterSpacing: 1),
@@ -156,11 +149,11 @@ class ConversionCard extends StatelessWidget {
                       ),
                     ),
                     const SizedBox(height: 12),
-                    const Align(
+                    Align(
                       alignment: Alignment.centerLeft,
                       child: Text(
-                        'converted to',
-                        style: TextStyle(
+                        translate(Keys.Converter_Converted_To).toLowerCase(),
+                        style: const TextStyle(
                             fontWeight: FontWeight.bold,
                             color: Colors.white54,
                             letterSpacing: 1),
@@ -194,8 +187,8 @@ class ConversionCard extends StatelessWidget {
       );
 }
 
-class TopBackground extends StatelessWidget {
-  const TopBackground({key}) : super(key: key);
+class _TopBackground extends StatelessWidget {
+  const _TopBackground({key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) => Container(
@@ -223,14 +216,11 @@ class ConverterSelection extends StatelessWidget {
   @override
   Widget build(BuildContext context) => InkWell(
         onTap: () {
-          Navigator.push(
-            context,
-            MaterialPageRoute(
-              builder: (context) => UnitsScreen(
-                convProvider: convProvider,
-                whichUnit: whichUnit,
-                currentUnit: currentUnit,
-              ),
+          context.navigateTo(
+            UnitsScreen(
+              convProvider: convProvider,
+              whichUnit: whichUnit,
+              currentUnit: currentUnit,
             ),
           );
         },
@@ -238,7 +228,7 @@ class ConverterSelection extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              whichUnit,
+              translate(whichUnit).toLowerCase(),
               style: const TextStyle(color: Colors.white70),
             ),
             SizedBox(height: 0.01 * MediaQuery.of(context).size.height),
@@ -254,7 +244,7 @@ class ConverterSelection extends StatelessWidget {
                 child: Padding(
                   padding: const EdgeInsets.only(left: 4),
                   child: Text(
-                    currentUnit,
+                    translate(currentUnit).toLowerCase(),
                     overflow: TextOverflow.ellipsis,
                     style: const TextStyle(
                         color: Colors.white70, fontWeight: FontWeight.w400),

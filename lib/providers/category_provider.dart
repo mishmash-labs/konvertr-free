@@ -2,6 +2,7 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_icons/flutter_icons.dart';
+import 'package:flutter_translate/flutter_translate.dart';
 
 import '../models/category.dart';
 import '../models/unit.dart';
@@ -117,7 +118,12 @@ class CategoriesProvider extends ChangeNotifier {
 
       _categories.add(category);
     });
-    _allCategories = _categories..sort((a, b) => a.name.compareTo(b.name));
+    _allCategories = _categories
+      ..sort((a, b) {
+        final translatedA = translate(a.name).toLowerCase();
+        final translatedB = translate(b.name).toLowerCase();
+        return translatedA.compareTo(translatedB);
+      });
     notifyListeners();
   }
 
@@ -126,10 +132,10 @@ class CategoriesProvider extends ChangeNotifier {
         ? _searchingCategory = true
         : _searchingCategory = false;
 
-    _categories = _allCategories
-        .where((element) =>
-            element.name.toLowerCase().contains(searchTerm.toLowerCase()))
-        .toList();
+    _categories = _allCategories.where((element) {
+      final translated = translate(element.name);
+      return translated.toLowerCase().contains(searchTerm.toLowerCase());
+    }).toList();
 
     notifyListeners();
   }

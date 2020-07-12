@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_translate/flutter_translate.dart';
 
 import '../models/category.dart';
 
@@ -24,7 +25,7 @@ class CategoryCard extends StatelessWidget {
               size: 0.05625 * MediaQuery.of(context).size.height,
             ),
             Text(
-              convCategory.name,
+              translate(convCategory.name).toLowerCase(),
               overflow: TextOverflow.ellipsis,
               style: const TextStyle(
                 fontSize: 16,

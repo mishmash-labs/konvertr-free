@@ -2,9 +2,11 @@ import 'package:flushbar/flushbar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_clipboard_manager/flutter_clipboard_manager.dart';
 import 'package:flutter_icons/flutter_icons.dart';
+import 'package:flutter_translate/flutter_translate.dart';
 import 'package:konvertr_free/utils/theme.dart';
 
 import '../models/unit.dart';
+import '../utils/keys.dart';
 
 class ConverterProvider extends ChangeNotifier {
   ConverterProvider(
@@ -88,7 +90,7 @@ class ConverterProvider extends ChangeNotifier {
       case 'copy':
         if (convertedValue != '') {
           FlutterClipboardManager.copyToClipBoard(
-                  '$_inputValueString ${fromUnit.name} = $convertedValue ${toUnit.name}')
+                  '$_inputValueString ${translate(fromUnit.name).toLowerCase()} = $convertedValue ${translate(toUnit.name).toLowerCase()}')
               .then(
             (result) {
               if (result) {
@@ -96,12 +98,12 @@ class ConverterProvider extends ChangeNotifier {
                   margin: const EdgeInsets.all(8),
                   borderRadius: 8,
                   flushbarPosition: FlushbarPosition.TOP,
-                  message: 'conversion copied to clipboard',
+                  message: translate(Keys.Clipboard).toLowerCase(),
                   icon: const Icon(
                     Feather.copy,
                     color: Colors.white60,
                   ),
-                  backgroundColor: secondaryColor,
+                  backgroundColor: secondaryColor.withOpacity(0.5),
                   barBlur: 8,
                   shouldIconPulse: true,
                   duration: const Duration(seconds: 3),
