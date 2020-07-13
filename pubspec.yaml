@@ -1,7 +1,7 @@
 name: konvertr_free
 description: Unit Converter App built using Flutter
 
-version: 0.6.0+9
+version: 0.7.0+10
 
 environment:
   sdk: ">=2.6.0 <3.0.0"
@@ -23,6 +23,15 @@ dependencies:
 dev_dependencies:
   build_runner: ^1.10.0
   flutter_translate_gen: ^1.2.1
+
+flutter_icons:
+  includes:
+    - ant 
+    - fea
+    - mco
+    - faw5s
+    - faw
+    - ion
 
 flutter:
   uses-material-design: true
