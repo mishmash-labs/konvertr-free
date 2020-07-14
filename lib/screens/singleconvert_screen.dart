@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_icons/flutter_icons.dart';
 import 'package:flutter_translate/flutter_translate.dart';
 import 'package:konvertr_free/utils/theme.dart';
 import 'package:provider/provider.dart';
@@ -8,6 +7,7 @@ import '../components/converter_numpad.dart';
 import '../components/my_appbar.dart';
 import '../providers/converter_provider.dart';
 import '../utils/extensions.dart';
+import '../utils/icons.dart';
 import '../utils/keys.dart';
 import 'units_screen.dart';
 
@@ -66,7 +66,7 @@ class _TopSection extends StatelessWidget {
               child: InkWell(
                 onTap: () => convProvider.executeButton(context, 'swap'),
                 child: const Icon(
-                  AntDesign.swap,
+                  KonvertrIcons.swap,
                   color: Colors.white60,
                   size: 28,
                 ),

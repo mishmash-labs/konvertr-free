@@ -1,6 +1,5 @@
 import 'package:animations/animations.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_icons/flutter_icons.dart';
 import 'package:flutter_translate/flutter_translate.dart';
 import 'package:konvertr_free/utils/theme.dart';
 import 'package:provider/provider.dart';
@@ -9,6 +8,7 @@ import '../components/category_card.dart';
 import '../components/my_appbar.dart';
 import '../providers/category_provider.dart';
 import '../providers/converter_provider.dart';
+import '../utils/icons.dart';
 import '../utils/keys.dart';
 import 'singleconvert_screen.dart';
 
@@ -58,7 +58,7 @@ class _NoCategories extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           const Icon(
-            MaterialCommunityIcons.swap_horizontal_variant,
+            KonvertrIcons.swap_horizontal_variant,
             color: Colors.white54,
             size: 75,
           ),
@@ -100,13 +100,13 @@ class _SearchBar extends StatelessWidget {
           hintText: translate(Keys.Search_Categories).toLowerCase(),
           hintStyle: const TextStyle(color: Colors.white38),
           prefixIcon: const Icon(
-            Icons.search,
+            KonvertrIcons.search,
             color: Colors.white38,
           ),
           suffixIcon: cat.searchingCategory
               ? IconButton(
                   icon: const Icon(
-                    Icons.cancel,
+                    KonvertrIcons.cancel,
                     color: Colors.white38,
                   ),
                   onPressed: () {

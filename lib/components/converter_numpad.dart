@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_icons/flutter_icons.dart';
 import 'package:provider/provider.dart';
 
 import '../providers/converter_provider.dart';
+import '../utils/icons.dart';
 
 class ConverterKeypad extends StatelessWidget {
   const ConverterKeypad({key}) : super(key: key);
@@ -42,7 +42,7 @@ class ConverterKeypad extends StatelessWidget {
               valueButton(value: '7'),
               valueButton(value: '8'),
               valueButton(value: '9'),
-              iconButton(value: 'copy', icon: Feather.copy),
+              iconButton(value: 'copy', icon: KonvertrIcons.copy),
             ],
           ),
           TableRow(
@@ -50,7 +50,7 @@ class ConverterKeypad extends StatelessWidget {
               valueButton(value: '4'),
               valueButton(value: '5'),
               valueButton(value: '6'),
-              iconButton(value: 'swap', icon: AntDesign.swap),
+              iconButton(value: 'swap', icon: KonvertrIcons.swap),
             ],
           ),
           TableRow(
@@ -68,8 +68,7 @@ class ConverterKeypad extends StatelessWidget {
               convProvider.categoryName == 'temperature'
                   ? valueButton(value: '+/-')
                   : valueButton(value: '00'),
-              iconButton(
-                  value: 'del', icon: MaterialCommunityIcons.backspace_outline),
+              iconButton(value: 'del', icon: KonvertrIcons.backspace),
             ],
           ),
         ],

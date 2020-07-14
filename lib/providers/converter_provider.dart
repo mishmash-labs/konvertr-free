@@ -1,11 +1,11 @@
 import 'package:flushbar/flushbar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_clipboard_manager/flutter_clipboard_manager.dart';
-import 'package:flutter_icons/flutter_icons.dart';
 import 'package:flutter_translate/flutter_translate.dart';
 import 'package:konvertr_free/utils/theme.dart';
 
 import '../models/unit.dart';
+import '../utils/icons.dart';
 import '../utils/keys.dart';
 
 class ConverterProvider extends ChangeNotifier {
@@ -100,7 +100,7 @@ class ConverterProvider extends ChangeNotifier {
                   flushbarPosition: FlushbarPosition.TOP,
                   message: translate(Keys.Clipboard).toLowerCase(),
                   icon: const Icon(
-                    Feather.copy,
+                    KonvertrIcons.copy,
                     color: Colors.white60,
                   ),
                   backgroundColor: secondaryColor.withOpacity(0.5),

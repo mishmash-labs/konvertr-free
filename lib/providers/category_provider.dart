@@ -1,11 +1,11 @@
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_icons/flutter_icons.dart';
 import 'package:flutter_translate/flutter_translate.dart';
 
 import '../models/category.dart';
 import '../models/unit.dart';
+import '../utils/icons.dart';
 
 class CategoriesProvider extends ChangeNotifier {
   CategoriesProvider(BuildContext context) {
@@ -23,82 +23,82 @@ class CategoriesProvider extends ChangeNotifier {
   IconData getIconForCategory(String categoryName) {
     switch (categoryName) {
       case 'angle':
-        return FontAwesome5Solid.drafting_compass;
+        return KonvertrIcons.angle;
         break;
       case 'area':
-        return FontAwesome.area_chart;
+        return KonvertrIcons.area;
         break;
       case 'charge':
-        return MaterialCommunityIcons.battery_charging;
+        return KonvertrIcons.charge;
         break;
       case 'electric current':
-        return FontAwesome5Solid.plug;
+        return KonvertrIcons.current;
         break;
       case 'data transfer':
-        return FontAwesome.download;
+        return KonvertrIcons.transfer;
         break;
       case 'data':
-        return FontAwesome.database;
+        return KonvertrIcons.data;
         break;
       case 'energy':
-        return FontAwesome5Solid.bolt;
+        return KonvertrIcons.energy;
         break;
       case 'flow':
-        return MaterialCommunityIcons.water_pump;
+        return KonvertrIcons.flow;
         break;
       case 'force':
-        return Ionicons.md_rocket;
+        return KonvertrIcons.force;
         break;
       case 'frequency':
-        return MaterialCommunityIcons.radio_tower;
+        return KonvertrIcons.frequency;
         break;
       case 'fuel economy':
-        return FontAwesome5Solid.gas_pump;
+        return KonvertrIcons.economy;
         break;
       case 'illumination':
-        return FontAwesome5Solid.lightbulb;
+        return KonvertrIcons.illumination;
         break;
       case 'length':
-        return FontAwesome5Solid.ruler_combined;
+        return KonvertrIcons.length;
         break;
       case 'luminance':
-        return FontAwesome5Solid.sun;
+        return KonvertrIcons.luminance;
         break;
       case 'mass':
-        return FontAwesome5Solid.weight;
+        return KonvertrIcons.mass;
         break;
       case 'power':
-        return FontAwesome5Solid.power_off;
+        return KonvertrIcons.power;
         break;
       case 'pressure':
-        return MaterialCommunityIcons.pipe;
+        return KonvertrIcons.pressure;
         break;
       case 'radiation':
-        return MaterialCommunityIcons.radioactive;
+        return KonvertrIcons.radiation;
         break;
       case 'sound':
-        return MaterialCommunityIcons.volume_high;
+        return KonvertrIcons.sound;
         break;
       case 'speed':
-        return Ionicons.ios_speedometer;
+        return KonvertrIcons.speed;
         break;
       case 'temperature':
-        return FontAwesome5Solid.thermometer_full;
+        return KonvertrIcons.temperature;
         break;
       case 'time':
-        return FontAwesome5Solid.clock;
+        return KonvertrIcons.time;
         break;
       case 'torque':
-        return FontAwesome5Solid.wrench;
+        return KonvertrIcons.torque;
         break;
       case 'typography':
-        return MaterialCommunityIcons.format_font;
+        return KonvertrIcons.typography;
         break;
       case 'volume':
-        return MaterialCommunityIcons.beaker;
+        return KonvertrIcons.volume;
         break;
       default:
-        return FontAwesome.star_half_empty;
+        return KonvertrIcons.heart;
     }
   }
 

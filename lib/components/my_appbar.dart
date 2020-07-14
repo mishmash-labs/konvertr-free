@@ -24,6 +24,8 @@ class _CustomAppBarState extends State<CustomAppBar> {
         backgroundColor: Theme.of(context).primaryColor,
         centerTitle: true,
         elevation: 0,
+        actions: widget.actions,
+        leading: widget.leading,
         title: (widget.title != null)
             ? Text(
                 translate(widget.title).toLowerCase(),
