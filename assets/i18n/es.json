@@ -406,5 +406,11 @@
   "favorites_bottom_bar": "favoritos",
   "calculator_bottom_bar": "calculadora",
   "settings_bottom_bar": "ajustes",
-  "clipboard": "conversión copiada al portapapeles"
+  "clipboard": "conversión copiada al portapapeles",
+  "dark-mode": "modo oscuro",
+  "default-calculator": "abra la página de la calculadora en el lanzamiento",
+  "default-converter": "abrir la página de categorías en el lanzamiento",
+  "converter": "convertidor",
+  "calculator": "calculadora",
+  "default-page": "página por defecto"
 }

@@ -1,7 +1,6 @@
 import 'package:animations/animations.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_translate/flutter_translate.dart';
-import 'package:konvertr_free/utils/theme.dart';
 import 'package:provider/provider.dart';
 
 import '../components/category_card.dart';
@@ -10,6 +9,7 @@ import '../providers/category_provider.dart';
 import '../providers/converter_provider.dart';
 import '../utils/icons.dart';
 import '../utils/keys.dart';
+import '../utils/theme.dart';
 import 'singleconvert_screen.dart';
 
 class CategoriesScreen extends StatelessWidget {

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_translate/flutter_translate.dart';
-import 'package:konvertr_free/utils/theme.dart';
 import 'package:provider/provider.dart';
 
 import '../components/converter_numpad.dart';
@@ -9,6 +8,7 @@ import '../providers/converter_provider.dart';
 import '../utils/extensions.dart';
 import '../utils/icons.dart';
 import '../utils/keys.dart';
+import '../utils/theme.dart';
 import 'units_screen.dart';
 
 class SingleConverter extends StatelessWidget {
@@ -90,101 +90,100 @@ class _ConversionCard extends StatelessWidget {
   const _ConversionCard({key}) : super(key: key);
 
   @override
-  Widget build(BuildContext context) => Padding(
-        padding: EdgeInsets.symmetric(
-            vertical: MediaQuery.of(context).size.height * 0.035,
-            horizontal: 16),
-        child: Card(
-            color: secondaryColor,
-            shape: RoundedRectangleBorder(
-              side: const BorderSide(width: 2, color: Colors.white10),
-              borderRadius: BorderRadius.circular(10),
-            ),
-            elevation: 0,
-            child: SizedBox(
-              width: double.infinity,
-              child: Padding(
-                padding: const EdgeInsets.all(8),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: [
-                    Align(
-                      alignment: Alignment.centerLeft,
-                      child: Text(
-                        translate(Keys.Converter_Amount).toLowerCase(),
-                        style: const TextStyle(
-                            fontWeight: FontWeight.bold,
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: EdgeInsets.symmetric(
+          vertical: MediaQuery.of(context).size.height * 0.035, horizontal: 16),
+      child: Card(
+          color: secondaryColor,
+          shape: RoundedRectangleBorder(
+            side: BorderSide(width: 2, color: Colors.white10),
+            borderRadius: BorderRadius.circular(10),
+          ),
+          elevation: 0,
+          child: SizedBox(
+            width: double.infinity,
+            child: Padding(
+              padding: const EdgeInsets.all(8),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  Align(
+                    alignment: Alignment.centerLeft,
+                    child: Text(
+                      translate(Keys.Converter_Amount).toLowerCase(),
+                      style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white54,
+                          letterSpacing: 1),
+                    ),
+                  ),
+                  const SizedBox(height: 6),
+                  Consumer<ConverterProvider>(
+                    builder: (_, conv, __) => TextField(
+                      style: TextStyle(color: Colors.white54, fontSize: 14),
+                      enabled: true,
+                      autofocus: true,
+                      readOnly: true,
+                      showCursor: true,
+                      controller: conv.amountController,
+                      cursorColor: Colors.white54,
+                      decoration: InputDecoration(
+                        isDense: true,
+                        suffixText: conv.fromUnit.symbol,
+                        suffixStyle: TextStyle(color: Colors.white54),
+                        focusedBorder: OutlineInputBorder(
+                          borderSide: BorderSide(
                             color: Colors.white54,
-                            letterSpacing: 1),
-                      ),
-                    ),
-                    const SizedBox(height: 6),
-                    Consumer<ConverterProvider>(
-                      builder: (_, conv, __) => TextField(
-                        style: const TextStyle(
-                            color: Colors.white54, fontSize: 14),
-                        enabled: true,
-                        autofocus: true,
-                        readOnly: true,
-                        showCursor: true,
-                        controller: conv.amountController,
-                        cursorColor: Colors.white54,
-                        decoration: InputDecoration(
-                          isDense: true,
-                          suffixText: conv.fromUnit.symbol,
-                          suffixStyle: const TextStyle(color: Colors.white54),
-                          focusedBorder: const OutlineInputBorder(
-                            borderSide: BorderSide(
-                              color: Colors.white54,
-                              width: 1.5,
-                            ),
-                          ),
-                          border: const OutlineInputBorder(
-                            borderSide: BorderSide(
-                              color: Colors.white54,
-                              width: 1.5,
-                            ),
+                            width: 1.5,
                           ),
                         ),
-                      ),
-                    ),
-                    const SizedBox(height: 12),
-                    Align(
-                      alignment: Alignment.centerLeft,
-                      child: Text(
-                        translate(Keys.Converter_Converted_To).toLowerCase(),
-                        style: const TextStyle(
-                            fontWeight: FontWeight.bold,
+                        border: OutlineInputBorder(
+                          borderSide: BorderSide(
                             color: Colors.white54,
-                            letterSpacing: 1),
-                      ),
-                    ),
-                    const SizedBox(height: 6),
-                    Consumer<ConverterProvider>(
-                      builder: (_, conv, __) => InputDecorator(
-                        decoration: InputDecoration(
-                          isDense: true,
-                          suffixText: conv.toUnit.symbol,
-                          suffixStyle: const TextStyle(color: Colors.white54),
-                          enabledBorder: const OutlineInputBorder(
-                            borderSide: BorderSide(
-                              color: Colors.white54,
-                              width: 1.5,
-                            ),
+                            width: 1.5,
                           ),
                         ),
-                        child: Text(
-                          conv.convertedValue,
-                          style: const TextStyle(
-                              color: Colors.white54, fontSize: 14),
-                        ),
                       ),
                     ),
-                  ],
-                ),
+                  ),
+                  const SizedBox(height: 12),
+                  Align(
+                    alignment: Alignment.centerLeft,
+                    child: Text(
+                      translate(Keys.Converter_Converted_To).toLowerCase(),
+                      style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white54,
+                          letterSpacing: 1),
+                    ),
+                  ),
+                  const SizedBox(height: 6),
+                  Consumer<ConverterProvider>(
+                    builder: (_, conv, __) => InputDecorator(
+                      decoration: InputDecoration(
+                        isDense: true,
+                        suffixText: conv.toUnit.symbol,
+                        suffixStyle: TextStyle(color: Colors.white54),
+                        enabledBorder: OutlineInputBorder(
+                          borderSide: BorderSide(
+                            color: Colors.white54,
+                            width: 1.5,
+                          ),
+                        ),
+                      ),
+                      child: Text(
+                        conv.convertedValue,
+                        style: TextStyle(color: Colors.white54, fontSize: 14),
+                      ),
+                    ),
+                  ),
+                ],
               ),
-            )),
-      );
+            ),
+          )),
+    );
+  }
 }
 
 class _TopBackground extends StatelessWidget {

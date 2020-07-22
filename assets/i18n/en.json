@@ -406,5 +406,11 @@
     "favorites_bottom_bar": "favorites",
     "calculator_bottom_bar": "calculator",
     "settings_bottom_bar": "settings",
-    "clipboard": "conversion copied to clipboard"
+    "clipboard": "conversion copied to clipboard",
+    "dark-mode": "dark mode",
+    "default-calculator": "open the calculator page on launch",
+    "default-converter": "open the categories page on launch",
+    "converter": "converter",
+    "calculator": "calculator",
+    "default-page": "default page"
 }

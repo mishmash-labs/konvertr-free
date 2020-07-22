@@ -406,5 +406,11 @@
   "favorites_bottom_bar": "favoris",
   "calculator_bottom_bar": "calculatrice",
   "settings_bottom_bar": "paramètres",
-  "clipboard": "conversion copiée dans le presse-papiers"
+  "clipboard": "conversion copiée dans le presse-papiers",
+  "dark-mode": "mode sombre",
+  "default-calculator": "ouvrir la page de la calculatrice au lancement",
+  "default-converter": "ouvrir la page des catégories au lancement",
+  "converter": "convertisseur",
+  "calculator": "calculatrice",
+  "default-page": "page par défaut"
 }

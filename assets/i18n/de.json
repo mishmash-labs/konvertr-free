@@ -406,5 +406,11 @@
   "favorites_bottom_bar": "Favoriten",
   "calculator_bottom_bar": "Taschenrechner",
   "settings_bottom_bar": "die Einstellungen",
-  "clipboard": "Konvertierung in Zwischenablage kopiert"
+  "clipboard": "Konvertierung in Zwischenablage kopiert",
+  "dark-mode": "dunkler Modus",
+  "default-calculator": "Öffnen Sie beim Start die Rechnerseite",
+  "default-converter": "Öffnen Sie beim Start die Kategorieseite",
+  "converter": "Konverter",
+  "calculator": "Taschenrechner",
+  "default-page": "Standardseite"
 }

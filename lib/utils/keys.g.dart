@@ -70,4 +70,16 @@ class Keys {
   static const String Settings_Bottom_Bar = 'settings_bottom_bar';
 
   static const String Clipboard = 'clipboard';
+
+  static const String Dark_Mode = 'dark-mode';
+
+  static const String Default_Calculator = 'default-calculator';
+
+  static const String Default_Converter = 'default-converter';
+
+  static const String Converter = 'converter';
+
+  static const String Calculator = 'calculator';
+
+  static const String Default_Page = 'default-page';
 }
