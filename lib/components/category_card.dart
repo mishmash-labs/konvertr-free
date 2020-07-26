@@ -25,7 +25,7 @@ class CategoryCard extends StatelessWidget {
               size: 0.05625 * MediaQuery.of(context).size.height,
             ),
             Text(
-              translate(convCategory.name).toLowerCase(),
+              translate(convCategory.name),
               overflow: TextOverflow.ellipsis,
               style: const TextStyle(
                 fontSize: 16,
