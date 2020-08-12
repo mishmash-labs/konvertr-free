@@ -17,10 +17,10 @@ dependencies:
   flutter_clipboard_manager: ^0.0.2
   flutter_translate: ^1.6.0
   flutter_translate_annotations: ^1.0.0
-  provider: ^4.3.1
+  provider: ^4.3.2
 
 dev_dependencies:
-  build_runner: ^1.10.2
+  build_runner: ^1.10.1
   flutter_translate_gen: ^1.2.1
 
 flutter:
