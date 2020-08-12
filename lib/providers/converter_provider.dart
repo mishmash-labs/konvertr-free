@@ -2,11 +2,11 @@ import 'package:flushbar/flushbar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_clipboard_manager/flutter_clipboard_manager.dart';
 import 'package:flutter_translate/flutter_translate.dart';
+import 'package:konvertr_free/utils/theme.dart';
 
 import '../models/unit.dart';
 import '../utils/icons.dart';
 import '../utils/keys.dart';
-import '../utils/theme.dart';
 
 class ConverterProvider extends ChangeNotifier {
   ConverterProvider(

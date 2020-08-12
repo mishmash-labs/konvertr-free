@@ -1,5 +1,7 @@
+import 'package:flushbar/flushbar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_translate/flutter_translate.dart';
+import 'package:konvertr_free/utils/theme.dart';
 import 'package:provider/provider.dart';
 
 import '../components/converter_numpad.dart';
@@ -8,7 +10,6 @@ import '../providers/converter_provider.dart';
 import '../utils/extensions.dart';
 import '../utils/icons.dart';
 import '../utils/keys.dart';
-import '../utils/theme.dart';
 import 'units_screen.dart';
 
 class SingleConverter extends StatelessWidget {
@@ -32,9 +33,9 @@ class SingleConverter extends StatelessWidget {
       body: Column(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Stack(children: [
-            const _TopBackground(),
-            const _TopSection(),
+          Stack(children: const [
+            _TopBackground(),
+            _TopSection(),
           ]),
           const RepaintBoundary(child: ConverterKeypad()),
         ],
@@ -160,21 +161,24 @@ class _ConversionCard extends StatelessWidget {
                   ),
                   const SizedBox(height: 6),
                   Consumer<ConverterProvider>(
-                    builder: (_, conv, __) => InputDecorator(
-                      decoration: InputDecoration(
-                        isDense: true,
-                        suffixText: conv.toUnit.symbol,
-                        suffixStyle: TextStyle(color: Colors.white54),
-                        enabledBorder: OutlineInputBorder(
-                          borderSide: BorderSide(
-                            color: Colors.white54,
-                            width: 1.5,
+                    builder: (_, conv, __) => InkWell(
+                      onTap: () => conv.executeButton(context, 'copy'),
+                      child: InputDecorator(
+                        decoration: InputDecoration(
+                          isDense: true,
+                          suffixText: conv.toUnit.symbol,
+                          suffixStyle: TextStyle(color: Colors.white54),
+                          enabledBorder: OutlineInputBorder(
+                            borderSide: BorderSide(
+                              color: Colors.white54,
+                              width: 1.5,
+                            ),
                           ),
                         ),
-                      ),
-                      child: Text(
-                        conv.convertedValue,
-                        style: TextStyle(color: Colors.white54, fontSize: 14),
+                        child: Text(
+                          conv.convertedValue,
+                          style: TextStyle(color: Colors.white54, fontSize: 14),
+                        ),
                       ),
                     ),
                   ),
@@ -243,7 +247,9 @@ class ConverterSelection extends StatelessWidget {
                 child: Padding(
                   padding: const EdgeInsets.only(left: 4),
                   child: Text(
-                    translate(currentUnit).toLowerCase(),
+                    translate(currentUnit)
+                        .toLowerCase()
+                        .replaceAll('', '\u{200B}'),
                     overflow: TextOverflow.ellipsis,
                     style: const TextStyle(
                         color: Colors.white70, fontWeight: FontWeight.w400),
