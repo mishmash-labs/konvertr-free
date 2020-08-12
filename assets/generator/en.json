@@ -37,5 +37,6 @@
     "default-converter": "open the categories page on launch",
     "converter": "converter",
     "calculator": "calculator",
-    "default-page": "default page"
+    "default-page": "default page",
+    "upgrade": "Upgrade to Konvertr Pro"
 }

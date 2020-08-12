@@ -82,4 +82,6 @@ class Keys {
   static const String Calculator = 'calculator';
 
   static const String Default_Page = 'default-page';
+
+  static const String Upgrade = 'upgrade';
 }

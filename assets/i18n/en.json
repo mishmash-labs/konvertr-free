@@ -392,7 +392,7 @@
     "numpad_open": "tap to open numpad",
     "settings_title": "settings",
     "about_title": "about",
-    "about_subtitle": "about konvertr",
+    "about_subtitle": "About Konvertr",
     "theme_title": "theme",
     "style_title": "converter style",
     "classic": "classic",
@@ -412,5 +412,6 @@
     "default-converter": "open the categories page on launch",
     "converter": "converter",
     "calculator": "calculator",
-    "default-page": "default page"
+    "default-page": "default page",
+    "upgrade": "Upgrade to Konvertr Pro"
 }

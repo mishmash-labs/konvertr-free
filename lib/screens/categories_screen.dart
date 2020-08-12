@@ -2,7 +2,9 @@ import 'package:animations/animations.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_translate/flutter_translate.dart';
 import 'package:konvertr_free/utils/theme.dart';
+import 'package:package_info/package_info.dart';
 import 'package:provider/provider.dart';
+import 'package:store_redirect/store_redirect.dart';
 
 import '../components/category_card.dart';
 import '../components/my_appbar.dart';
@@ -13,16 +15,76 @@ import '../utils/keys.dart';
 import 'singleconvert_screen.dart';
 
 class CategoriesScreen extends StatelessWidget {
-  const CategoriesScreen({key}) : super(key: key);
+  CategoriesScreen({key}) : super(key: key);
 
   TextEditingController get searchController => TextEditingController();
   FocusNode get searchNode => FocusNode();
 
+  final List<String> choices = [
+    Keys.Upgrade,
+    Keys.About_Subtitle,
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const CustomAppBar(
+      appBar: CustomAppBar(
         title: Keys.App_Title,
+        actions: [
+          PopupMenuButton<String>(
+            color: secondaryColor,
+            onSelected: (val) async {
+              switch (val) {
+                case Keys.About_Subtitle:
+                  final packageInfo = await PackageInfo.fromPlatform();
+
+                  return showModal(
+                    context: context,
+                    builder: (_) => Theme(
+                      data: ThemeData(
+                        brightness: Brightness.dark,
+                        dialogBackgroundColor: Theme.of(context).primaryColor,
+                        textTheme: const TextTheme(
+                          headline5: TextStyle(color: Colors.white70),
+                          bodyText2: TextStyle(color: Colors.white54),
+                        ),
+                        buttonTheme: ButtonThemeData(
+                          colorScheme: Theme.of(context)
+                              .colorScheme
+                              .copyWith(primary: Colors.white70), // Te
+                        ),
+                      ),
+                      child: AboutDialog(
+                        applicationIcon: const Icon(
+                          KonvertrIcons.swap_horizontal_variant,
+                          size: 40,
+                          color: Colors.white70,
+                        ),
+                        applicationName: packageInfo.appName,
+                        applicationVersion: packageInfo.version,
+                        applicationLegalese: '© 2020 Mishmash Labs',
+                      ),
+                    ),
+                  );
+                case Keys.Upgrade:
+                  StoreRedirect.redirect(androidAppId: "com.mishmash.konvertr");
+                  break;
+                default:
+              }
+            },
+            itemBuilder: (BuildContext context) {
+              return choices.map((String choice) {
+                return PopupMenuItem<String>(
+                  value: choice,
+                  child: Text(
+                    translate(choice),
+                    style: TextStyle(color: Colors.white70),
+                  ),
+                );
+              }).toList();
+            },
+          ),
+        ],
       ),
       backgroundColor: Theme.of(context).primaryColor,
       body: CustomScrollView(
