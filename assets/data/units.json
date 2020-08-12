@@ -1000,12 +1000,12 @@
     {
       "name": "yard",
       "symbol": "yd",
-      "conversion": 1.09361
+      "conversion": 1.09361329833770779
     },
     {
       "name": "foot",
       "symbol": "ft",
-      "conversion": 3.28084
+      "conversion": 3.28083989501312336
     },
     {
       "name": "karam",

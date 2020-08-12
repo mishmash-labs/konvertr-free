@@ -133,10 +133,10 @@ class CategoriesProvider extends ChangeNotifier {
         : _searchingCategory = false;
 
     _categories = _allCategories.where((element) {
-      bool catCond = translate(element.name)
+      final catCond = translate(element.name)
           .toLowerCase()
           .contains(searchTerm.toLowerCase());
-      bool unitCond = element.units.any((element) {
+      final unitCond = element.units.any((element) {
         return translate(element.name).contains(searchTerm.toLowerCase());
       });
       return catCond || unitCond;

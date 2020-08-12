@@ -24,13 +24,16 @@ class CategoryCard extends StatelessWidget {
               color: Colors.white30,
               size: 0.05625 * MediaQuery.of(context).size.height,
             ),
-            Text(
-              translate(convCategory.name),
-              overflow: TextOverflow.ellipsis,
-              style: const TextStyle(
-                fontSize: 16,
-                fontWeight: FontWeight.w400,
-                color: Colors.white54,
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 6),
+              child: Text(
+                translate(convCategory.name),
+                textAlign: TextAlign.center,
+                style: const TextStyle(
+                  fontSize: 16,
+                  fontWeight: FontWeight.w400,
+                  color: Colors.white54,
+                ),
               ),
             )
           ],

@@ -2,12 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_translate/flutter_translate.dart';
 
 class CustomAppBar extends StatefulWidget implements PreferredSizeWidget {
-  CustomAppBar({Key key, this.title, this.leading, this.actions})
-      : preferredSize = Size.fromHeight(kToolbarHeight),
-        super(key: key);
+  const CustomAppBar({Key key, this.title, this.leading, this.actions})
+      : super(key: key);
 
   @override
-  final Size preferredSize;
+  Size get preferredSize => const Size.fromHeight(kToolbarHeight);
 
   final String title;
   final Widget leading;
