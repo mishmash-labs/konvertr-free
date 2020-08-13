@@ -412,5 +412,6 @@
   "default-converter": "abrir la página de categorías en el lanzamiento",
   "converter": "convertidor",
   "calculator": "calculadora",
-  "default-page": "página por defecto"
+  "default-page": "página por defecto",
+  "upgrade": "Actualice a Konvertr Pro"
 }

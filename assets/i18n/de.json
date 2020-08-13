@@ -412,5 +412,6 @@
   "default-converter": "Öffnen Sie beim Start die Kategorieseite",
   "converter": "Konverter",
   "calculator": "Taschenrechner",
-  "default-page": "Standardseite"
+  "default-page": "Standardseite",
+  "upgrade": "Upgrade auf Konvertr Pro"
 }
