@@ -17,8 +17,8 @@ dependencies:
   flutter_clipboard_manager: ^0.0.2
   flutter_translate: ^1.6.0
   flutter_translate_annotations: ^1.0.0
-  package_info: ^0.4.1
-  provider: ^4.3.2
+  package_info: ^0.4.3
+  provider: ^4.3.2+2
   store_redirect: ^1.0.2
 
 dev_dependencies:
