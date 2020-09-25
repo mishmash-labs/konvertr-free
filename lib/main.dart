@@ -11,7 +11,8 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
   final delegate = await LocalizationDelegate.create(
-      fallbackLocale: 'en', supportedLocales: ['en', 'es', 'fr', 'de', 'hi']);
+      fallbackLocale: 'en',
+      supportedLocales: ['en', 'es', 'fr', 'de', 'hi', 'nl', 'pl', 'pt', 'ru']);
   runApp(LocalizedApp(delegate, KonvertrHome()));
 }
 
