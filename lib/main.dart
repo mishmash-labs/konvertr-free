@@ -35,9 +35,9 @@ class KonvertrHome extends StatelessWidget {
         locale: localizationDelegate.currentLocale,
         home: CategoriesScreen(),
         theme: ThemeData(
-          primaryColor: Color(0xff380e7f),
-          accentColor: Colors.white70,
-        ),
+            primaryColor: Color(0xff380e7f),
+            accentColor: Colors.white70,
+            brightness: Brightness.dark),
       ),
     );
   }
