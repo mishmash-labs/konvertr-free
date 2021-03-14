@@ -48,10 +48,15 @@ class CategoriesScreen extends StatelessWidget {
                           headline5: TextStyle(color: Colors.white70),
                           bodyText2: TextStyle(color: Colors.white54),
                         ),
-                        buttonTheme: ButtonThemeData(
-                          colorScheme: Theme.of(context)
-                              .colorScheme
-                              .copyWith(primary: Colors.white70), // Te
+                        textButtonTheme: TextButtonThemeData(
+                          style: ButtonStyle(
+                            foregroundColor:
+                                MaterialStateProperty.resolveWith<Color>(
+                              (states) {
+                                return Colors.white70;
+                              },
+                            ),
+                          ),
                         ),
                       ),
                       child: AboutDialog(
