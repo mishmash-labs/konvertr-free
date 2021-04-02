@@ -15,8 +15,8 @@ dependencies:
   animations: ^2.0.0
   flushbar: ^1.10.4
   flutter_clipboard_manager: ^0.0.2
-  flutter_translate: ^1.6.0
-  flutter_translate_annotations: ^1.0.0
+  flutter_translate: ^2.0.1
+  flutter_translate_annotations: ^2.0.0
   package_info: ^2.0.0
   provider: ^5.0.0
   store_redirect: ^1.0.2
