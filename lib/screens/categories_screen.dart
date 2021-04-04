@@ -4,7 +4,7 @@ import 'package:flutter_translate/flutter_translate.dart';
 import 'package:konvertr_free/utils/theme.dart';
 import 'package:package_info/package_info.dart';
 import 'package:provider/provider.dart';
-import 'package:store_redirect/store_redirect.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import '../components/category_card.dart';
 import '../components/my_appbar.dart';
@@ -24,6 +24,13 @@ class CategoriesScreen extends StatelessWidget {
     Keys.Upgrade,
     Keys.About_Subtitle,
   ];
+
+  static const _url =
+      'https://play.google.com/store/apps/details?id=com.mishmash.konvertr';
+
+  void _launchURL() async => await canLaunch(_url)
+      ? await launch(_url)
+      : throw 'Could not launch $_url';
 
   @override
   Widget build(BuildContext context) {
@@ -72,7 +79,7 @@ class CategoriesScreen extends StatelessWidget {
                     ),
                   );
                 case Keys.Upgrade:
-                  StoreRedirect.redirect(androidAppId: "com.mishmash.konvertr");
+                  _launchURL();
                   break;
                 default:
               }

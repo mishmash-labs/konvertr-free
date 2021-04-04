@@ -1,6 +1,6 @@
-import 'package:flushbar/flushbar.dart';
+import 'package:another_flushbar/flushbar.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_clipboard_manager/flutter_clipboard_manager.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_translate/flutter_translate.dart';
 import 'package:konvertr_free/utils/theme.dart';
 
@@ -89,28 +89,25 @@ class ConverterProvider extends ChangeNotifier {
         break;
       case 'copy':
         if (convertedValue != '') {
-          FlutterClipboardManager.copyToClipBoard(
-                  '$_inputValueString ${translate(fromUnit.name).toLowerCase()} = $convertedValue ${translate(toUnit.name).toLowerCase()}')
-              .then(
-            (result) {
-              if (result) {
-                Flushbar(
-                  margin: const EdgeInsets.all(8),
-                  borderRadius: 8,
-                  flushbarPosition: FlushbarPosition.TOP,
-                  message: translate(Keys.Clipboard).toLowerCase(),
-                  icon: const Icon(
-                    KonvertrIcons.copy,
-                    color: Colors.white60,
-                  ),
-                  backgroundColor: secondaryColor.withOpacity(0.5),
-                  barBlur: 8,
-                  shouldIconPulse: true,
-                  duration: const Duration(seconds: 3),
-                ).show(context);
-              }
-            },
-          );
+          Clipboard.setData(ClipboardData(
+                  text:
+                      '$_inputValueString ${translate(fromUnit.name).toLowerCase()} = $convertedValue ${translate(toUnit.name).toLowerCase()}'))
+              .then((result) {
+            Flushbar(
+              margin: const EdgeInsets.all(8),
+              borderRadius: const BorderRadius.all(Radius.circular(8)),
+              flushbarPosition: FlushbarPosition.TOP,
+              message: translate(Keys.Clipboard).toLowerCase(),
+              icon: const Icon(
+                KonvertrIcons.copy,
+                color: Colors.white60,
+              ),
+              backgroundColor: secondaryColor.withOpacity(0.5),
+              barBlur: 8,
+              shouldIconPulse: true,
+              duration: const Duration(seconds: 3),
+            ).show(context);
+          });
         }
         break;
       case '.':
