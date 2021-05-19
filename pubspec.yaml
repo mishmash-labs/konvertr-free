@@ -14,7 +14,7 @@ dependencies:
     
   animations: ^2.0.0
   another_flushbar: ^1.10.18
-  flutter_translate: ^2.0.1
+  flutter_translate: ^3.0.1
   flutter_translate_annotations: ^2.0.0
   package_info: ^2.0.0
   provider: ^5.0.0
