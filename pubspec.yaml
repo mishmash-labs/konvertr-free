@@ -13,16 +13,17 @@ dependencies:
     sdk: flutter
     
   animations: ^2.0.0
-  another_flushbar: ^1.10.18
+  another_flushbar: ^1.10.22
   flutter_translate: ^3.0.1
   flutter_translate_annotations: ^2.0.0
-  package_info: ^2.0.0
+  package_info: ^2.0.2
   provider: ^5.0.0
-  url_launcher: ^6.0.3
+  url_launcher: ^6.0.4
 
 dev_dependencies:
-  build_runner: ^2.0.1
+  build_runner: ^2.0.4
   flutter_translate_gen: ^2.0.0
+  dapackages:
 
 flutter:
   uses-material-design: true
