@@ -90,7 +90,7 @@ class CategoriesScreen extends StatelessWidget {
                   value: choice,
                   child: Text(
                     translate(choice),
-                    style: TextStyle(color: Colors.white70),
+                    style: const TextStyle(color: Colors.white70),
                   ),
                 );
               }).toList();

@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_scroll_to_top/flutter_scroll_to_top.dart';
 import 'package:flutter_translate/flutter_translate.dart';
 
 import '../components/my_appbar.dart';
@@ -7,12 +8,13 @@ import '../models/unit.dart';
 import '../providers/converter_provider.dart';
 
 class UnitsScreen extends StatelessWidget {
-  const UnitsScreen({key, this.convProvider, this.whichUnit, this.currentUnit})
+  UnitsScreen({key, this.convProvider, this.whichUnit, this.currentUnit})
       : super(key: key);
 
   final ConverterProvider convProvider;
   final String currentUnit;
   final String whichUnit;
+  final ScrollController scrollController = ScrollController();
 
   @override
   Widget build(BuildContext context) {
@@ -24,13 +26,26 @@ class UnitsScreen extends StatelessWidget {
           onPressed: () => Navigator.pop(context),
         ),
       ),
-      body: ListView.builder(
-        itemCount: convProvider.units.length,
-        itemBuilder: (context, index) => _UnitListItem(
-          unit: convProvider.units[index],
-          convProvider: convProvider,
-          whichUnit: whichUnit,
-          currentUnit: currentUnit,
+      body: ScrollWrapper(
+        scrollController: scrollController,
+        promptAlignment: Alignment.bottomRight,
+        promptAnimationCurve: Curves.elasticInOut,
+        promptDuration: const Duration(milliseconds: 400),
+        promptScrollOffset: 100,
+        promptTheme: PromptButtonTheme(
+            icon: const Icon(Icons.keyboard_arrow_up, color: Colors.white54),
+            color: HSLColor.fromColor(const Color(0xff380e7f))
+                .withLightness(0.2)
+                .toColor()),
+        child: ListView.builder(
+          controller: scrollController,
+          itemCount: convProvider.units.length,
+          itemBuilder: (context, index) => _UnitListItem(
+            unit: convProvider.units[index],
+            convProvider: convProvider,
+            whichUnit: whichUnit,
+            currentUnit: currentUnit,
+          ),
         ),
       ),
     );

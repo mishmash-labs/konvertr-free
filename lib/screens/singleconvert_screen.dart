@@ -97,7 +97,7 @@ class _ConversionCard extends StatelessWidget {
       child: Card(
           color: secondaryColor,
           shape: RoundedRectangleBorder(
-            side: BorderSide(width: 2, color: Colors.white10),
+            side: const BorderSide(width: 2, color: Colors.white10),
             borderRadius: BorderRadius.circular(10),
           ),
           elevation: 0,
@@ -112,7 +112,7 @@ class _ConversionCard extends StatelessWidget {
                     alignment: Alignment.centerLeft,
                     child: Text(
                       translate(Keys.Converter_Amount).toLowerCase(),
-                      style: TextStyle(
+                      style: const TextStyle(
                           fontWeight: FontWeight.bold,
                           color: Colors.white54,
                           letterSpacing: 1),
@@ -121,7 +121,8 @@ class _ConversionCard extends StatelessWidget {
                   const SizedBox(height: 6),
                   Consumer<ConverterProvider>(
                     builder: (_, conv, __) => TextField(
-                      style: TextStyle(color: Colors.white54, fontSize: 14),
+                      style:
+                          const TextStyle(color: Colors.white54, fontSize: 14),
                       enabled: true,
                       autofocus: true,
                       readOnly: true,
@@ -131,14 +132,14 @@ class _ConversionCard extends StatelessWidget {
                       decoration: InputDecoration(
                         isDense: true,
                         suffixText: conv.fromUnit.symbol,
-                        suffixStyle: TextStyle(color: Colors.white54),
-                        focusedBorder: OutlineInputBorder(
+                        suffixStyle: const TextStyle(color: Colors.white54),
+                        focusedBorder: const OutlineInputBorder(
                           borderSide: BorderSide(
                             color: Colors.white54,
                             width: 1.5,
                           ),
                         ),
-                        border: OutlineInputBorder(
+                        border: const OutlineInputBorder(
                           borderSide: BorderSide(
                             color: Colors.white54,
                             width: 1.5,
@@ -152,7 +153,7 @@ class _ConversionCard extends StatelessWidget {
                     alignment: Alignment.centerLeft,
                     child: Text(
                       translate(Keys.Converter_Converted_To).toLowerCase(),
-                      style: TextStyle(
+                      style: const TextStyle(
                           fontWeight: FontWeight.bold,
                           color: Colors.white54,
                           letterSpacing: 1),
@@ -166,8 +167,8 @@ class _ConversionCard extends StatelessWidget {
                         decoration: InputDecoration(
                           isDense: true,
                           suffixText: conv.toUnit.symbol,
-                          suffixStyle: TextStyle(color: Colors.white54),
-                          enabledBorder: OutlineInputBorder(
+                          suffixStyle: const TextStyle(color: Colors.white54),
+                          enabledBorder: const OutlineInputBorder(
                             borderSide: BorderSide(
                               color: Colors.white54,
                               width: 1.5,
@@ -176,7 +177,8 @@ class _ConversionCard extends StatelessWidget {
                         ),
                         child: Text(
                           conv.convertedValue,
-                          style: TextStyle(color: Colors.white54, fontSize: 14),
+                          style: const TextStyle(
+                              color: Colors.white54, fontSize: 14),
                         ),
                       ),
                     ),

@@ -1,0 +1,10 @@
+include: package:flutter_lints/flutter.yaml
+
+analyzer:
+  exclude:
+    - lib/**.g.dart
+    - lib/**.inject.dart
+    - lib/**.inject.summary
+    - test/**.g.dart
+    - test/**.inject.dart
+    - lib/utils/icons.dart

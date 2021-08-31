@@ -13,10 +13,12 @@ void main() async {
   final delegate = await LocalizationDelegate.create(
       fallbackLocale: 'en',
       supportedLocales: ['en', 'es', 'fr', 'de', 'hi', 'nl', 'pl', 'pt', 'ru']);
-  runApp(LocalizedApp(delegate, KonvertrHome()));
+  runApp(LocalizedApp(delegate, const KonvertrHome()));
 }
 
 class KonvertrHome extends StatelessWidget {
+  const KonvertrHome({Key key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     final localizationDelegate = LocalizedApp.of(context).delegate;
@@ -35,7 +37,7 @@ class KonvertrHome extends StatelessWidget {
         locale: localizationDelegate.currentLocale,
         home: CategoriesScreen(),
         theme: ThemeData(
-            primaryColor: Color(0xff380e7f),
+            primaryColor: const Color(0xff380e7f),
             accentColor: Colors.white70,
             brightness: Brightness.dark),
       ),
