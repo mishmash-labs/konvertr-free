@@ -38,8 +38,9 @@ class KonvertrHome extends StatelessWidget {
         home: CategoriesScreen(),
         theme: ThemeData(
             primaryColor: const Color(0xff380e7f),
-            accentColor: Colors.white70,
-            brightness: Brightness.dark),
+            brightness: Brightness.dark,
+            colorScheme:
+                ColorScheme.fromSwatch().copyWith(secondary: Colors.white70)),
       ),
     );
   }
