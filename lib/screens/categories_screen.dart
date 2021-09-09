@@ -1,8 +1,7 @@
 import 'package:animations/animations.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_translate/flutter_translate.dart';
-import 'package:konvertr_free/utils/theme.dart';
-import 'package:package_info/package_info.dart';
+import 'package:package_info_plus/package_info_plus.dart';
 import 'package:provider/provider.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -12,6 +11,7 @@ import '../providers/category_provider.dart';
 import '../providers/converter_provider.dart';
 import '../utils/icons.dart';
 import '../utils/keys.dart';
+import '../utils/theme.dart';
 import 'singleconvert_screen.dart';
 
 class CategoriesScreen extends StatelessWidget {
