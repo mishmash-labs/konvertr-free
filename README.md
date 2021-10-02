@@ -15,6 +15,7 @@ Features
 - Intuitive copy to clipboard feature.
 
 Pro Features - https://play.google.com/store/apps/details?id=com.mishmash.konvertr
+
 Get access to all these features through Konvertr Pro!
 - Calculator: A built in basic calculator that keeps track of your calculation history.
 - Multi-view: View all units at the same time to see conversions for all of them in real time.
