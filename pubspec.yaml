@@ -12,12 +12,12 @@ dependencies:
   flutter_localizations:
     sdk: flutter
     
-  animations: ^2.0.1
+  animations: ^2.0.2
   another_flushbar: ^1.10.24
   flutter_scroll_to_top: ^1.1.0
   flutter_translate: ^3.0.1
   flutter_translate_annotations: ^2.0.0
-  package_info_plus: ^1.1.0
+  package_info_plus: ^1.3.0
   provider: ^6.0.1
   url_launcher: ^6.0.12
 
