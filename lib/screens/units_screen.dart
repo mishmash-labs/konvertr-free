@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_scroll_to_top/flutter_scroll_to_top.dart';
 import 'package:flutter_translate/flutter_translate.dart';
@@ -27,27 +26,28 @@ class UnitsScreen extends StatelessWidget {
         ),
       ),
       body: ScrollWrapper(
-        scrollController: scrollController,
-        promptAlignment: Alignment.bottomRight,
-        promptAnimationCurve: Curves.elasticInOut,
-        promptDuration: const Duration(milliseconds: 400),
-        promptScrollOffset: 100,
-        promptTheme: PromptButtonTheme(
-            icon: const Icon(Icons.keyboard_arrow_up, color: Colors.white54),
-            color: HSLColor.fromColor(const Color(0xff380e7f))
-                .withLightness(0.2)
-                .toColor()),
-        child: ListView.builder(
-          controller: scrollController,
-          itemCount: convProvider.units.length,
-          itemBuilder: (context, index) => _UnitListItem(
-            unit: convProvider.units[index],
-            convProvider: convProvider,
-            whichUnit: whichUnit,
-            currentUnit: currentUnit,
-          ),
-        ),
-      ),
+          scrollController: scrollController,
+          promptAlignment: Alignment.bottomRight,
+          promptAnimationCurve: Curves.elasticInOut,
+          promptDuration: const Duration(milliseconds: 400),
+          enabledAtOffset: 100,
+          promptTheme: PromptButtonTheme(
+              icon: const Icon(Icons.keyboard_arrow_up, color: Colors.white54),
+              color: HSLColor.fromColor(const Color(0xff380e7f))
+                  .withLightness(0.2)
+                  .toColor()),
+          builder: (ctx, props) {
+            return ListView.builder(
+              controller: scrollController,
+              itemCount: convProvider.units.length,
+              itemBuilder: (context, index) => _UnitListItem(
+                unit: convProvider.units[index],
+                convProvider: convProvider,
+                whichUnit: whichUnit,
+                currentUnit: currentUnit,
+              ),
+            );
+          }),
     );
   }
 }
