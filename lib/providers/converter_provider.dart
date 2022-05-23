@@ -42,17 +42,17 @@ class ConverterProvider extends ChangeNotifier {
   List<Unit> get units => _units;
 
   String _format(double value) {
-    final _tempVal = value.toStringAsFixed(10);
-    var _outputVal = double.parse(_tempVal).toStringAsPrecision(15);
-    if (_outputVal.contains('.') &&
-        _outputVal.endsWith('0') &&
-        !_outputVal.contains('e')) {
-      _outputVal = _outputVal.replaceAll(RegExp(r'0*$'), '');
+    final tempVal = value.toStringAsFixed(10);
+    var outputVal = double.parse(tempVal).toStringAsPrecision(15);
+    if (outputVal.contains('.') &&
+        outputVal.endsWith('0') &&
+        !outputVal.contains('e')) {
+      outputVal = outputVal.replaceAll(RegExp(r'0*$'), '');
     }
-    if (_outputVal.endsWith('.')) {
-      _outputVal = _outputVal.substring(0, _outputVal.length - 1);
+    if (outputVal.endsWith('.')) {
+      outputVal = outputVal.substring(0, outputVal.length - 1);
     }
-    return _thousandsFormatter(_outputVal);
+    return _thousandsFormatter(outputVal);
   }
 
   void setDefaults() {

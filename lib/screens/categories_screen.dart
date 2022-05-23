@@ -25,11 +25,11 @@ class CategoriesScreen extends StatelessWidget {
     Keys.About_Subtitle,
   ];
 
-  static const _url =
-      'https://play.google.com/store/apps/details?id=com.mishmash.konvertr';
+  final _url = Uri.parse(
+      'https://play.google.com/store/apps/details?id=com.mishmash.konvertr');
 
-  void _launchURL() async => await canLaunch(_url)
-      ? await launch(_url)
+  void _launchURL() async => await canLaunchUrl(_url)
+      ? await launchUrl(_url)
       : throw 'Could not launch $_url';
 
   @override
